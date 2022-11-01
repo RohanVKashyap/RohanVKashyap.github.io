@@ -1,0 +1,875 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mark van der Wilk</title>
+    <link>https://markvdw.github.io/</link>
+      <atom:link href="https://markvdw.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <description>Mark van der Wilk</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2021</copyright><lastBuildDate>Thu, 01 Dec 2022 00:00:00 +0000</lastBuildDate>
+    <image>
+      <url>https://markvdw.github.io/media/icon_hufdd866d90d76849587aac6fbf27da1ac_464_512x512_fill_lanczos_center_2.png</url>
+      <title>Mark van der Wilk</title>
+      <link>https://markvdw.github.io/</link>
+    </image>
+    
+    <item>
+      <title>Invariance Learning in Deep Neural Networks with Differentiable Laplace Approximations</title>
+      <link>https://markvdw.github.io/publication/immerouderaa-2022-deepinv/</link>
+      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/immerouderaa-2022-deepinv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Memory Safe Computations with XLA Compiler</title>
+      <link>https://markvdw.github.io/publication/artemev-2022-xla/</link>
+      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/artemev-2022-xla/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Relaxing Equivariance Constraints with Non-stationary Continuous Filters</title>
+      <link>https://markvdw.github.io/publication/ouderaa-2022-relaxing/</link>
+      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/ouderaa-2022-relaxing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>SnAKe: Bayesian Optimization with Pathwise Exploration</title>
+      <link>https://markvdw.github.io/publication/folch-2022-snake/</link>
+      <pubDate>Thu, 01 Dec 2022 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/folch-2022-snake/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data augmentation in Bayesian neural networks and the cold posterior effect</title>
+      <link>https://markvdw.github.io/publication/nabarro-2022-data/</link>
+      <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/nabarro-2022-data/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Learning invariant weights in neural networks</title>
+      <link>https://markvdw.github.io/publication/ouderaa-2022-learning/</link>
+      <pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/ouderaa-2022-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Learning Inductive Biases in Nerual Networks</title>
+      <link>https://markvdw.github.io/talk/learning-inductive-biases-in-nerual-networks/</link>
+      <pubDate>Mon, 11 Jul 2022 11:30:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/learning-inductive-biases-in-nerual-networks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Smarter Neuron: Automating Neural Architecture Design</title>
+      <link>https://markvdw.github.io/talk/a-smarter-neuron-automating-neural-architecture-design/</link>
+      <pubDate>Fri, 25 Mar 2022 16:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/a-smarter-neuron-automating-neural-architecture-design/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Automating Gaussian Process Approximations</title>
+      <link>https://markvdw.github.io/talk/automating-gaussian-process-approximations/</link>
+      <pubDate>Wed, 09 Mar 2022 16:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/automating-gaussian-process-approximations/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Inductive Biases, Input Densities, and Predictive Uncertainty</title>
+      <link>https://markvdw.github.io/talk/inductive-biases-input-densities-and-predictive-uncertainty/</link>
+      <pubDate>Wed, 09 Mar 2022 16:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/inductive-biases-input-densities-and-predictive-uncertainty/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Improved Inverse-Free Variational Bounds for Sparse Gaussian Processes</title>
+      <link>https://markvdw.github.io/publication/vdw-2022-inv/</link>
+      <pubDate>Tue, 01 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/vdw-2022-inv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Matrix Inversion free variational inference in Conditional Student&#39;s T Processes</title>
+      <link>https://markvdw.github.io/publication/popescu-2022-tproc/</link>
+      <pubDate>Tue, 01 Feb 2022 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/popescu-2022-tproc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Approximations, Inductive Biases, and their Connections in Gaussian Processes</title>
+      <link>https://markvdw.github.io/talk/approximations-inductive-biases-and-their-connections-in-gaussian-processes/</link>
+      <pubDate>Fri, 14 Jan 2022 09:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/approximations-inductive-biases-and-their-connections-in-gaussian-processes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Teaching</title>
+      <link>https://markvdw.github.io/teaching/</link>
+      <pubDate>Wed, 12 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/teaching/</guid>
+      <description>&lt;h2 id=&#34;courses&#34;&gt;Courses&lt;/h2&gt;
+&lt;p&gt;At Imperial College London:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Probabilistic Inference (Spring 2020, Spring 2021, Spring 2022)&lt;/li&gt;
+&lt;li&gt;Mathematics for Machine Learning (half) (Autumn 2020, Autumn 2022)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;masters-projects-msc--meng&#34;&gt;Master&amp;rsquo;s Projects (MSc / MEng)&lt;/h2&gt;
+&lt;p&gt;I run a variety of master&amp;rsquo;s projects each year for students who are already enrolled in a course at Imperial. I generally don&amp;rsquo;t advise master&amp;rsquo;s projects or internships from other institutions. To see the projects I offer, take a look at the DoC project portal. If you are assigned to one of my projects, do look at my &lt;a href=&#34;https://hackmd.io/@OccamLab/BJ-kzN32t&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;guidelines for master&amp;rsquo;s projects&lt;/a&gt;.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Research Overview</title>
+      <link>https://markvdw.github.io/research-overview/</link>
+      <pubDate>Tue, 04 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/research-overview/</guid>
+      <description>&lt;h2 id=&#34;list-of-research-interests&#34;&gt;List of Research Interests&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Bayesian inference and approximations to it (variational, EP, MCMC, Stein, &amp;hellip;).&lt;/li&gt;
+&lt;li&gt;Gaussian process models (deep GPs, GPSSM, GPLVM, &amp;hellip;), practical approximations to them, and their theoretical properties.&lt;/li&gt;
+&lt;li&gt;Bayesian deep learning (inference over weights, using GPs as building blocks, &amp;hellip;).&lt;/li&gt;
+&lt;li&gt;Neural networks / other models with invariance properties (e.g. rotation, scale, or more arbitrary) and learning invariances.&lt;/li&gt;
+&lt;li&gt;Analysis of deep neural networks (infinite limits and GP relations).&lt;/li&gt;
+&lt;li&gt;Model-based reinforcement learning.&lt;/li&gt;
+&lt;li&gt;Differentially private machine learning.&lt;/li&gt;
+&lt;li&gt;Connections between Bayesian inference and generalisation error bounds.&lt;/li&gt;
+&lt;li&gt;Connections between causality and model selection.&lt;/li&gt;
+&lt;li&gt;Applications involving tailored probabilistic models for e.g. Bayesian optimisation.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;high-level-aims-and-approach&#34;&gt;High-level aims and approach&lt;/h2&gt;
+&lt;p&gt;Our research aims to improve three broad properties of Machine Learning methods:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Data efficiency: Making better predictions with less data.&lt;/li&gt;
+&lt;li&gt;Automatic Machine Learning: Methods are too brittle, and require human design and oversight.&lt;/li&gt;
+&lt;li&gt;Uncertainty quantification and decision making: Uncertainty tells us when risks are worth taking.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Improvements in these areas would benefit the full spectrum of applications: from tasks with small amounts of data where eliminating noise is important, to high-dimensional large-data settings where neural networks are applied to natural data like images.&lt;/p&gt;
+&lt;p&gt;Approaches from statistics can help to improve these three areas, e.g. Bayesian modelling. Bayesian modelling is well-known for helping with quantifying uncertainty. This is important for decision making, since risk needs to be taken into account. If a self-driving car is 5% sure the road ahead is blocked, it can slow down to gain more information, or perform evasive action. If a &amp;ldquo;best guess&amp;rdquo; is given of &amp;ldquo;not blocked&amp;rdquo;, the consequences can be catastrophic. Bayesian deep learning aims to get better uncertainty estimates, and we do work on this.&lt;/p&gt;
+&lt;p&gt;However, I&amp;rsquo;m more excited about an underappreciated ability of the Bayesian framework: automatic inductive bias selection. By developing this ability in neural networks, the design of network architecture could be automated. Deep learning would be much more practical if humans wouldn&amp;rsquo;t need to make a multitude of design choices, like how many layers are needed, how wide they should be, their convolutional structure, and so on. Currently, these choices are made by cross-validation, which is basically trial-and-error where different versions of the network are trained from scratch. The Bayesian approach provides a single objective function that can be optimised to find architecture and weights at the same time. The long-term goal for this line of research, is to be able to determine the connectivity structure of neurons (because this is what architecture is), in a single training run of the network. This would vastly simplify network design.&lt;/p&gt;
+&lt;p&gt;Another hypothesis in the ML community is that simply scaling models to be larger will solve the three problems mentioned above, rather than improving training procedures. Approaches like meta-learning and large language models like GPT-3 push in this direction. This brings up its own interesting open questions that statistical reasoning can contribute to: What tasks and datasets should be used? Can knowledge about the mathematics of inference inform architecture design? How should methods be evaluated? These are certainly also interesting questions to investigate.&lt;/p&gt;
+&lt;p&gt;I&amp;rsquo;m not completely sure what approach I would bet on. I certainly follow developments in meta-learning and large models carefully. If the answer to this was clear, this wouldn&amp;rsquo;t be research. Luckily, there are interesting questions to investigate in both directions.&lt;/p&gt;
+&lt;h2 id=&#34;research-highlights&#34;&gt;Research Highlights&lt;/h2&gt;
+&lt;p&gt;To give a more concrete idea of research we have done, here are some projects and papers roughly grouped together in themes. These projects were done together with collaborators and students, so do look at the papers themselves.&lt;/p&gt;
+&lt;h3 id=&#34;learning-invariances&#34;&gt;Learning invariances&lt;/h3&gt;
+&lt;p&gt;Invariance and equivariance are very common inductive biases, with the ubiquitous convolutional layer being the most common example. When designing architectures, humans currently choose how many convolutional layers to use, together with parameters like filter size. Often these choices are made with a laborious trial-and-error procedure (cross-validation). To make the number of choices even larger, other types of convolutional layers have been developed in recent years, which help generalisation across different scales and rotations. The optimal inductive bias varies by problem and dataset, so it would be nice if we had an automatic procedure for determining these.&lt;/p&gt;
+&lt;p&gt;We are developing methods that allow weights and architecture to be learned &lt;em&gt;at the same time&lt;/em&gt;, by optimising a single objective function. In our paper &lt;a href=&#34;https://markvdw.github.io/publication/vdw-2018-invgp/&#34;&gt;&lt;em&gt;Learning Invariances using the Marginal Likelihood&lt;/em&gt;&lt;/a&gt; we expressed invariances as data augmentations, and learned the correct data augmentation parameters through backprop with a single optimisation run. The objective function was derived from the principles of Bayesian model selection&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;.&lt;/p&gt;
+&lt;p&gt;The final invariance can be visualised by looking at the samples that the data augmentation procedure generates. Samples generated for a particular input image visualise which transformations are seen as not changing the label (see figure below).&lt;/p&gt;
+&lt;figure&gt;
+  &lt;img src=&#34;https://markvdw.github.io/learning-invariances-samples.png&#34; alt=&#34;Samples from data augmentation procedure.&#34;/&gt;
+  &lt;figcaption&gt;Figure: Samples describing the &lt;i&gt;learned invariance&lt;/i&gt; for some MNIST digits (squares). The method becomes insensitive to local rotations, shears, and rotations.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;Overall, this procedure is a lot more convenient than training a model many times in a cross-validated grid search over the data augmentation parameters. What really shows that invariances are truly learned here, is that if you apply the &lt;em&gt;same&lt;/em&gt; method to a dataset with different characteristics, a different invariance is learned. The same exact method that worked well on MNIST would learn almost full rotational invariance for rotated MNIST (see paper for results). Following the normal procedure, the cross-validated grid search would have to be performed again!&lt;/p&gt;
+&lt;p&gt;The method above was based on Gaussian processes, and we since have been working on neural network equivalents which learn different kinds of equivariant tied weights. &lt;a href=&#34;https://markvdw.github.io/publication/vdo-2021-invariant-weights/&#34;&gt;Our workshop paper&lt;/a&gt; provided some nice GIFs of different kinds of convolutional structure being learned together with weights (see figure below).&lt;/p&gt;
+&lt;figure&gt;
+  &lt;img src=&#34;https://markvdw.github.io/filters-gif.gif&#34; alt=&#34;my alt text&#34;/&gt;
+  &lt;figcaption&gt;Figure: Learning rotationally equivariant filter structure starting from full connectivity. Note how the rotation of the filters increases as it learns the equivariant structure. Work in progress that is currently only available for shallow NNs.&lt;/figcaption&gt;
+&lt;/figure&gt;
+&lt;p&gt;What are the limitations?&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Currently it only works really robustly on shallow models (although we have had &lt;a href=&#34;https://markvdw.github.io/publication/schwoebel-2021-layer/&#34;&gt;partial progress in deep models&lt;/a&gt;).&lt;/li&gt;
+&lt;li&gt;You need to specify a solution space of invariances, from which the correct invariance is picked. All machine learning methods need to parameterise their solution space, but so far we have only parameterised simple ones like the space of distributions on affine transformations, and local deformations.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;There is plenty of more to do!&lt;/p&gt;
+&lt;h3 id=&#34;accurate-and-automatic-gaussian-process-approximations&#34;&gt;Accurate and Automatic Gaussian process approximations&lt;/h3&gt;
+&lt;p&gt;We also do nitty-gritty research to make Gaussian processes (a model that is also common in statistics) work &lt;em&gt;really&lt;/em&gt; well. One neat property of GPs is that there are principles for selecting all their free parameters. In principle, this means that humans aren&amp;rsquo;t needed in the loop to train them.&lt;/p&gt;
+&lt;p&gt;Unfortunately, to reduce computational complexity, approximations need to be introduced. These often introduce free parameters again, which then means that a human has to intervene to ensure that the quality of the approximation is acceptable. This defeats part of the point! We improved two GP approximations (variational and conjugate gradient) by providing:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;automatic procedures for selecting approximation parameters, and&lt;/li&gt;
+&lt;li&gt;mathematical guarantees on the quality of the solution.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;This helps the methods give solutions in a more computationally efficient manner, while also making them more accurate. These methods help give predictions that you can really trust.&lt;/p&gt;
+&lt;p&gt;See:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&#34;https://markvdw.github.io/publication/burt-2020-convergence/&#34;&gt;Convergence of Sparse Variational Inference in Gaussian Process Regression&lt;/a&gt; (or the shorter &lt;a href=&#34;https://markvdw.github.io/publication/burt-2019-rates/&#34;&gt;conference version&lt;/a&gt;)&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://markvdw.github.io/publication/artemevburt-2021-cglb/&#34;&gt;Tighter Bounds on the Log Marginal Likelihood of Gaussian Process Regression Using Conjugate Gradients
+&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;In the search for faster GP approximations, I have also worked on variational bounds that &lt;a href=&#34;https://markvdw.github.io/publication/vdw-2020-inv/&#34;&gt;do not require matrix inverses to be computed&lt;/a&gt;. While the maths works, getting the method to optimise quickly enough for it to actually provide a practical benefit is still difficult. I do think the results are neat, and that there is a lot more to be looked into here.&lt;/p&gt;
+&lt;h3 id=&#34;deep-gaussian-processes&#34;&gt;Deep Gaussian processes&lt;/h3&gt;
+&lt;p&gt;Why is accurate Gaussian process inference important? Well, apart from GPs being useful for noisy and/or low-data tasks where quantifying uncertainty is important&lt;sup id=&#34;fnref:2&#34;&gt;&lt;a href=&#34;#fn:2&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;2&lt;/a&gt;&lt;/sup&gt;, GPs are also a different representation of a neural network layer. It seems that there are advantages in terms of the quality of approximate Bayesian inference when representing a layer as a GP rather than with weights. One key research question is whether thinking about neural network layers as GPs can help bring the benefits of Bayesian inference (uncertainty and automatic model selection) to deep neural networks.&lt;/p&gt;
+&lt;p&gt;The evidence of this comes from the very first papers on deep GPs by &lt;a href=&#34;http://proceedings.mlr.press/v31/damianou13a.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Damianou &amp;amp; Lawrence&lt;/a&gt;, where the marginal likelihood estimate was already used for model selection. Simple inference methods keep this property, even as &lt;a href=&#34;https://markvdw.github.io/publication/dutordoir-2020-dcgp/&#34;&gt;deep GP models become more complex&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Techniques that accomplish similar things for neural networks are only now being developed. However, in some ways the approaches in deep GPs are simpler and easier, even if they are computationally expensive. I think that there is a significant opportunity for both classes of models to benefit from each other&amp;rsquo;s strengths. &lt;a href=&#34;https://markvdw.github.io/publication/dutordoir-2021-relu/&#34;&gt;Deep links between deep GPs and deep neural networks&lt;/a&gt; are becoming clearer, and can provide a concrete way to get the best of both worlds.&lt;/p&gt;
+&lt;h3 id=&#34;capsules&#34;&gt;Capsules&lt;/h3&gt;
+&lt;p&gt;I do believe that good model structure is the most important property for good performance. When I first heard Geoff Hinton&amp;rsquo;s talk about capsule networks, I was very intrigued by the inductive bias specified by the network alone. In addition, there seems to be a lot of probabilistic inspiration behind the routing algorithm.&lt;/p&gt;
+&lt;p&gt;Together with Lewis Smith et al, we attempted to make a fully &lt;a href=&#34;https://markvdw.github.io/publication/smith-2020-capsules/&#34;&gt;probabilistic formulation&lt;/a&gt; of capsule networks, which would allow routing to be derived directly from inference. Although our practical success was limited, the project did provide a lot of insight. I do still believe in the idea behind capsules and their link to probabilistic inference. Hopefully this won&amp;rsquo;t be our last project on the topic.&lt;/p&gt;
+&lt;section class=&#34;footnotes&#34; role=&#34;doc-endnotes&#34;&gt;
+&lt;hr&gt;
+&lt;ol&gt;
+&lt;li id=&#34;fn:1&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;See &lt;a href=&#34;http://www.inference.org.uk/mackay/itila/book.html&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;David MacKay&amp;rsquo;s excellent textbook&lt;/a&gt; for a good intro.&amp;#160;&lt;a href=&#34;#fnref:1&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li id=&#34;fn:2&#34; role=&#34;doc-endnote&#34;&gt;
+&lt;p&gt;Which is the case in many industrial and engineering problems.&amp;#160;&lt;a href=&#34;#fnref:2&#34; class=&#34;footnote-backref&#34; role=&#34;doc-backlink&#34;&gt;&amp;#x21a9;&amp;#xfe0e;&lt;/a&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/section&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Bayesian Neural Network Priors Revisited</title>
+      <link>https://markvdw.github.io/publication/fortuin-2022-bayesian/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/fortuin-2022-bayesian/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Last Layer Marginal Likelihood for Invariance Learning</title>
+      <link>https://markvdw.github.io/publication/schwoebel-2022-layer/</link>
+      <pubDate>Sat, 01 Jan 2022 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/schwoebel-2022-layer/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Input Densities and Predictive Uncertainties</title>
+      <link>https://markvdw.github.io/talk/input-densities-and-predictive-uncertainties/</link>
+      <pubDate>Tue, 12 Oct 2021 12:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/input-densities-and-predictive-uncertainties/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Augmentation in Infinitely Wide Neural Networks</title>
+      <link>https://markvdw.github.io/talk/data-augmentation-in-infinitely-wide-neural-networks/</link>
+      <pubDate>Tue, 21 Sep 2021 19:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/data-augmentation-in-infinitely-wide-neural-networks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Correlated weights in infinite limits of deep convolutional neural networks</title>
+      <link>https://markvdw.github.io/publication/garriga-alonso-2021-correlated/</link>
+      <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/garriga-alonso-2021-correlated/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The promises and pitfalls of deep kernel learning</title>
+      <link>https://markvdw.github.io/publication/ober-2021-promises/</link>
+      <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/ober-2021-promises/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tighter Bounds on the Log Marginal Likelihood of Gaussian Process Regression Using Conjugate Gradients</title>
+      <link>https://markvdw.github.io/publication/artemevburt-2021-cglb/</link>
+      <pubDate>Thu, 01 Jul 2021 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/artemevburt-2021-cglb/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reliable Training of Gaussian Process Approximations</title>
+      <link>https://markvdw.github.io/talk/reliable-training-of-gaussian-process-approximations/</link>
+      <pubDate>Wed, 02 Jun 2021 16:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/reliable-training-of-gaussian-process-approximations/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>How Accurate Gaussian Processes can help Deep Learning</title>
+      <link>https://markvdw.github.io/talk/how-accurate-gaussian-processes-can-help-deep-learning/</link>
+      <pubDate>Fri, 30 Apr 2021 16:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/how-accurate-gaussian-processes-can-help-deep-learning/</guid>
+      <description>&lt;h3 id=&#34;context&#34;&gt;Context&lt;/h3&gt;
+&lt;p&gt;This talk was given as part of a series where alumni of the group where I did my PhD were invited to return to discuss their research. This is one of those talks with a high-level overview of recent work, together with some opinions on how they relate to larger questions in the field.&lt;/p&gt;
+&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+Slides can be added in a few ways:
+
+- **Create** slides using Wowchemy&#39;s [*Slides*](https://wowchemy.com/docs/managing-content/#create-slides) feature and link using `slides` parameter in the front matter of the talk file
+- **Upload** an existing slide deck to `static/` and link using `url_slides` parameter in the front matter of the talk file
+- **Embed** your slides (e.g. Google Slides) or presentation video on this page using [shortcodes](https://wowchemy.com/docs/writing-markdown-latex/).
+
+Further event details, including [page elements](https://wowchemy.com/docs/writing-markdown-latex/) such as image galleries, can be added to the body of this page. --!&gt;</description>
+    </item>
+    
+    <item>
+      <title>Accurate and Reliable Gaussian Processes</title>
+      <link>https://markvdw.github.io/project/reliable-gp/</link>
+      <pubDate>Tue, 27 Apr 2021 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/project/reliable-gp/</guid>
+      <description>&lt;p&gt;Gaussian processes are a backbone model in machine learning, which is often used when&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Bayesian Model Selection in Deep Learning</title>
+      <link>https://markvdw.github.io/talk/bayesian-model-selection-in-deep-learning/</link>
+      <pubDate>Wed, 24 Feb 2021 16:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/bayesian-model-selection-in-deep-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Barely Biased Learning for Gaussian Process Regression</title>
+      <link>https://markvdw.github.io/publication/burt-2021-barely/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/burt-2021-barely/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Deep Neural Networks as Point Estimates for Deep Gaussian Processes</title>
+      <link>https://markvdw.github.io/publication/dutordoir-2021-relu/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/dutordoir-2021-relu/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GPflux: A Library for Deep Gaussian Processes</title>
+      <link>https://markvdw.github.io/publication/dutordoir-2021-gpflux/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/dutordoir-2021-gpflux/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Speedy Performance Estimation for Neural Architecture Search</title>
+      <link>https://markvdw.github.io/publication/ru-2021-speed/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/ru-2021-speed/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Understanding Variational Inference in Function-Space</title>
+      <link>https://markvdw.github.io/publication/burt-2020-understanding/</link>
+      <pubDate>Fri, 01 Jan 2021 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/burt-2020-understanding/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Welcome to Wowchemy, the website builder for Hugo</title>
+      <link>https://markvdw.github.io/post/getting-started/</link>
+      <pubDate>Sun, 13 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/post/getting-started/</guid>
+      <description>&lt;h2 id=&#34;overview&#34;&gt;Overview&lt;/h2&gt;
+&lt;ol&gt;
+&lt;li&gt;The Wowchemy website builder for Hugo, along with its starter templates, is designed for professional creators, educators, and teams/organizations - although it can be used to create any kind of site&lt;/li&gt;
+&lt;li&gt;The template can be modified and customised to suit your needs. It&amp;rsquo;s a good platform for anyone looking to take control of their data and online identity whilst having the convenience to start off with a &lt;strong&gt;no-code solution (write in Markdown and customize with YAML parameters)&lt;/strong&gt; and having &lt;strong&gt;flexibility to later add even deeper personalization with HTML and CSS&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;You can work with all your favourite tools and apps with hundreds of plugins and integrations to speed up your workflows, interact with your readers, and much more&lt;/li&gt;
+&lt;/ol&gt;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+&lt;figure  id=&#34;figure-the-template-is-mobile-first-with-a-responsive-design-to-ensure-that-your-site-looks-stunning-on-every-device&#34;&gt;
+  &lt;div class=&#34;d-flex justify-content-center&#34;&gt;
+    &lt;div class=&#34;w-100&#34; &gt;&lt;img src=&#34;https://raw.githubusercontent.com/wowchemy/wowchemy-hugo-modules/master/academic.png&#34; alt=&#34;The template is mobile first with a responsive design to ensure that your site looks stunning on every device.&#34; loading=&#34;lazy&#34; data-zoomable /&gt;&lt;/div&gt;
+  &lt;/div&gt;&lt;figcaption&gt;
+      The template is mobile first with a responsive design to ensure that your site looks stunning on every device.
+    &lt;/figcaption&gt;&lt;/figure&gt;
+&lt;h2 id=&#34;get-started&#34;&gt;Get Started&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;👉 &lt;a href=&#34;https://wowchemy.com/templates/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Create a new site&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;📚 &lt;a href=&#34;https://wowchemy.com/docs/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Personalize your site&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;💬 &lt;a href=&#34;https://discord.gg/z8wNYzb&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Chat with the &lt;strong&gt;Wowchemy community&lt;/strong&gt;&lt;/a&gt; or &lt;a href=&#34;https://discourse.gohugo.io&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Hugo community&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;🐦 Twitter: &lt;a href=&#34;https://twitter.com/wowchemy&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@wowchemy&lt;/a&gt; &lt;a href=&#34;https://twitter.com/GeorgeCushen&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;@GeorgeCushen&lt;/a&gt; &lt;a href=&#34;https://twitter.com/search?q=%28%23MadeWithWowchemy%20OR%20%23MadeWithAcademic%29&amp;amp;src=typed_query&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;#MadeWithWowchemy&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;💡 &lt;a href=&#34;https://github.com/wowchemy/wowchemy-hugo-modules/issues&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Request a &lt;strong&gt;feature&lt;/strong&gt; or report a &lt;strong&gt;bug&lt;/strong&gt; for &lt;em&gt;Wowchemy&lt;/em&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;⬆️ &lt;strong&gt;Updating Wowchemy?&lt;/strong&gt; View the &lt;a href=&#34;https://wowchemy.com/docs/guide/update/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Update Guide&lt;/a&gt; and &lt;a href=&#34;https://wowchemy.com/updates/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Release Notes&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;crowd-funded-open-source-software&#34;&gt;Crowd-funded open-source software&lt;/h2&gt;
+&lt;p&gt;To help us develop this template and software sustainably under the MIT license, we ask all individuals and businesses that use it to help support its ongoing maintenance and development via sponsorship.&lt;/p&gt;
+&lt;h3 id=&#34;-click-here-to-become-a-sponsor-and-help-support-wowchemys-future-httpswowchemycomplans&#34;&gt;&lt;a href=&#34;https://wowchemy.com/plans/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;❤️ Click here to become a sponsor and help support Wowchemy&amp;rsquo;s future ❤️&lt;/a&gt;&lt;/h3&gt;
+&lt;p&gt;As a token of appreciation for sponsoring, you can &lt;strong&gt;unlock &lt;a href=&#34;https://wowchemy.com/plans/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;these&lt;/a&gt; awesome rewards and extra features 🦄✨&lt;/strong&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ecosystem&#34;&gt;Ecosystem&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;&lt;a href=&#34;https://github.com/wowchemy/hugo-academic-cli&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Hugo Academic CLI&lt;/a&gt;:&lt;/strong&gt; Automatically import publications from BibTeX&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;inspiration&#34;&gt;Inspiration&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&#34;https://academic-demo.netlify.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Check out the latest &lt;strong&gt;demo&lt;/strong&gt;&lt;/a&gt; of what you&amp;rsquo;ll get in less than 10 minutes, or &lt;a href=&#34;https://wowchemy.com/user-stories/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;view the &lt;strong&gt;showcase&lt;/strong&gt;&lt;/a&gt; of personal, project, and business sites.&lt;/p&gt;
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Page builder&lt;/strong&gt; - Create &lt;em&gt;anything&lt;/em&gt; with &lt;a href=&#34;https://wowchemy.com/docs/page-builder/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;widgets&lt;/strong&gt;&lt;/a&gt; and &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;elements&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Edit any type of content&lt;/strong&gt; - Blog posts, publications, talks, slides, projects, and more!&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Create content&lt;/strong&gt; in &lt;a href=&#34;https://wowchemy.com/docs/writing-markdown-latex/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Markdown&lt;/strong&gt;&lt;/a&gt;, &lt;a href=&#34;https://wowchemy.com/docs/import/jupyter/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;Jupyter&lt;/strong&gt;&lt;/a&gt;, or &lt;a href=&#34;https://wowchemy.com/docs/install-locally/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;RStudio&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Plugin System&lt;/strong&gt; - Fully customizable &lt;a href=&#34;https://wowchemy.com/docs/customization/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;&lt;strong&gt;color&lt;/strong&gt; and &lt;strong&gt;font themes&lt;/strong&gt;&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Display Code and Math&lt;/strong&gt; - Code highlighting and &lt;a href=&#34;https://en.wikibooks.org/wiki/LaTeX/Mathematics&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;LaTeX math&lt;/a&gt; supported&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Integrations&lt;/strong&gt; - &lt;a href=&#34;https://analytics.google.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Google Analytics&lt;/a&gt;, &lt;a href=&#34;https://disqus.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Disqus commenting&lt;/a&gt;, Maps, Contact Forms, and more!&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Beautiful Site&lt;/strong&gt; - Simple and refreshing one page design&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Industry-Leading SEO&lt;/strong&gt; - Help get your website found on search engines and social media&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Media Galleries&lt;/strong&gt; - Display your images and videos with captions in a customizable gallery&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mobile Friendly&lt;/strong&gt; - Look amazing on every screen with a mobile friendly version of your site&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Multi-language&lt;/strong&gt; - 34+ language packs including English, 中文, and Português&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Multi-user&lt;/strong&gt; - Each author gets their own profile page&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Privacy Pack&lt;/strong&gt; - Assists with GDPR&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Stand Out&lt;/strong&gt; - Bring your site to life with animation, parallax backgrounds, and scroll effects&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;One-Click Deployment&lt;/strong&gt; - No servers. No databases. Only files.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;themes&#34;&gt;Themes&lt;/h2&gt;
+&lt;p&gt;Wowchemy and its templates come with &lt;strong&gt;automatic day (light) and night (dark) mode&lt;/strong&gt; built-in. Alternatively, visitors can choose their preferred mode - click the moon icon in the top right of the &lt;a href=&#34;https://academic-demo.netlify.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Demo&lt;/a&gt; to see it in action! Day/night mode can also be disabled by the site admin in &lt;code&gt;params.toml&lt;/code&gt;.&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://wowchemy.com/docs/customization&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Choose a stunning &lt;strong&gt;theme&lt;/strong&gt; and &lt;strong&gt;font&lt;/strong&gt;&lt;/a&gt; for your site. Themes are fully customizable.&lt;/p&gt;
+&lt;h2 id=&#34;license&#34;&gt;License&lt;/h2&gt;
+&lt;p&gt;Copyright 2016-present &lt;a href=&#34;https://georgecushen.com&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;George Cushen&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Released under the &lt;a href=&#34;https://github.com/wowchemy/wowchemy-hugo-modules/blob/master/LICENSE.md&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;MIT&lt;/a&gt; license.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Bayesian Model Selection in Deep Learning</title>
+      <link>https://markvdw.github.io/talk/bayesian-model-selection-in-deep-learning/</link>
+      <pubDate>Thu, 10 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/bayesian-model-selection-in-deep-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bayesian Image Classification with Deep Convolutional Gaussian Processes</title>
+      <link>https://markvdw.github.io/publication/dutordoir-2020-dcgp/</link>
+      <pubDate>Sat, 01 Aug 2020 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/dutordoir-2020-dcgp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Variational Gaussian Processes without Matrix Inverses</title>
+      <link>https://markvdw.github.io/talk/variational-gaussian-processes-without-matrix-inverses/</link>
+      <pubDate>Tue, 16 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/variational-gaussian-processes-without-matrix-inverses/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Learning Invariances using the Marginal Likelihood</title>
+      <link>https://markvdw.github.io/talk/learning-invariances-using-the-marginal-likelihood/</link>
+      <pubDate>Mon, 08 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/learning-invariances-using-the-marginal-likelihood/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Learning Invariances using the Marginal Likelihood</title>
+      <link>https://markvdw.github.io/talk/learning-invariances-using-the-marginal-likelihood/</link>
+      <pubDate>Mon, 17 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/learning-invariances-using-the-marginal-likelihood/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Bayesian Perspective on Training Speed and Model Selection</title>
+      <link>https://markvdw.github.io/publication/lyle-2020-trainingspeed/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/lyle-2020-trainingspeed/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Framework for Interdomain and Multioutput Gaussian Processes</title>
+      <link>https://markvdw.github.io/publication/vdw-2020-framework/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/vdw-2020-framework/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Capsule Networks -- A Probabilistic Perspective</title>
+      <link>https://markvdw.github.io/publication/smith-2020-capsules/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/smith-2020-capsules/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Convergence of Sparse Variational Inference in Gaussian Processes Regression</title>
+      <link>https://markvdw.github.io/publication/burt-2020-convergence/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/burt-2020-convergence/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Design of Experiments for Verifying Biomolecular Networks</title>
+      <link>https://markvdw.github.io/publication/sedgwick-2020-design/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/sedgwick-2020-design/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>On the Benefits of Invariance in Neural Networks</title>
+      <link>https://markvdw.github.io/publication/lyle-2020-benefits/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/lyle-2020-benefits/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Stochastic Segmentation Networks: Modelling Spatially Correlated Aleatoric Uncertainty</title>
+      <link>https://markvdw.github.io/publication/monteiro-2020-correlated/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/monteiro-2020-correlated/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Variational Gaussian Process Models without Matrix Inverses</title>
+      <link>https://markvdw.github.io/publication/vdw-2020-inv/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/vdw-2020-inv/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Variational Orthogonal Features</title>
+      <link>https://markvdw.github.io/publication/burt-2020-vof/</link>
+      <pubDate>Wed, 01 Jan 2020 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/burt-2020-vof/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Variational Gaussian Process Models without Matrix Inverses</title>
+      <link>https://markvdw.github.io/talk/variational-gaussian-process-models-without-matrix-inverses/</link>
+      <pubDate>Sun, 08 Dec 2019 13:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/variational-gaussian-process-models-without-matrix-inverses/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sampling for Data Augmentation: Generative Models vs Invariances</title>
+      <link>https://markvdw.github.io/talk/sampling-for-data-augmentation-generative-models-vs-invariances/</link>
+      <pubDate>Thu, 10 Oct 2019 13:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/sampling-for-data-augmentation-generative-models-vs-invariances/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Invariances in Gaussian processes and How to Learn Them</title>
+      <link>https://markvdw.github.io/talk/invariances-in-gaussian-processes-and-how-to-learn-them/</link>
+      <pubDate>Thu, 12 Sep 2019 13:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/invariances-in-gaussian-processes-and-how-to-learn-them/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Overcoming Mean-Field Approximations in Recurrent Gaussian Process Models</title>
+      <link>https://markvdw.github.io/publication/ialongo-2019-overcoming/</link>
+      <pubDate>Sat, 01 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/ialongo-2019-overcoming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rates of Convergence for Sparse Variational Gaussian Process Regression</title>
+      <link>https://markvdw.github.io/publication/burt-2019-rates/</link>
+      <pubDate>Sat, 01 Jun 2019 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/burt-2019-rates/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Slides</title>
+      <link>https://markvdw.github.io/slides/example/</link>
+      <pubDate>Tue, 05 Feb 2019 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/slides/example/</guid>
+      <description>&lt;h1 id=&#34;create-slides-in-markdown-with-wowchemy&#34;&gt;Create slides in Markdown with Wowchemy&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://wowchemy.com/&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Wowchemy&lt;/a&gt; | &lt;a href=&#34;https://owchemy.com/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;features&#34;&gt;Features&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Efficiently write slides in Markdown&lt;/li&gt;
+&lt;li&gt;3-in-1: Create, Present, and Publish your slides&lt;/li&gt;
+&lt;li&gt;Supports speaker notes&lt;/li&gt;
+&lt;li&gt;Mobile friendly slides&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;controls&#34;&gt;Controls&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Next: &lt;code&gt;Right Arrow&lt;/code&gt; or &lt;code&gt;Space&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Previous: &lt;code&gt;Left Arrow&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Start: &lt;code&gt;Home&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Finish: &lt;code&gt;End&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Overview: &lt;code&gt;Esc&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Speaker notes: &lt;code&gt;S&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Fullscreen: &lt;code&gt;F&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Zoom: &lt;code&gt;Alt + Click&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;https://github.com/hakimel/reveal.js#pdf-export&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;PDF Export&lt;/a&gt;: &lt;code&gt;E&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;code-highlighting&#34;&gt;Code Highlighting&lt;/h2&gt;
+&lt;p&gt;Inline code: &lt;code&gt;variable&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Code block:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-python&#34;&gt;porridge = &amp;quot;blueberry&amp;quot;
+if porridge == &amp;quot;blueberry&amp;quot;:
+    print(&amp;quot;Eating...&amp;quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;math&#34;&gt;Math&lt;/h2&gt;
+&lt;p&gt;In-line math: $x + y = z$&lt;/p&gt;
+&lt;p&gt;Block math:&lt;/p&gt;
+&lt;p&gt;$$
+f\left( x \right) = ;\frac{{2\left( {x + 4} \right)\left( {x - 4} \right)}}{{\left( {x + 4} \right)\left( {x + 1} \right)}}
+$$&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;fragments&#34;&gt;Fragments&lt;/h2&gt;
+&lt;p&gt;Make content appear incrementally&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;{{% fragment %}} One {{% /fragment %}}
+{{% fragment %}} **Two** {{% /fragment %}}
+{{% fragment %}} Three {{% /fragment %}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Press &lt;code&gt;Space&lt;/code&gt; to play!&lt;/p&gt;
+&lt;p&gt;&lt;span class=&#34;fragment &#34; &gt;
+One
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+&lt;strong&gt;Two&lt;/strong&gt;
+&lt;/span&gt;
+&lt;span class=&#34;fragment &#34; &gt;
+Three
+&lt;/span&gt;&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;A fragment can accept two optional parameters:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;code&gt;class&lt;/code&gt;: use a custom style (requires definition in custom CSS)&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;weight&lt;/code&gt;: sets the order in which a fragment appears&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;speaker-notes&#34;&gt;Speaker Notes&lt;/h2&gt;
+&lt;p&gt;Add speaker notes to your presentation&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{% speaker_note %}}
+- Only the speaker can read these notes
+- Press `S` key to view
+{{% /speaker_note %}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;Press the &lt;code&gt;S&lt;/code&gt; key to view the speaker notes!&lt;/p&gt;
+&lt;aside class=&#34;notes&#34;&gt;
+  &lt;ul&gt;
+&lt;li&gt;Only the speaker can read these notes&lt;/li&gt;
+&lt;li&gt;Press &lt;code&gt;S&lt;/code&gt; key to view&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/aside&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;themes&#34;&gt;Themes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;black: Black background, white text, blue links (default)&lt;/li&gt;
+&lt;li&gt;white: White background, black text, blue links&lt;/li&gt;
+&lt;li&gt;league: Gray background, white text, blue links&lt;/li&gt;
+&lt;li&gt;beige: Beige background, dark text, brown links&lt;/li&gt;
+&lt;li&gt;sky: Blue background, thin dark text, blue links&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;night: Black background, thick white text, orange links&lt;/li&gt;
+&lt;li&gt;serif: Cappuccino background, gray text, brown links&lt;/li&gt;
+&lt;li&gt;simple: White background, black text, blue links&lt;/li&gt;
+&lt;li&gt;solarized: Cream-colored background, dark green text, blue links&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+
+&lt;section data-noprocess data-shortcode-slide
+  
+      
+      data-background-image=&#34;/media/boards.jpg&#34;
+  &gt;
+
+&lt;h2 id=&#34;custom-slide&#34;&gt;Custom Slide&lt;/h2&gt;
+&lt;p&gt;Customize the slide style and background&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-markdown&#34;&gt;{{&amp;lt; slide background-image=&amp;quot;/media/boards.jpg&amp;quot; &amp;gt;}}
+{{&amp;lt; slide background-color=&amp;quot;#0000FF&amp;quot; &amp;gt;}}
+{{&amp;lt; slide class=&amp;quot;my-style&amp;quot; &amp;gt;}}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h2 id=&#34;custom-css-example&#34;&gt;Custom CSS Example&lt;/h2&gt;
+&lt;p&gt;Let&amp;rsquo;s make headers navy colored.&lt;/p&gt;
+&lt;p&gt;Create &lt;code&gt;assets/css/reveal_custom.css&lt;/code&gt; with:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&#34;language-css&#34;&gt;.reveal section h1,
+.reveal section h2,
+.reveal section h3 {
+  color: navy;
+}
+&lt;/code&gt;&lt;/pre&gt;
+&lt;hr&gt;
+&lt;h1 id=&#34;questions&#34;&gt;Questions?&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&#34;https://github.com/wowchemy/wowchemy-hugo-modules/discussions&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Ask&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;https://wowchemy.com/docs/managing-content/#create-slides&#34; target=&#34;_blank&#34; rel=&#34;noopener&#34;&gt;Documentation&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Bayesian Layers: A Module for Neural Network Uncertainty</title>
+      <link>https://markvdw.github.io/publication/tran-2019-layers/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/tran-2019-layers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Scalable Bayesian dynamic covariance modeling with variational Wishart and inverse Wishart processes</title>
+      <link>https://markvdw.github.io/publication/heaukulani-2019-wishart/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/heaukulani-2019-wishart/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sparse Gaussian process approximations and applications</title>
+      <link>https://markvdw.github.io/publication/vdw-2019-sparse/</link>
+      <pubDate>Tue, 01 Jan 2019 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/vdw-2019-sparse/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Convolutional Gaussian Processes: a Building Block for Bayesian Deep Learning</title>
+      <link>https://markvdw.github.io/talk/convolutional-gaussian-processes-a-building-block-for-bayesian-deep-learning/</link>
+      <pubDate>Sun, 08 Jul 2018 13:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/convolutional-gaussian-processes-a-building-block-for-bayesian-deep-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Learning Invariances using the Marginal Likelihood</title>
+      <link>https://markvdw.github.io/publication/vdw-2018-invgp/</link>
+      <pubDate>Mon, 01 Jan 2018 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/vdw-2018-invgp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Convolutional Gaussian Processes</title>
+      <link>https://markvdw.github.io/talk/convolutional-gaussian-processes/</link>
+      <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/convolutional-gaussian-processes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Closed-form Inference and Prediction in Gaussian Process State-Space Models</title>
+      <link>https://markvdw.github.io/publication/ialongo-2017-closed/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/ialongo-2017-closed/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Concrete problems for autonomous vehicle safety: advantages of Bayesian deep learning</title>
+      <link>https://markvdw.github.io/publication/mcallister-2017-concrete/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/mcallister-2017-concrete/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Convolutional Gaussian Processes</title>
+      <link>https://markvdw.github.io/publication/vdw-2017-convgp/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/vdw-2017-convgp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>GPflow: A Gaussian Process Library using TensorFlow</title>
+      <link>https://markvdw.github.io/publication/gpflow/</link>
+      <pubDate>Sun, 01 Jan 2017 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/gpflow/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Example Project</title>
+      <link>https://markvdw.github.io/project/example/</link>
+      <pubDate>Wed, 27 Apr 2016 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/project/example/</guid>
+      <description>&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus. Vestibulum sit amet erat at nulla eleifend gravida.&lt;/p&gt;
+&lt;p&gt;Nullam vel molestie justo. Curabitur vitae efficitur leo. In hac habitasse platea dictumst. Sed pulvinar mauris dui, eget varius purus congue ac. Nulla euismod, lorem vel elementum dapibus, nunc justo porta mi, sed tempus est est vel tellus. Nam et enim eleifend, laoreet sem sit amet, elementum sem. Morbi ut leo congue, maximus velit ut, finibus arcu. In et libero cursus, rutrum risus non, molestie leo. Nullam congue quam et volutpat malesuada. Sed risus tortor, pulvinar et dictum nec, sodales non mi. Phasellus lacinia commodo laoreet. Nam mollis, erat in feugiat consectetur, purus eros egestas tellus, in auctor urna odio at nibh. Mauris imperdiet nisi ac magna convallis, at rhoncus ligula cursus.&lt;/p&gt;
+&lt;p&gt;Cras aliquam rhoncus ipsum, in hendrerit nunc mattis vitae. Duis vitae efficitur metus, ac tempus leo. Cras nec fringilla lacus. Quisque sit amet risus at ipsum pharetra commodo. Sed aliquam mauris at consequat eleifend. Praesent porta, augue sed viverra bibendum, neque ante euismod ante, in vehicula justo lorem ac eros. Suspendisse augue libero, venenatis eget tincidunt ut, malesuada at lorem. Donec vitae bibendum arcu. Aenean maximus nulla non pretium iaculis. Quisque imperdiet, nulla in pulvinar aliquet, velit quam ultrices quam, sit amet fringilla leo sem vel nunc. Mauris in lacinia lacus.&lt;/p&gt;
+&lt;p&gt;Suspendisse a tincidunt lacus. Curabitur at urna sagittis, dictum ante sit amet, euismod magna. Sed rutrum massa id tortor commodo, vitae elementum turpis tempus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean purus turpis, venenatis a ullamcorper nec, tincidunt et massa. Integer posuere quam rutrum arcu vehicula imperdiet. Mauris ullamcorper quam vitae purus congue, quis euismod magna eleifend. Vestibulum semper vel augue eget tincidunt. Fusce eget justo sodales, dapibus odio eu, ultrices lorem. Duis condimentum lorem id eros commodo, in facilisis mauris scelerisque. Morbi sed auctor leo. Nullam volutpat a lacus quis pharetra. Nulla congue rutrum magna a ornare.&lt;/p&gt;
+&lt;p&gt;Aliquam in turpis accumsan, malesuada nibh ut, hendrerit justo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque sed erat nec justo posuere suscipit. Donec ut efficitur arcu, in malesuada neque. Nunc dignissim nisl massa, id vulputate nunc pretium nec. Quisque eget urna in risus suscipit ultricies. Pellentesque odio odio, tincidunt in eleifend sed, posuere a diam. Nam gravida nisl convallis semper elementum. Morbi vitae felis faucibus, vulputate orci placerat, aliquet nisi. Aliquam erat volutpat. Maecenas sagittis pulvinar purus, sed porta quam laoreet at.&lt;/p&gt;
+</description>
+    </item>
+    
+    <item>
+      <title>Data-Efficient Policy Search using PILCO and Directed-Exploration</title>
+      <link>https://markvdw.github.io/publication/mcallister-2016-exploration/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/mcallister-2016-exploration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Understanding Probabilistic Sparse Gaussian Process Approximations</title>
+      <link>https://markvdw.github.io/publication/bauer-2016-understanding/</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/bauer-2016-understanding/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Distributed Variational Inference in Sparse Gaussian Process Regression and Latent Variable Models</title>
+      <link>https://markvdw.github.io/publication/gal-2014-parallel/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/gal-2014-parallel/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Variational Inference for Latent Variable Modelling of Correlation Structure</title>
+      <link>https://markvdw.github.io/publication/vdw-2014-wplvm/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/vdw-2014-wplvm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Variational Inference in Sparse Gaussian Process Regression and Latent Variable Models - a Gentle Tutorial</title>
+      <link>https://markvdw.github.io/publication/galvdw-2014-tutorial/</link>
+      <pubDate>Wed, 01 Jan 2014 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/publication/galvdw-2014-tutorial/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://markvdw.github.io/admin/config.yml</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/admin/config.yml</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title></title>
+      <link>https://markvdw.github.io/people/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/people/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

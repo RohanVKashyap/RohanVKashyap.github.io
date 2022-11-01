@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Recent &amp; Upcoming Talks | Mark van der Wilk</title>
+    <link>https://markvdw.github.io/event/</link>
+      <atom:link href="https://markvdw.github.io/event/index.xml" rel="self" type="application/rss+xml" />
+    <description>Recent &amp; Upcoming Talks</description>
+    <generator>Wowchemy (https://wowchemy.com)</generator><language>en-us</language><copyright>© 2021</copyright><lastBuildDate>Mon, 11 Jul 2022 11:30:00 +0000</lastBuildDate>
+    <image>
+      <url>https://markvdw.github.io/media/icon_hufdd866d90d76849587aac6fbf27da1ac_464_512x512_fill_lanczos_center_2.png</url>
+      <title>Recent &amp; Upcoming Talks</title>
+      <link>https://markvdw.github.io/event/</link>
+    </image>
+    
+    <item>
+      <title>Learning Inductive Biases in Nerual Networks</title>
+      <link>https://markvdw.github.io/talk/learning-inductive-biases-in-nerual-networks/</link>
+      <pubDate>Mon, 11 Jul 2022 11:30:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/learning-inductive-biases-in-nerual-networks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>A Smarter Neuron: Automating Neural Architecture Design</title>
+      <link>https://markvdw.github.io/talk/a-smarter-neuron-automating-neural-architecture-design/</link>
+      <pubDate>Fri, 25 Mar 2022 16:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/a-smarter-neuron-automating-neural-architecture-design/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Automating Gaussian Process Approximations</title>
+      <link>https://markvdw.github.io/talk/automating-gaussian-process-approximations/</link>
+      <pubDate>Wed, 09 Mar 2022 16:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/automating-gaussian-process-approximations/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Inductive Biases, Input Densities, and Predictive Uncertainty</title>
+      <link>https://markvdw.github.io/talk/inductive-biases-input-densities-and-predictive-uncertainty/</link>
+      <pubDate>Wed, 09 Mar 2022 16:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/inductive-biases-input-densities-and-predictive-uncertainty/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Approximations, Inductive Biases, and their Connections in Gaussian Processes</title>
+      <link>https://markvdw.github.io/talk/approximations-inductive-biases-and-their-connections-in-gaussian-processes/</link>
+      <pubDate>Fri, 14 Jan 2022 09:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/approximations-inductive-biases-and-their-connections-in-gaussian-processes/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Input Densities and Predictive Uncertainties</title>
+      <link>https://markvdw.github.io/talk/input-densities-and-predictive-uncertainties/</link>
+      <pubDate>Tue, 12 Oct 2021 12:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/input-densities-and-predictive-uncertainties/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Data Augmentation in Infinitely Wide Neural Networks</title>
+      <link>https://markvdw.github.io/talk/data-augmentation-in-infinitely-wide-neural-networks/</link>
+      <pubDate>Tue, 21 Sep 2021 19:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/data-augmentation-in-infinitely-wide-neural-networks/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Reliable Training of Gaussian Process Approximations</title>
+      <link>https://markvdw.github.io/talk/reliable-training-of-gaussian-process-approximations/</link>
+      <pubDate>Wed, 02 Jun 2021 16:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/reliable-training-of-gaussian-process-approximations/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>How Accurate Gaussian Processes can help Deep Learning</title>
+      <link>https://markvdw.github.io/talk/how-accurate-gaussian-processes-can-help-deep-learning/</link>
+      <pubDate>Fri, 30 Apr 2021 16:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/how-accurate-gaussian-processes-can-help-deep-learning/</guid>
+      <description>&lt;h3 id=&#34;context&#34;&gt;Context&lt;/h3&gt;
+&lt;p&gt;This talk was given as part of a series where alumni of the group where I did my PhD were invited to return to discuss their research. This is one of those talks with a high-level overview of recent work, together with some opinions on how they relate to larger questions in the field.&lt;/p&gt;
+&lt;!-- &lt;div class=&#34;alert alert-note&#34;&gt;
+  &lt;div&gt;
+    Click on the &lt;strong&gt;Slides&lt;/strong&gt; button above to view the built-in slides feature.
+  &lt;/div&gt;
+&lt;/div&gt;
+
+
+Slides can be added in a few ways:
+
+- **Create** slides using Wowchemy&#39;s [*Slides*](https://wowchemy.com/docs/managing-content/#create-slides) feature and link using `slides` parameter in the front matter of the talk file
+- **Upload** an existing slide deck to `static/` and link using `url_slides` parameter in the front matter of the talk file
+- **Embed** your slides (e.g. Google Slides) or presentation video on this page using [shortcodes](https://wowchemy.com/docs/writing-markdown-latex/).
+
+Further event details, including [page elements](https://wowchemy.com/docs/writing-markdown-latex/) such as image galleries, can be added to the body of this page. --!&gt;</description>
+    </item>
+    
+    <item>
+      <title>Bayesian Model Selection in Deep Learning</title>
+      <link>https://markvdw.github.io/talk/bayesian-model-selection-in-deep-learning/</link>
+      <pubDate>Wed, 24 Feb 2021 16:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/bayesian-model-selection-in-deep-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Bayesian Model Selection in Deep Learning</title>
+      <link>https://markvdw.github.io/talk/bayesian-model-selection-in-deep-learning/</link>
+      <pubDate>Thu, 10 Dec 2020 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/bayesian-model-selection-in-deep-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Variational Gaussian Processes without Matrix Inverses</title>
+      <link>https://markvdw.github.io/talk/variational-gaussian-processes-without-matrix-inverses/</link>
+      <pubDate>Tue, 16 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/variational-gaussian-processes-without-matrix-inverses/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Learning Invariances using the Marginal Likelihood</title>
+      <link>https://markvdw.github.io/talk/learning-invariances-using-the-marginal-likelihood/</link>
+      <pubDate>Mon, 08 Jun 2020 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/learning-invariances-using-the-marginal-likelihood/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Learning Invariances using the Marginal Likelihood</title>
+      <link>https://markvdw.github.io/talk/learning-invariances-using-the-marginal-likelihood/</link>
+      <pubDate>Mon, 17 Feb 2020 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/learning-invariances-using-the-marginal-likelihood/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Variational Gaussian Process Models without Matrix Inverses</title>
+      <link>https://markvdw.github.io/talk/variational-gaussian-process-models-without-matrix-inverses/</link>
+      <pubDate>Sun, 08 Dec 2019 13:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/variational-gaussian-process-models-without-matrix-inverses/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sampling for Data Augmentation: Generative Models vs Invariances</title>
+      <link>https://markvdw.github.io/talk/sampling-for-data-augmentation-generative-models-vs-invariances/</link>
+      <pubDate>Thu, 10 Oct 2019 13:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/sampling-for-data-augmentation-generative-models-vs-invariances/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Invariances in Gaussian processes and How to Learn Them</title>
+      <link>https://markvdw.github.io/talk/invariances-in-gaussian-processes-and-how-to-learn-them/</link>
+      <pubDate>Thu, 12 Sep 2019 13:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/invariances-in-gaussian-processes-and-how-to-learn-them/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Convolutional Gaussian Processes: a Building Block for Bayesian Deep Learning</title>
+      <link>https://markvdw.github.io/talk/convolutional-gaussian-processes-a-building-block-for-bayesian-deep-learning/</link>
+      <pubDate>Sun, 08 Jul 2018 13:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/convolutional-gaussian-processes-a-building-block-for-bayesian-deep-learning/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Convolutional Gaussian Processes</title>
+      <link>https://markvdw.github.io/talk/convolutional-gaussian-processes/</link>
+      <pubDate>Thu, 28 Sep 2017 00:00:00 +0000</pubDate>
+      <guid>https://markvdw.github.io/talk/convolutional-gaussian-processes/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
