@@ -809,15 +809,15 @@
 <p>There is plenty of more to do!</p>
 <h3 id="Denoising Score Matching Langevin Dynamics">Denoising Score Matching Langevin Dynamics</h3>
 <figure>
-  <img src="/Diffusion_models.png" alt=""/>
-  <figcaption>Solving a reversetime SDE yields a score-based
+  <img src="/diffusion_models.png" alt=""/>
+  <figcaption>Solving a reverse-time SDE yields a score-based
     generative model. Transforming data to a simple noise distribution can be accomplished
     with a continuous-time SDE.</figcaption>
 </figure>
 <p>Let <span
   class="math inline">\(p_\sigma(\tilde{\mathbf{x}} \mid
   \mathbf{x}):=\mathcal{N}\left(\tilde{\mathbf{x}} ; \mathbf{x}, \sigma^2
-  \mathbf{I}\right)\)</span> be a perturbation kernel, and <span
+  \mathbf{I}\right)\)</span> be a perturbation kernel, <span
   class="math inline">\(p_\sigma(\tilde{\mathbf{x}}):=\int p_{\text {data
   }}(\mathbf{x}) p_\sigma(\tilde{\mathbf{x}} \mid \mathbf{x}) \mathrm{d}
   \mathbf{x}\)</span>, where <span class="math inline">\(p_{\text {data
@@ -880,23 +880,20 @@
 <h3 id="push-forward generative models">Push-forward generative models</h3>  
 </figure> Score-Based Generative Modeling (SGM) is a recently developed approach to probabilistic generative modeling that exhibits state-of-the-art performance on several audio and image synthesis tasks Progressively applying Gaussian noise transforms complex data distributions to approximately Gaussian. Reversing this dynamic defines a generative model. When the forward noising process is given by a Stochastic Differential Equation (SDE), <a href="https://arxiv.org/pdf/2011.13456.pdf"><em>Song et al. (2021)</em></a> demonstrate how the time inhomogeneous drift of the associated reverse-time SDE may be estimated using score-matching. A limitation of this approach is that the forward-time SDE must be run for a sufficiently long time for the final distribution to be approximately Gaussian while ensuring that the corresponding time-discretization error is controlled.</p>
 <!--<p>Let $\nu$ be a probability measure on $\mathbb{R}$ with density w.r.t. the Lesbesgue measure and such that $\operatorname{supp}(\nu)=\mathbb{R}$. Assume that there exists $g: \mathbb{R}^p \rightarrow \mathbb{R}$ Lipschitz such that $\nu=g_{\#} \mu_p$. Let us denote $T_{\mathrm{OT}}=\Phi_\nu^{-1} \circ \Phi$ the Monge map between $\mu_1$ and $\nu$, where $\Phi_\nu$ is the cumulative distribution function of $\nu$. Then we have $\operatorname{Lip}(g) \geq \operatorname{Lip}\left(T_{\mathrm{OT}}\right)$.</p>-->
-<p>Let <span class="math inline"><em>ν</em></span> be a probability
-  measure on <span class="math inline">ℝ</span> with density w.r.t. the
-  Lesbesgue measure and such that <span
-  class="math inline">supp (<em>ν</em>) = ℝ</span>. Assume that there
-  exists <span
-  class="math inline"><em>g</em> : ℝ<sup><em>p</em></sup> → ℝ</span>
-  Lipschitz such that <span
-  class="math inline"><em>ν</em> = <em>g</em><sub>#</sub><em>μ</em><sub><em>p</em></sub></span>.
-  Let us denote <span
-  class="math inline"><em>T</em><sub>OT</sub> = <em>Φ</em><sub><em>ν</em></sub><sup>−1</sup> ∘ <em>Φ</em></span>
-  the Monge map between <span
-  class="math inline"><em>μ</em><sub>1</sub></span> and <span
-  class="math inline"><em>ν</em></span>, where <span
-  class="math inline"><em>Φ</em><sub><em>ν</em></sub></span> is the
-  cumulative distribution function of <span
-  class="math inline"><em>ν</em></span>. Then we have <span
-  class="math inline">Lip (<em>g</em>) ≥ Lip (<em>T</em><sub>OT</sub>)</span>.</p>
+<p>Let <span class="math inline">\(\nu\)</span> be a probability measure
+  on <span class="math inline">\(\mathbb{R}\)</span> with density w.r.t.
+  the Lesbesgue measure and such that <span
+  class="math inline">\(\operatorname{supp}(\nu)=\mathbb{R}\)</span>.
+  Assume that there exists <span class="math inline">\(g: \mathbb{R}^p
+  \rightarrow \mathbb{R}\)</span> Lipschitz such that <span
+  class="math inline">\(\nu=g_{\#} \mu_p\)</span>. Let us denote <span
+  class="math inline">\(T_{\mathrm{OT}}=\Phi_\nu^{-1} \circ \Phi\)</span>
+  the Monge map between <span class="math inline">\(\mu_1\)</span> and
+  <span class="math inline">\(\nu\)</span>, where <span
+  class="math inline">\(\Phi_\nu\)</span> is the cumulative distribution
+  function of <span class="math inline">\(\nu\)</span>. Then we have <span
+  class="math inline">\(\operatorname{Lip}(g) \geq
+  \operatorname{Lip}\left(T_{\mathrm{OT}}\right)\)</span>.</p>
 <p>We also do nitty-gritty research to make Gaussian processes (a model that is also common in statistics) work <em>really</em> well. One neat property of GPs is that there are principles for selecting all their free parameters. In principle, this means that humans aren&rsquo;t needed in the loop to train them.</p>
 <p>Unfortunately, to reduce computational complexity, approximations need to be introduced. These often introduce free parameters again, which then means that a human has to intervene to ensure that the quality of the approximation is acceptable. This defeats part of the point! We improved two GP approximations (variational and conjugate gradient) by providing:</p>
 <ul>
