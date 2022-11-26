@@ -796,14 +796,14 @@
 <p>We are developing methods that allow weights and architecture to be learned <em>at the same time</em>, by optimising a single objective function. In our paper <a href="/publication/vdw-2018-invgp/"><em>Learning Invariances using the Marginal Likelihood</em></a> we expressed invariances as data augmentations, and learned the correct data augmentation parameters through backprop with a single optimisation run. The objective function was derived from the principles of Bayesian model selection<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
 <p>The final invariance can be visualised by looking at the samples that the data augmentation procedure generates. Samples generated for a particular input image visualise which transformations are seen as not changing the label (see figure below).</p>
 <figure>
-  <img src="/learning-invariances-samples.png" alt="Samples from data augmentation procedure."/>
+  <img src="/authors/admin/DALL-E-IMAGE.png" alt="Selected samples from DALLE-2 model."/>
   <figcaption>Figure: Samples describing the <i>learned invariance</i> for some MNIST digits (squares). The method becomes insensitive to local rotations, shears, and rotations.</figcaption>
 </figure>
 <p>Overall, this procedure is a lot more convenient than training a model many times in a cross-validated grid search over the data augmentation parameters. What really shows that invariances are truly learned here, is that if you apply the <em>same</em> method to a dataset with different characteristics, a different invariance is learned. The same exact method that worked well on MNIST would learn almost full rotational invariance for rotated MNIST (see paper for results). Following the normal procedure, the cross-validated grid search would have to be performed again!</p>
 <p>The method above was based on Gaussian processes, and we since have been working on neural network equivalents which learn different kinds of equivariant tied weights. <a href="/publication/vdo-2021-invariant-weights/">Our workshop paper</a> provided some nice GIFs of different kinds of convolutional structure being learned together with weights (see figure below).</p>
 <figure>
-  <img src="/filters-gif.gif" alt="my alt text"/>
-  <figcaption>Figure: Learning rotationally equivariant filter structure starting from full connectivity. Note how the rotation of the filters increases as it learns the equivariant structure. Work in progress that is currently only available for shallow NNs.</figcaption>
+  <img src="/authors/admin/DALL-E-IMAGEs.png" alt=""/>
+  <figcaption>Figure: Selected samples from DALLE-2 model.</figcaption>
 </figure>
 <p>What are the limitations?</p>
 <ul>
@@ -811,7 +811,7 @@
 <li>You need to specify a solution space of invariances, from which the correct invariance is picked. All machine learning methods need to parameterise their solution space, but so far we have only parameterised simple ones like the space of distributions on affine transformations, and local deformations.</li>
 </ul>
 <p>There is plenty of more to do!</p>
-<h3 id="accurate-and-automatic-gaussian-process-approximations">Accurate and Automatic Gaussian process approximations</h3>
+<h3 id="push-forward generative models">Push-forward generative models</h3>
 <p>We also do nitty-gritty research to make Gaussian processes (a model that is also common in statistics) work <em>really</em> well. One neat property of GPs is that there are principles for selecting all their free parameters. In principle, this means that humans aren&rsquo;t needed in the loop to train them.</p>
 <p>Unfortunately, to reduce computational complexity, approximations need to be introduced. These often introduce free parameters again, which then means that a human has to intervene to ensure that the quality of the approximation is acceptable. This defeats part of the point! We improved two GP approximations (variational and conjugate gradient) by providing:</p>
 <ul>
