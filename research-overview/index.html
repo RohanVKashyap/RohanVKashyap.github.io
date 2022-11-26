@@ -796,8 +796,10 @@
 <p>We are developing methods that allow weights and architecture to be learned <em>at the same time</em>, by optimising a single objective function. In our paper <a href="/publication/vdw-2018-invgp/"><em>Learning Invariances using the Marginal Likelihood</em></a> we expressed invariances as data augmentations, and learned the correct data augmentation parameters through backprop with a single optimisation run. The objective function was derived from the principles of Bayesian model selection<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
 <p>The final invariance can be visualised by looking at the samples that the data augmentation procedure generates. Samples generated for a particular input image visualise which transformations are seen as not changing the label (see figure below).</p>
 <figure>
-  <img src="/authors/admin/DALLE-2-IMAGE.png" alt=""/>
-  <figcaption>Selected samples from DALLE-2 model</figcaption>
+  <img src="/diffusion_models.png" alt=""/>
+  <figcaption>Solving a reversetime SDE yields a score-based
+    generative model. Transforming data to a simple noise distribution can be accomplished
+    with a continuous-time SDE.</figcaption>
 </figure>
 <p>Overall, this procedure is a lot more convenient than training a model many times in a cross-validated grid search over the data augmentation parameters. What really shows that invariances are truly learned here, is that if you apply the <em>same</em> method to a dataset with different characteristics, a different invariance is learned. The same exact method that worked well on MNIST would learn almost full rotational invariance for rotated MNIST (see paper for results). Following the normal procedure, the cross-validated grid search would have to be performed again!</p>
 <p>The method above was based on Gaussian processes, and we since have been working on neural network equivalents which learn different kinds of equivariant tied weights. <a href="/publication/vdo-2021-invariant-weights/">Our workshop paper</a> provided some nice GIFs of different kinds of convolutional structure being learned together with weights (see figure below).</p>
@@ -812,6 +814,66 @@
 </ul>
 <p>There is plenty of more to do!</p>
 <h3 id="push-forward generative models">Push-forward generative models</h3>
+<p>Denoising SCORE MATCHING With LANGEVIN DYNAMICS (SMLD) Let <span
+  class="math inline">\(p_\sigma(\tilde{\mathbf{x}} \mid
+  \mathbf{x}):=\mathcal{N}\left(\tilde{\mathbf{x}} ; \mathbf{x}, \sigma^2
+  \mathbf{I}\right)\)</span> be a perturbation kernel, and <span
+  class="math inline">\(p_\sigma(\tilde{\mathbf{x}}):=\int p_{\text {data
+  }}(\mathbf{x}) p_\sigma(\tilde{\mathbf{x}} \mid \mathbf{x}) \mathrm{d}
+  \mathbf{x}\)</span>, where <span class="math inline">\(p_{\text {data
+  }}(\mathbf{x})\)</span> denotes the data distribution. Consider a
+  sequence of positive noise scales <span
+  class="math inline">\(\sigma_{\min }=\sigma_1&lt;\)</span> <span
+  class="math inline">\(\sigma_2&lt;\cdots&lt;\sigma_N=\sigma_{\max
+  }\)</span>. Typically, <span class="math inline">\(\sigma_{\min
+  }\)</span> is small enough such that <span
+  class="math inline">\(p_{\sigma_{\min }}(\mathbf{x}) \approx p_{\text
+  {data }}(\mathbf{x})\)</span>, and <span
+  class="math inline">\(\sigma_{\max }\)</span> is 2 Published as a
+  conference paper at ICLR 2021 large enough such that <span
+  class="math inline">\(p_{\sigma_{\max }}(\mathbf{x}) \approx
+  \mathcal{N}\left(\mathbf{x} ; \mathbf{0}, \sigma_{\max }^2
+  \mathbf{I}\right)\)</span>. Song &amp; Ermon (2019) propose to train a
+  Noise Conditional Score Network (NCSN), denoted by <span
+  class="math inline">\(\mathbf{s}_{\boldsymbol{\theta}}(\mathbf{x},
+  \sigma)\)</span>, with a weighted sum of denoising score matching
+  (Vincent, 2011) objectives: <span
+  class="math display">\[\boldsymbol{\theta}^*=\underset{\boldsymbol{\theta}}{\arg
+  \min } \sum_{i=1}^N \sigma_i^2
+  \mathbb{E}_{p_{\mathrm{data}}(\mathbf{x})}
+  \mathbb{E}_{p_{\sigma_i}(\tilde{\mathbf{x}} \mid
+  \mathbf{x})}\left[\left\|\mathbf{s}_{\boldsymbol{\theta}}\left(\tilde{\mathbf{x}},
+  \sigma_i\right)-\nabla_{\tilde{\mathbf{x}}} \log
+  p_{\sigma_i}(\tilde{\mathbf{x}} \mid \mathbf{x})\right\|_2^2\right]
+  .\]</span> Given sufficient data and model capacity, the optimal
+  score-based model <span class="math inline">\(\mathbf{s}_\theta
+  *(\mathbf{x}, \sigma)\)</span> matches <span
+  class="math inline">\(\nabla_{\mathbf{x}} \log
+  p_\sigma(\mathbf{x})\)</span> almost everywhere for <span
+  class="math inline">\(\sigma
+  \in\left\{\sigma_i\right\}_{i=1}^N\)</span>. For sampling, Song &amp;
+  Ermon (2019) run <span class="math inline">\(M\)</span> steps of
+  Langevin MCMC to get a sample for each <span
+  class="math inline">\(p_{\sigma_i}(\mathbf{x})\)</span> sequentially:
+  <span
+  class="math display">\[\mathbf{x}_i^m=\mathbf{x}_i^{m-1}+\epsilon_i
+  \mathbf{s}_{\boldsymbol{\theta}^*}\left(\mathbf{x}_i^{m-1},
+  \sigma_i\right)+\sqrt{2 \epsilon_i} \mathbf{z}_i^m, \quad m=1,2, \cdots,
+  M,\]</span> where <span class="math inline">\(\epsilon_i&gt;0\)</span>
+  is the step size, and <span
+  class="math inline">\(\mathbf{z}_i^m\)</span> is standard normal. The
+  above is repeated for <span class="math inline">\(i=N, N-\)</span> <span
+  class="math inline">\(1, \cdots, 1\)</span> in turn with <span
+  class="math inline">\(\mathbf{x}_N^0 \sim \mathcal{N}\left(\mathbf{x}
+  \mid \mathbf{0}, \sigma_{\max }^2 \mathbf{I}\right)\)</span> and <span
+  class="math inline">\(\mathbf{x}_i^0=\mathbf{x}_{i+1}^M\)</span> when
+  <span class="math inline">\(i&lt;N\)</span>. As <span
+  class="math inline">\(M \rightarrow \infty\)</span> and <span
+  class="math inline">\(\epsilon_i \rightarrow 0\)</span> for all <span
+  class="math inline">\(i, \mathbf{x}_1^M\)</span> becomes an exact sample
+  from <span class="math inline">\(p_{\sigma_{\min }}(\mathbf{x}) \approx
+  p_{\text {data }}(\mathbf{x})\)</span> under some regularity
+  conditions.</p>
 <figure>
   <img src="/authors/admin/DALLE-2-IMAGES.png" alt=""/>
   <figcaption>Figure: Selected samples from DALLE-2 model.</figcaption>
@@ -848,10 +910,10 @@
 </a></li>
 </ul>
 <p>In the search for faster GP approximations, I have also worked on variational bounds that <a href="/publication/vdw-2020-inv/">do not require matrix inverses to be computed</a>. While the maths works, getting the method to optimise quickly enough for it to actually provide a practical benefit is still difficult. I do think the results are neat, and that there is a lot more to be looked into here.</p>
-<h3 id="deep-gaussian-processes">Deep Gaussian processes</h3>
+<!--<h3 id="deep-gaussian-processes">Deep Gaussian processes</h3>
 <p>Why is accurate Gaussian process inference important? Well, apart from GPs being useful for noisy and/or low-data tasks where quantifying uncertainty is important<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, GPs are also a different representation of a neural network layer. It seems that there are advantages in terms of the quality of approximate Bayesian inference when representing a layer as a GP rather than with weights. One key research question is whether thinking about neural network layers as GPs can help bring the benefits of Bayesian inference (uncertainty and automatic model selection) to deep neural networks.</p>
 <p>The evidence of this comes from the very first papers on deep GPs by <a href="http://proceedings.mlr.press/v31/damianou13a.html" target="_blank" rel="noopener">Damianou &amp; Lawrence</a>, where the marginal likelihood estimate was already used for model selection. Simple inference methods keep this property, even as <a href="/publication/dutordoir-2020-dcgp/">deep GP models become more complex</a>.</p>
-<p>Techniques that accomplish similar things for neural networks are only now being developed. However, in some ways the approaches in deep GPs are simpler and easier, even if they are computationally expensive. I think that there is a significant opportunity for both classes of models to benefit from each other&rsquo;s strengths. <a href="/publication/dutordoir-2021-relu/">Deep links between deep GPs and deep neural networks</a> are becoming clearer, and can provide a concrete way to get the best of both worlds.</p>
+<p>Techniques that accomplish similar things for neural networks are only now being developed. However, in some ways the approaches in deep GPs are simpler and easier, even if they are computationally expensive. I think that there is a significant opportunity for both classes of models to benefit from each other&rsquo;s strengths. <a href="/publication/dutordoir-2021-relu/">Deep links between deep GPs and deep neural networks</a> are becoming clearer, and can provide a concrete way to get the best of both worlds.</p>-->
 <!--<h3 id="capsules">Capsules</h3>
 <p>I do believe that good model structure is the most important property for good performance. When I first heard Geoff Hinton&rsquo;s talk about capsule networks, I was very intrigued by the inductive bias specified by the network alone. In addition, there seems to be a lot of probabilistic inspiration behind the routing algorithm.</p>
 <p>Together with Lewis Smith et al, we attempted to make a fully <a href="/publication/smith-2020-capsules/">probabilistic formulation</a> of capsule networks, which would allow routing to be derived directly from inference. Although our practical success was limited, the project did provide a lot of insight. I do still believe in the idea behind capsules and their link to probabilistic inference. Hopefully this won&rsquo;t be our last project on the topic.</p>-->
