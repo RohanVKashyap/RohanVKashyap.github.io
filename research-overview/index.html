@@ -810,7 +810,7 @@
 <h3 id="Denoising Score Matching Langevin Dynamics">Denoising Score Matching Langevin Dynamics</h3>
 <figure>
   <img src="/diffusion_models.png" alt=""/>
-  <figcaption>Solving a reverse-time SDE yields a score-based
+  <figcaption>Figure: Solving a reverse-time SDE yields a score-based
     generative model. Transforming data to a simple noise distribution can be accomplished
     with a continuous-time SDE.</figcaption>
 </figure>
@@ -879,7 +879,23 @@
   <figcaption>Figure: Selected samples from DALLE-2 model.</figcaption>
 <h3 id="push-forward generative models">Push-forward generative models</h3>  
 </figure> Score-Based Generative Modeling (SGM) is a recently developed approach to probabilistic generative modeling that exhibits state-of-the-art performance on several audio and image synthesis tasks Progressively applying Gaussian noise transforms complex data distributions to approximately Gaussian. Reversing this dynamic defines a generative model. When the forward noising process is given by a Stochastic Differential Equation (SDE), <a href="https://arxiv.org/pdf/2011.13456.pdf"><em>Song et al. (2021)</em></a> demonstrate how the time inhomogeneous drift of the associated reverse-time SDE may be estimated using score-matching. A limitation of this approach is that the forward-time SDE must be run for a sufficiently long time for the final distribution to be approximately Gaussian while ensuring that the corresponding time-discretization error is controlled.</p>
-<!--<p>Let $\nu$ be a probability measure on $\mathbb{R}$ with density w.r.t. the Lesbesgue measure and such that $\operatorname{supp}(\nu)=\mathbb{R}$. Assume that there exists $g: \mathbb{R}^p \rightarrow \mathbb{R}$ Lipschitz such that $\nu=g_{\#} \mu_p$. Let us denote $T_{\mathrm{OT}}=\Phi_\nu^{-1} \circ \Phi$ the Monge map between $\mu_1$ and $\nu$, where $\Phi_\nu$ is the cumulative distribution function of $\nu$. Then we have $\operatorname{Lip}(g) \geq \operatorname{Lip}\left(T_{\mathrm{OT}}\right)$.</p>-->
+<p>Theorem 1. Let <span class="math inline">\(g: \mathbb{R}^p
+  \rightarrow \mathbb{R}^d\)</span> be a Lipschitz function with Lipschitz
+  constant <span class="math inline">\(\operatorname{Lip}(g)\)</span>.
+  Then for any Borel set <span class="math inline">\(\mathrm{A} \in
+  \mathcal{B}\left(\mathbb{R}^d\right)\)</span>, <span
+  class="math display">\[\operatorname{Lip}(g)\left(g_{\#}
+  \mu_p\right)^{+}(\partial \mathrm{A}) \geq
+  \varphi\left(\Phi^{-1}\left(g_{\#}
+  \mu_p(\mathrm{~A})\right)\right)\]</span> where <span
+  class="math inline">\(\varphi(x)=(2 \pi)^{-1 / 2} \exp \left[-x^2 /
+  2\right]\)</span> and <span
+  class="math inline">\(\Phi(x)=\int_{-\infty}^x \varphi(t) \mathrm{d}
+  t\)</span>. In addition, we have that for any <span
+  class="math inline">\(r \geq 0\)</span> <span
+  class="math display">\[g_{\#} \mu_p\left(\mathrm{~A}_r\right) \geq
+  \Phi\left(r / \operatorname{Lip}(g)+\Phi^{-1}\left(g_{\#}
+  \mu_p(\mathrm{~A})\right)\right) \text {. }\]</span></p>
 <p>Let <span class="math inline">\(\nu\)</span> be a probability measure
   on <span class="math inline">\(\mathbb{R}\)</span> with density w.r.t.
   the Lesbesgue measure and such that <span
