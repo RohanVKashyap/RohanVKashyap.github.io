@@ -796,13 +796,13 @@
 <p>We are developing methods that allow weights and architecture to be learned <em>at the same time</em>, by optimising a single objective function. In our paper <a href="/publication/vdw-2018-invgp/"><em>Learning Invariances using the Marginal Likelihood</em></a> we expressed invariances as data augmentations, and learned the correct data augmentation parameters through backprop with a single optimisation run. The objective function was derived from the principles of Bayesian model selection<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
 <p>The final invariance can be visualised by looking at the samples that the data augmentation procedure generates. Samples generated for a particular input image visualise which transformations are seen as not changing the label (see figure below).</p>
 <figure>
-  <img src="/authors/admin/DALL-E-IMAGE.png" alt="Selected samples from DALLE-2 model."/>
-  <figcaption>Figure: Samples describing the <i>learned invariance</i> for some MNIST digits (squares). The method becomes insensitive to local rotations, shears, and rotations.</figcaption>
+  <img src="/authors/admin/DALLE-2-IMAGE.png" alt=""/>
+  <figcaption>Selected samples from DALLE-2 model</figcaption>
 </figure>
 <p>Overall, this procedure is a lot more convenient than training a model many times in a cross-validated grid search over the data augmentation parameters. What really shows that invariances are truly learned here, is that if you apply the <em>same</em> method to a dataset with different characteristics, a different invariance is learned. The same exact method that worked well on MNIST would learn almost full rotational invariance for rotated MNIST (see paper for results). Following the normal procedure, the cross-validated grid search would have to be performed again!</p>
 <p>The method above was based on Gaussian processes, and we since have been working on neural network equivalents which learn different kinds of equivariant tied weights. <a href="/publication/vdo-2021-invariant-weights/">Our workshop paper</a> provided some nice GIFs of different kinds of convolutional structure being learned together with weights (see figure below).</p>
 <figure>
-  <img src="/authors/admin/DALL-E-IMAGEs.png" alt=""/>
+  <img src="/authors/admin/DALLE-2-IMAGES.png" alt=""/>
   <figcaption>Figure: Selected samples from DALLE-2 model.</figcaption>
 </figure>
 <p>What are the limitations?</p>
