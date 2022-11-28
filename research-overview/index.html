@@ -874,8 +874,9 @@
 <figure>
   <img src="/authors/admin/DALLE-2-IMAGES.png" alt=""/>
   <figcaption>Figure: Selected samples from DALLE-2 model.</figcaption>
+</figure>  
 <h3 id="push-forward generative models">Push-forward generative models</h3>  
-</figure> Score-Based Generative Modeling (SGM) is a recently developed approach to probabilistic generative modeling that exhibits state-of-the-art performance on several audio and image synthesis tasks. Progressively applying Gaussian noise transforms complex data distributions to approximately Gaussian. Reversing this dynamic defines a generative model. When the forward noising process is given by a Stochastic Differential Equation (SDE), <a href="https://arxiv.org/pdf/2011.13456.pdf"><em>Song et al. (2021)</em></a> demonstrate how the time inhomogeneous drift of the associated reverse-time SDE may be estimated using score-matching. A limitation of this approach is that the forward-time SDE must be run for a sufficiently long time for the final distribution to be approximately Gaussian while ensuring that the corresponding time-discretization error is controlled.</p>
+Score-Based Generative Modeling (SGM) is a recently developed approach to probabilistic generative modeling that exhibits state-of-the-art performance on several audio and image synthesis tasks. Progressively applying Gaussian noise transforms complex data distributions to approximately Gaussian. Reversing this dynamic defines a generative model. When the forward noising process is given by a Stochastic Differential Equation (SDE), <a href="https://arxiv.org/pdf/2011.13456.pdf"><em>Song et al. (2021)</em></a> demonstrate how the time inhomogeneous drift of the associated reverse-time SDE may be estimated using score-matching. A limitation of this approach is that the forward-time SDE must be run for a sufficiently long time for the final distribution to be approximately Gaussian while ensuring that the corresponding time-discretization error is controlled.</p>
 <p>Theorem 1. Let <span class="math inline">\(g: \mathbb{R}^p
   \rightarrow \mathbb{R}^d\)</span> be a Lipschitz function with Lipschitz
   constant <span class="math inline">\(\operatorname{Lip}(g)\)</span>.
@@ -913,10 +914,30 @@
 <li>automatic procedures for selecting approximation parameters, and</li>
 <li>mathematical guarantees on the quality of the solution.</li>
 </ul>-->
-<p>This helps the methods give solutions in a more computationally efficient manner, while also making them more accurate. These methods help give predictions that you can really trust.</p>
+<h3 id="Poisson Flow Generative Models">Poisson Flow Generative Models</h3>
+<figure>
+  <img src="/authors/admin/Image2.png" alt=""/>
+  <figcaption>Figure: (a) 3D Poisson field trajectories for a heart-shaped distribution (b) The evolvements of a
+    distribution (top) or an (augmented) sample (bottom) by the forward/backward ODEs pertained to
+    the Poisson field.</figcaption>
+</figure>  
+<p><p>The Poisson flow generative model (PFGM) maps a uniform distribution
+  on a high-dimensional hemisphere into any data distribution. They
+  interpret the data points as electrical charges on the <span
+  class="math inline">\(\mathrm{z}=\)</span> 0 hyperplane in a space
+  augmented with an additional dimension z, generating a high-dimensional
+  electric field (the gradient of the solution to Poisson equation). They
+  prove that if these charges flow upward along electric field lines,
+  their initial distribution in the <span
+  class="math inline">\(\mathrm{z}=0\)</span> plane transforms into a
+  distribution on the hemisphere of radius <span
+  class="math inline">\(r\)</span> that becomes uniform in the <span
+  class="math inline">\(r \rightarrow \infty\)</span> limit. To learn the
+  bijective transformation, they estimate the normalized field in the
+  augmented space.|</p></p>
 <p>See:</p>
 <ul>
-<li><a href="https://arxiv.org/pdf/2011.13456.pdf">Score-Based Generative Modeling through Stochastic Differential Equations</a> (or the shorter <a href="/publication/burt-2019-rates/">conference version</a>)</li>
+<li><a href="https://arxiv.org/pdf/2011.13456.pdf">Score-Based Generative Modeling through Stochastic Differential Equations</a></li>
 <li><a href="https://arxiv.org/pdf/2206.14476.pdf">Can Push-forward Generative Models Fit Multimodal Distributions?</a>
 </a></li>
 </ul>
