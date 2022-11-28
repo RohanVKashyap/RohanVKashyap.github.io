@@ -796,17 +796,16 @@
 <p>We are developing methods that allow weights and architecture to be learned <em>at the same time</em>, by optimising a single objective function. In our paper <a href="/publication/vdw-2018-invgp/"><em>Learning Invariances using the Marginal Likelihood</em></a> we expressed invariances as data augmentations, and learned the correct data augmentation parameters through backprop with a single optimisation run. The objective function was derived from the principles of Bayesian model selection<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>.</p>
 <!--<p>The final invariance can be visualised by looking at the samples that the data augmentation procedure generates. Samples generated for a particular input image visualise which transformations are seen as not changing the label (see figure below).</p>
 <p>Overall, this procedure is a lot more convenient than training a model many times in a cross-validated grid search over the data augmentation parameters. What really shows that invariances are truly learned here, is that if you apply the <em>same</em> method to a dataset with different characteristics, a different invariance is learned. The same exact method that worked well on MNIST would learn almost full rotational invariance for rotated MNIST (see paper for results). Following the normal procedure, the cross-validated grid search would have to be performed again!</p>-->
-<p>The method above was based on Gaussian processes, and we since have been working on neural network equivalents which learn different kinds of equivariant tied weights. <a href="/publication/vdo-2021-invariant-weights/">Our workshop paper</a> provided some nice GIFs of different kinds of convolutional structure being learned together with weights (see figure below).</p>
 <!--<figure>
   <img src="/authors/admin/DALLE-2-IMAGES.png" alt=""/>
   <figcaption>Figure: Selected samples from DALLE-2 model.</figcaption>
 </figure>-->
-<p>What are the limitations?</p>
+<!--<p>What are the limitations?</p>
 <ul>
 <li>Currently it only works really robustly on shallow models (although we have had <a href="/publication/schwoebel-2021-layer/">partial progress in deep models</a>).</li>
 <li>You need to specify a solution space of invariances, from which the correct invariance is picked. All machine learning methods need to parameterise their solution space, but so far we have only parameterised simple ones like the space of distributions on affine transformations, and local deformations.</li>
-</ul>
-<p>There is plenty of more to do!</p>
+</ul>-->
+<p>This section is a brief overview of the recent advances in the theoretical analysis of push-forward generative models.</p>
 <h3 id="Denoising Score Matching Langevin Dynamics">Denoising Score Matching Langevin Dynamics</h3>
 <figure>
   <img src="/diffusion_models.png" alt=""/>
@@ -876,7 +875,7 @@
   <img src="/authors/admin/DALLE-2-IMAGES.png" alt=""/>
   <figcaption>Figure: Selected samples from DALLE-2 model.</figcaption>
 <h3 id="push-forward generative models">Push-forward generative models</h3>  
-</figure> Score-Based Generative Modeling (SGM) is a recently developed approach to probabilistic generative modeling that exhibits state-of-the-art performance on several audio and image synthesis tasks Progressively applying Gaussian noise transforms complex data distributions to approximately Gaussian. Reversing this dynamic defines a generative model. When the forward noising process is given by a Stochastic Differential Equation (SDE), <a href="https://arxiv.org/pdf/2011.13456.pdf"><em>Song et al. (2021)</em></a> demonstrate how the time inhomogeneous drift of the associated reverse-time SDE may be estimated using score-matching. A limitation of this approach is that the forward-time SDE must be run for a sufficiently long time for the final distribution to be approximately Gaussian while ensuring that the corresponding time-discretization error is controlled.</p>
+</figure> Score-Based Generative Modeling (SGM) is a recently developed approach to probabilistic generative modeling that exhibits state-of-the-art performance on several audio and image synthesis tasks. Progressively applying Gaussian noise transforms complex data distributions to approximately Gaussian. Reversing this dynamic defines a generative model. When the forward noising process is given by a Stochastic Differential Equation (SDE), <a href="https://arxiv.org/pdf/2011.13456.pdf"><em>Song et al. (2021)</em></a> demonstrate how the time inhomogeneous drift of the associated reverse-time SDE may be estimated using score-matching. A limitation of this approach is that the forward-time SDE must be run for a sufficiently long time for the final distribution to be approximately Gaussian while ensuring that the corresponding time-discretization error is controlled.</p>
 <p>Theorem 1. Let <span class="math inline">\(g: \mathbb{R}^p
   \rightarrow \mathbb{R}^d\)</span> be a Lipschitz function with Lipschitz
   constant <span class="math inline">\(\operatorname{Lip}(g)\)</span>.
@@ -908,7 +907,7 @@
   function of <span class="math inline">\(\nu\)</span>. Then we have <span
   class="math inline">\(\operatorname{Lip}(g) \geq
   \operatorname{Lip}\left(T_{\mathrm{OT}}\right)\)</span>.</p>
-<p>We also do nitty-gritty research to make Gaussian processes (a model that is also common in statistics) work <em>really</em> well. One neat property of GPs is that there are principles for selecting all their free parameters. In principle, this means that humans aren&rsquo;t needed in the loop to train them.</p>
+<!--<p>We also do nitty-gritty research to make Gaussian processes (a model that is also common in statistics) work <em>really</em> well. One neat property of GPs is that there are principles for selecting all their free parameters. In principle, this means that humans aren&rsquo;t needed in the loop to train them.</p>-->
 <!--<p>Unfortunately, to reduce computational complexity, approximations need to be introduced. These often introduce free parameters again, which then means that a human has to intervene to ensure that the quality of the approximation is acceptable. This defeats part of the point! We improved two GP approximations (variational and conjugate gradient) by providing:</p>-->
 <!--<ul>
 <li>automatic procedures for selecting approximation parameters, and</li>
@@ -917,8 +916,8 @@
 <p>This helps the methods give solutions in a more computationally efficient manner, while also making them more accurate. These methods help give predictions that you can really trust.</p>
 <p>See:</p>
 <ul>
-<li><a href="/publication/burt-2020-convergence/">Convergence of Sparse Variational Inference in Gaussian Process Regression</a> (or the shorter <a href="/publication/burt-2019-rates/">conference version</a>)</li>
-<li><a href="/publication/artemevburt-2021-cglb/">Tighter Bounds on the Log Marginal Likelihood of Gaussian Process Regression Using Conjugate Gradients
+<li><a href="https://arxiv.org/pdf/2011.13456.pdf">Score-Based Generative Modeling through Stochastic Differential Equations</a> (or the shorter <a href="/publication/burt-2019-rates/">conference version</a>)</li>
+<li><a href="https://arxiv.org/pdf/2206.14476.pdf">Can Push-forward Generative Models Fit Multimodal Distributions?</a>
 </a></li>
 </ul>
 <p>In the search for faster GP approximations, I have also worked on variational bounds that <a href="/publication/vdw-2020-inv/">do not require matrix inverses to be computed</a>. While the maths works, getting the method to optimise quickly enough for it to actually provide a practical benefit is still difficult. I do think the results are neat, and that there is a lot more to be looked into here.</p>
