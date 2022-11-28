@@ -876,7 +876,7 @@
   <figcaption>Figure: Selected samples from DALLE-2 model.</figcaption>
 </figure>  
 <h3 id="push-forward generative models">Push-forward generative models</h3>  
-Score-Based Generative Modeling (SGM) is a recently developed approach to probabilistic generative modeling that exhibits state-of-the-art performance on several audio and image synthesis tasks. Progressively applying Gaussian noise transforms complex data distributions to approximately Gaussian. Reversing this dynamic defines a generative model. When the forward noising process is given by a Stochastic Differential Equation (SDE), <a href="https://arxiv.org/pdf/2011.13456.pdf"><em>Song et al. (2021)</em></a> demonstrate how the time inhomogeneous drift of the associated reverse-time SDE may be estimated using score-matching. A limitation of this approach is that the forward-time SDE must be run for a sufficiently long time for the final distribution to be approximately Gaussian while ensuring that the corresponding time-discretization error is controlled.</p>
+<p style="text-align:justify;">Score-Based Generative Modeling (SGM) is a recently developed approach to probabilistic generative modeling that exhibits state-of-the-art performance on several audio and image synthesis tasks. Progressively applying Gaussian noise transforms complex data distributions to approximately Gaussian. Reversing this dynamic defines a generative model. When the forward noising process is given by a Stochastic Differential Equation (SDE), <a href="https://arxiv.org/pdf/2011.13456.pdf"><em>Song et al. (2021)</em></a> demonstrate how the time inhomogeneous drift of the associated reverse-time SDE may be estimated using score-matching. A limitation of this approach is that the forward-time SDE must be run for a sufficiently long time for the final distribution to be approximately Gaussian while ensuring that the corresponding time-discretization error is controlled.</p>
 <p>Theorem 1. Let <span class="math inline">\(g: \mathbb{R}^p
   \rightarrow \mathbb{R}^d\)</span> be a Lipschitz function with Lipschitz
   constant <span class="math inline">\(\operatorname{Lip}(g)\)</span>.
@@ -921,7 +921,7 @@ Score-Based Generative Modeling (SGM) is a recently developed approach to probab
     distribution (top) or an (augmented) sample (bottom) by the forward/backward ODEs pertained to
     the Poisson field.</figcaption>
 </figure>  
-<p style="text-align:justify;"><p>The Poisson flow generative model (PFGM) maps a uniform distribution
+<p style="text-align:justify;">The Poisson flow generative model (PFGM) maps a uniform distribution
   on a high-dimensional hemisphere into any data distribution. They
   interpret the data points as electrical charges on the <span
   class="math inline">\(\mathrm{z}=\)</span> 0 hyperplane in a space
