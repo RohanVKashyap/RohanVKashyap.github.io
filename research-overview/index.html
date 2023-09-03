@@ -774,11 +774,11 @@
 <ul>
 <li>Poisson Flow generative models.</li>
 <li>Variational Diffusion models.</li>
-<li>Mathematical reasoning for theorem proving using neural nets.</li>
-<li>Analysis of deep neural networks (infinite limits and GP relations). </li>
+<!--li>Mathematical reasoning for theorem proving using neural nets.</li-->
+<!--li>Analysis of deep neural networks (infinite limits and GP relations). </li-->
 <li>Direct and indirect push-forward generative models. Eg: VAE, GAN and diffusion models.</li>
 <li>Neural networks with invariance properties (e.g. rotation, scale, or more arbitrary) and learning invariances for continuous image manifolds.</li>
-<li>Analysis of neural network optimization in the weight space and related topics (convergence rates, cyclic step sizes, chebyshev polynomials, residual polynomials and link functions) for gradient descent algorithm.</li>
+<!--li>Analysis of neural network optimization in the weight space and related topics (convergence rates, cyclic step sizes, chebyshev polynomials, residual polynomials and link functions) for gradient descent algorithm.</li-->
 </ul>
 <!--<h2 id="high-level-aims-and-approach">High-level aims and approach</h2>
 <p>Our research aims to improve three broad properties of Machine Learning methods:</p>
@@ -792,6 +792,10 @@
 <h2 id="research-highlights">Research Highlights</h2>
 <p>To give a more concrete idea of research we have done, here are some projects and papers roughly grouped together in themes.</p>
 <h3 id="learning-invariances">Learning invariances</h3>
+<figure>
+  <img src="/poster.png" alt=""/>
+  <figcaption>Figure: AISTATS Poster.</figcaption>
+</figure>
 <p>Invariance and equivariance are very common inductive biases, with the ubiquitous convolutional layer being the most common example. When designing architectures, humans currently choose how many convolutional layers to use, together with parameters like filter size. Often these choices are made with a laborious trial-and-error procedure (cross-validation). To make the number of choices even larger, other types of convolutional layers have been developed in recent years, which help generalisation across different scales and rotations. The optimal inductive bias varies by problem and dataset, so it would be nice if we had an automatic procedure for determining these.</p>
 <p>We are developing methods that allow weights and architecture to be learned <em>at the same time</em>, by optimising a single objective function. In our paper <a href="https://rohanvkashyap.github.io/authors/admin/Neural%20discovery%20of%20permutation%20subgroups.pdf"><em>Neural discovery of permutation subgroups</em></a> (AISTATS 2023) we present a novel method to discover the underlying subgroup, given that it satisfies certain conditions. Our results show that one could discover any subgroup of type <span class="math inline">\(S_k(k \leq n)\)</span> by learning an <span class="math inline">\(S_n\)</span>-invariant function and a linear transformation.</p>
 <!--<p>The final invariance can be visualised by looking at the samples that the data augmentation procedure generates. Samples generated for a particular input image visualise which transformations are seen as not changing the label (see figure below).</p>
