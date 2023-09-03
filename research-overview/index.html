@@ -947,7 +947,7 @@
 <li><a href="https://arxiv.org/pdf/2206.14476.pdf">Can Push-forward Generative Models Fit Multimodal Distributions?</a>
 </a></li>
 </ul>
-<p>In the search for faster GP approximations, I have also worked on variational bounds that <a href="/publication/vdw-2020-inv/">do not require matrix inverses to be computed</a>. While the maths works, getting the method to optimise quickly enough for it to actually provide a practical benefit is still difficult. I do think the results are neat, and that there is a lot more to be looked into here.</p>
+<p>We designed quantitative concentration bounds (using Sobolev inequalities) explicitly dependent on the number of orbits and illustrated theoretical results for incorporating invariance symmetries using Lie groups for diffusion models using a score-based formulation by utilizing the implicit structure in the time-reversed stochastic differential equations. Currently, we are working on establishing connections to compact Riemannian manifolds.</p>
 <!--<h3 id="deep-gaussian-processes">Deep Gaussian processes</h3>
 <p>Why is accurate Gaussian process inference important? Well, apart from GPs being useful for noisy and/or low-data tasks where quantifying uncertainty is important<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, GPs are also a different representation of a neural network layer. It seems that there are advantages in terms of the quality of approximate Bayesian inference when representing a layer as a GP rather than with weights. One key research question is whether thinking about neural network layers as GPs can help bring the benefits of Bayesian inference (uncertainty and automatic model selection) to deep neural networks.</p>
 <p>The evidence of this comes from the very first papers on deep GPs by <a href="http://proceedings.mlr.press/v31/damianou13a.html" target="_blank" rel="noopener">Damianou &amp; Lawrence</a>, where the marginal likelihood estimate was already used for model selection. Simple inference methods keep this property, even as <a href="/publication/dutordoir-2020-dcgp/">deep GP models become more complex</a>.</p>
@@ -959,7 +959,7 @@
 <hr>
 <ol>
 <li id="fn:1" role="doc-endnote">
-<p>See <a href="http://www.inference.org.uk/mackay/itila/book.html" target="_blank" rel="noopener">David MacKay&rsquo;s excellent textbook</a> for a good intro.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+<p>See <a href="https://arxiv.org/pdf/2109.07103.pdf" target="_blank" rel="noopener">Automatic Symmetry Discovery with Lie Algebra Convolutional Network </a> for a good intro.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
 <li id="fn:2" role="doc-endnote">
 <p>Which is the case in many industrial and engineering problems.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
