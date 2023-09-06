@@ -716,7 +716,7 @@
   <h1>Research Overview</h1>
 
   
-  <p class="page-subtitle">A high-level overview of our research interests</p>
+  <p class="page-subtitle">Denoising Score Matching Langevin Dynamics</p>
   
 
   
@@ -770,16 +770,12 @@
   <div class="article-container">
 
     <div class="article-style">
-      <h2 id="list-of-research-interests">List of Research Interests</h2>
-<ul>
+      <h2 id="list-of-research-interests">Diffusion Models</h2>
+<!--ul>
 <li>Poisson Flow generative models.</li>
-<li>Variational Diffusion models.</li>
-<!--li>Mathematical reasoning for theorem proving using neural nets.</li-->
-<!--li>Analysis of deep neural networks (infinite limits and GP relations). </li-->
 <li>Direct and indirect push-forward generative models. Eg: VAE, GAN and diffusion models.</li>
 <li>Neural networks with invariance properties (e.g. rotation, scale, or more arbitrary) and learning invariances for continuous image manifolds.</li>
-<!--li>Analysis of neural network optimization in the weight space and related topics (convergence rates, cyclic step sizes, chebyshev polynomials, residual polynomials and link functions) for gradient descent algorithm.</li-->
-</ul>
+</ul-->
 <!--<h2 id="high-level-aims-and-approach">High-level aims and approach</h2>
 <p>Our research aims to improve three broad properties of Machine Learning methods:</p>
 <ul>
@@ -789,7 +785,7 @@
 </ul>
 <p>Improvements in these areas would benefit the full spectrum of applications: from tasks with small amounts of data where eliminating noise is important, to high-dimensional large-data settings where neural networks are applied to natural data like images.</p>
 <p>I&rsquo;m not completely sure what approach I would bet on. I certainly follow developments in meta-learning and large models carefully. If the answer to this was clear, this wouldn&rsquo;t be research. Luckily, there are interesting questions to investigate in both directions.</p>-->
-<h2 id="research-highlights">Research Highlights</h2>
+<!--h2 id="research-highlights">Research Highlights</h2>
 <p>To give a more concrete idea of research we have done, here are some projects and papers roughly grouped together in themes.</p>
 <h3 id="learning-invariances">Learning invariances</h3>
 <figure>
@@ -797,7 +793,7 @@
   <figcaption>Figure: AISTATS Poster.</figcaption>
 </figure>
 <p>Invariance and equivariance are very common inductive biases, with the ubiquitous convolutional layer being the most common example. When designing architectures, humans currently choose how many convolutional layers to use, together with parameters like filter size. Often these choices are made with a laborious trial-and-error procedure (cross-validation). To make the number of choices even larger, other types of convolutional layers have been developed in recent years, which help generalisation across different scales and rotations. The optimal inductive bias varies by problem and dataset, so it would be nice if we had an automatic procedure for determining these.</p>
-<p>We are developing methods that allow weights and architecture to be learned <em>at the same time</em>, by optimising a single objective function. In our paper <a href="https://rohanvkashyap.github.io/authors/admin/Neural%20discovery%20of%20permutation%20subgroups.pdf"><em>Neural discovery of permutation subgroups</em></a> (AISTATS 2023) we present a novel method to discover the underlying subgroup, given that it satisfies certain conditions. Our results show that one could discover any subgroup of type <span class="math inline">\(S_k(k \leq n)\)</span> by learning an <span class="math inline">\(S_n\)</span>-invariant function and a linear transformation.</p>
+<p>We are developing methods that allow weights and architecture to be learned <em>at the same time</em>, by optimising a single objective function. In our paper <a href="https://rohanvkashyap.github.io/authors/admin/Neural%20discovery%20of%20permutation%20subgroups.pdf"><em>Neural discovery of permutation subgroups</em></a> (AISTATS 2023) we present a novel method to discover the underlying subgroup, given that it satisfies certain conditions. Our results show that one could discover any subgroup of type <span class="math inline">\(S_k(k \leq n)\)</span> by learning an <span class="math inline">\(S_n\)</span>-invariant function and a linear transformation.</p-->
 <!--<p>The final invariance can be visualised by looking at the samples that the data augmentation procedure generates. Samples generated for a particular input image visualise which transformations are seen as not changing the label (see figure below).</p>
 <p>Overall, this procedure is a lot more convenient than training a model many times in a cross-validated grid search over the data augmentation parameters. What really shows that invariances are truly learned here, is that if you apply the <em>same</em> method to a dataset with different characteristics, a different invariance is learned. The same exact method that worked well on MNIST would learn almost full rotational invariance for rotated MNIST (see paper for results). Following the normal procedure, the cross-validated grid search would have to be performed again!</p>-->
 <!--<figure>
@@ -809,9 +805,9 @@
 <li>Currently it only works really robustly on shallow models (although we have had <a href="/publication/schwoebel-2021-layer/">partial progress in deep models</a>).</li>
 <li>You need to specify a solution space of invariances, from which the correct invariance is picked. All machine learning methods need to parameterise their solution space, but so far we have only parameterised simple ones like the space of distributions on affine transformations, and local deformations.</li>
 </ul>-->
-<h3 id="A Unified Framework for Discovering Discrete Symmetries">A Unified Framework for Discovering Discrete Symmetries</h3>
+<!--h3 id="A Unified Framework for Discovering Discrete Symmetries">A Unified Framework for Discovering Discrete Symmetries</h3>
 <p></p>In our recent paper, <a href="https://rohanvkashyap.github.io/authors/admin/view_1.pdf"><em>A Unified Framework for Discovering Discrete Symmetries</em></a> (NeurIPS review) we propose a unified framework that enables symmetry discovery across a broad range of subgroups including locally symmetric, dihedral and cyclic subgroups. At the core of the framework is a novel architecture composed of linear and tensor-valued functions that expresses functions invariant to these subgroups in a principled manner. The structure of the architecture enables us to leverage multi-armed bandit algorithms and gradient descent to efficiently optimize over the linear and the tensor-valued functions respectively.</p>
-<p>The following section is a brief overview of the recent advances in the theoretical analysis of push-forward generative models.</p>
+<p>The following section is a brief overview of the recent advances in the theoretical analysis of push-forward generative models.</p-->
 <h3 id="Denoising Score Matching Langevin Dynamics">Denoising Score Matching Langevin Dynamics</h3>
 <figure>
   <img src="/diffusion_models.png" alt=""/>
