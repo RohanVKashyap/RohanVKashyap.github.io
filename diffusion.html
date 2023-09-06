@@ -1,0 +1,263 @@
+
+<!DOCTYPE html><html lang=en><head><base href=../ ><title>A detailed example of data loaders with PyTorch</title><meta charset=utf-8><meta content="Blog of Shervine Amidi, Graduate Student at Stanford University." name=description><meta content="pytorch, how to, generate data on the fly, pytorch generator example, example data generator pytorch, parallel data generator pytorch" name=keywords><meta content="width=device-width, initial-scale=1" name=viewport><link href=https://stanford.edu/~shervine/blog/pytorch-how-to-generate-data-parallel rel=canonical><link href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css rel=stylesheet><link href=css/style.min.css?3587b1299365680430aa5634d6b49ffb rel=stylesheet type=text/css><link href=css/article.min.css?6b276411853b0aa728d3d16d218cc10d rel=stylesheet><link href=https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css rel=stylesheet><script src=https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js></script><script src=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js></script><script defer src=https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.9.1/underscore-min.js type=text/javascript></script><script async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML" type=text/javascript>
+    </script><script async src="https://www.googletagmanager.com/gtag/js?id=G-WRQS2JRR3J"></script><script src=js/ga.min.js?95daafd11134fe1dae6aab3d0750f5d6></script><script defer src=js/article.min.js?d4501a257815c34bb5963984260f6b39></script><script defer src=js/lang.min.js?7075a8a43f328d2d2661aafb30dea004></script><script async defer src=https://buttons.github.io/buttons.js></script></head> <body data-offset=50 data-spy=scroll data-target=.navbar> <nav class="navbar navbar-inverse navbar-static-top"> <div class=container-fluid> <div class=navbar-header> <button class=navbar-toggle data-target=#myNavbar data-toggle=collapse type=button> <span class=icon-bar></span> <span class=icon-bar></span> <span class=icon-bar></span> </button> <a class=navbar-brand href> <img alt=Stanford src=images/stanford-logo.png?f7176222abba492681ca93190e078e48> </a> <p class=navbar-text><font color=#dddddd>Shervine Amidi</font></p> </div> <div class="collapse navbar-collapse" id=myNavbar> <ul class="nav navbar-nav"> <li><a href>About</a></li> </ul> <ul class="nav navbar-nav navbar-center"> <li><a href=projects>Projects</a></li> <li><a href=teaching>Teaching</a></li> <li class=active><a href=blog>Blog</a></li> </ul> <div class="collapse navbar-collapse" data-target=None id=HiddenNavbar> <ul class="nav navbar-nav navbar-right"> <li><a href=https://www.mit.edu/~amidi>About</a></li> <p class=navbar-text><font color=#dddddd>Afshine Amidi</font></p> <a class=navbar-brand href=https://www.mit.edu/~amidi style="padding: 0px;"> <img alt=MIT src=images/mit-logo.png?4f7adbadc5c51293b439c17d7305f96b style="padding: 15px 15px; width: 70px; margin-left: 15px; margin-right: 5px;"> </a> </ul> </div> </div> </div> </nav> <div id=wrapper> <div id=sidebar-wrapper> <div class=sidebar-top> <li class=sidebar-title> <a href=blog><img alt=Stanford src=images/stanford-logo.png?f7176222abba492681ca93190e078e48 style="width: 15px;">   <b>Blog of Shervine Amidi</b></a> </li> <li class=sidebar-brand> <a href=#> <div> <span style=color:white>PyTorch data generator</span> </div> </a> </li> </div> <ul class=sidebar-nav> <li> <div class=dropdown-btn><a href=#motivation>Motivation</a></div> <div class=dropdown-container></div> </li> <li> <div class=dropdown-btn><a href=#tutorial>Tutorial</a></div> <div class=dropdown-container> <a href=#previous-situation><span>Previous situation</span></a> <a href=#notations><span>Notations</span></a> <a href=#dataset><span>Dataset</span></a> <a href=#pytorch-script><span>PyTorch script</span></a> </div> </li> <li> <div class=dropdown-btn><a href=#conclusion>Conclusion</a></div> <div class=dropdown-container></div> </li> </ul> <center> <div class=sidebar-footer> <li> <a href=https://github.com/shervinea/pytorch-data-generator style="color: white; text-decoration:none;"> <i aria-hidden=false class="fa fa-github fa-fw"></i> View code on GitHub </a> </li> </div> </center> </div> <div class=divider-5></div> <center> <img alt=Illustration class=img-responsive src=blog/illustrations/banner-data.jpg?c0e931a13775dd49a498414cb3eb9748> </center> <article class="markdown-body entry-content" itemprop=text>    
+    <div class="alert alert-primary" role=alert>
+      Want more content like this? <a class=alert-link href=https://docs.google.com/forms/d/e/1FAIpQLSeOr-yp8VzYIs4ZtE9HVkRcMJyDcJ2FieM82fUsFoCssHu9DA/viewform>Subscribe here</a> to be notified of new releases!
+    </div>
+    <br>  
+
+    
+    <div>
+      
+      <a href=blog style="color: #0366d6;"><b>Blog</b></a>
+
+      
+      <div style=float:right;>
+        <div class=input-group>
+          <select class=form-control onchange=changeLangAndTrack(this); onfocus=storeCurrentIndex(this);>
+            <option selected value=en>English</option>
+            <option value=fr>Français</option>
+          </select>
+          <div class=input-group-addon><i class=fa></i></div>
+        </div>
+      </div>
+    </div>
+
+    <h1><a aria-hidden=true class=anchor-bis href=#a-detailed-example-of-how-to-generate-your-data-in-parallel-with-pytorch id=a-detailed-example-of-how-to-generate-your-data-in-parallel-with-pytorch></a>A detailed example of how to generate your data in parallel with PyTorch</h1>
+<p>
+  </p><div style=float:right>
+  <a aria-label="Fork shervinea/pytorch-data-generator on GitHub" class=github-button data-icon=octicon-repo-forked data-show-count=true href=https://github.com/shervinea/pytorch-data-generator/fork>Fork</a>
+   
+  <a class=github-button data-icon=octicon-star data-show-count=true href=https://github.com/shervinea/pytorch-data-generator/ aria-label="Star shervinea/pytorch-data-generator on GitHub">Star</a>
+  </div>
+  <code>pytorch</code> <code>data loader</code> <code>large dataset</code> <code>parallel</code>
+<p></p>
+<p>By <a href=https://twitter.com/afshinea>Afshine Amidi</a> and <a href=https://twitter.com/shervinea>Shervine Amidi</a></p>
+<h2><a aria-hidden=true class=anchor href=#motivation id=motivation></a>Motivation</h2>
+<p>Have you ever had to load a dataset that was so memory consuming that you wished a magic trick could seamlessly take care of that? Large datasets are increasingly becoming part of our lives, as we are able to harness an ever-growing quantity of data.</p>
+<p>We have to keep in mind that in some cases, even the most state-of-the-art configuration won't have enough memory space to process the data the way we used to do it. That is the reason why we need to find other ways to do that task efficiently. In this blog post, we are going to show you how to <strong>generate your data on multiple cores in real time</strong> and <strong>feed it right away</strong> to your <strong>deep learning model</strong>.</p>
+<p>This tutorial will show you how to do so on the GPU-friendly framework <em>PyTorch</em>, where an <strong>efficient data generation scheme</strong> is crucial to leverage the full potential of your GPU during the training process.</p>
+<h2><a aria-hidden=true class=anchor href=#tutorial id=tutorial></a>Tutorial</h2>
+<h3><a aria-hidden=true class=anchor-bis href=#previous-situation id=previous-situation></a>Previous situation</h3>
+<p>Before reading this article, your PyTorch script probably looked like this:</p>
+<div class="highlight highlight-source-python"><pre><span class=pl-c><span class=pl-c>#</span> Load entire dataset</span>
+X, y <span class=pl-k>=</span> torch.load(<span class=pl-s><span class=pl-pds>'</span>some_training_set_with_labels.pt<span class=pl-pds>'</span></span>)
+
+<span class=pl-c><span class=pl-c>#</span> Train model</span>
+<span class=pl-k>for</span> epoch <span class=pl-k>in</span> <span class=pl-c1>range</span>(max_epochs):
+    <span class=pl-k>for</span> i <span class=pl-k>in</span> <span class=pl-c1>range</span>(n_batches):
+        <span class=pl-c><span class=pl-c>#</span> Local batches and labels</span>
+        local_X, local_y <span class=pl-k>=</span> X[i<span class=pl-k>*</span>n_batches:(i<span class=pl-k>+</span><span class=pl-c1>1</span>)<span class=pl-k>*</span>n_batches,], y[i<span class=pl-k>*</span>n_batches:(i<span class=pl-k>+</span><span class=pl-c1>1</span>)<span class=pl-k>*</span>n_batches,]
+
+        <span class=pl-c><span class=pl-c>#</span> Your model</span>
+        [<span class=pl-c1>...</span>]</pre></div>
+<p>or even this:</p>
+<div class="highlight highlight-source-python"><pre><span class=pl-c><span class=pl-c>#</span> Unoptimized generator</span>
+training_generator <span class=pl-k>=</span> SomeSingleCoreGenerator(<span class=pl-s><span class=pl-pds>'</span>some_training_set_with_labels.pt<span class=pl-pds>'</span></span>)
+
+<span class=pl-c><span class=pl-c>#</span> Train model</span>
+<span class=pl-k>for</span> epoch <span class=pl-k>in</span> <span class=pl-c1>range</span>(max_epochs):
+    <span class=pl-k>for</span> local_X, local_y <span class=pl-k>in</span> training_generator:
+        <span class=pl-c><span class=pl-c>#</span> Your model</span>
+        [<span class=pl-c1>...</span>]</pre></div>
+<p>This article is about optimizing the entire data generation process, so that it does not become a bottleneck in the training procedure.</p>
+<p>In order to do so, let's dive into a step by step recipe that builds a parallelizable data generator suited for this situation. By the way, the following code is a good skeleton to use for your own project; you can copy/paste the following pieces of code and fill the blanks accordingly.</p>
+<h3><a aria-hidden=true class=anchor-bis href=#notations id=notations></a>Notations</h3>
+<p>Before getting started, let's go through a few organizational tips that are particularly useful when dealing with large datasets.</p>
+<p>Let <code>ID</code> be the Python string that identifies a given sample of the dataset. A good way to keep track of samples and their labels is to adopt the following framework:</p>
+<ol>
+<li>
+<p>Create a dictionary called <code>partition</code> where you gather:</p>
+<ul>
+<li>in <code>partition['train']</code> a list of training IDs</li>
+<li>in <code>partition['validation']</code> a list of validation IDs</li>
+</ul>
+</li>
+<li>
+<p>Create a dictionary called <code>labels</code> where for each <code>ID</code> of the dataset, the associated label is given by <code>labels[ID]</code></p>
+</li>
+</ol>
+<p>For example, let's say that our training set contains <code>id-1</code>, <code>id-2</code> and <code>id-3</code> with respective labels <code>0</code>, <code>1</code> and <code>2</code>, with a validation set containing <code>id-4</code> with label <code>1</code>. In that case, the Python variables <code>partition</code> and <code>labels</code> look like</p>
+<pre><code>&gt;&gt;&gt; partition
+{'train': ['id-1', 'id-2', 'id-3'], 'validation': ['id-4']}
+</code></pre>
+<p>and</p>
+<pre><code>&gt;&gt;&gt; labels
+{'id-1': 0, 'id-2': 1, 'id-3': 2, 'id-4': 1}
+</code></pre>
+<p>Also, for the sake of <strong>modularity</strong>, we will write PyTorch code and customized classes in separate files, so that your folder looks like</p>
+<pre><code>folder/
+├── my_classes.py
+├── pytorch_script.py
+└── data/
+</code></pre>
+<p>where <code>data/</code> is assumed to be the folder containing your dataset.</p>
+<p>Finally, it is good to note that the code in this tutorial is aimed at being <strong>general</strong> and <strong>minimal</strong>, so that you can easily adapt it for your own dataset.</p>
+<h3><a aria-hidden=true class=anchor-bis href=#dataset id=dataset></a>Dataset</h3>
+<p>Now, let's go through the details of how to set the Python class <code>Dataset</code>, which will characterize the key features of the dataset you want to generate.</p>
+<p>First, let's write the initialization function of the class. We make the latter inherit the properties of <code>torch.utils.data.Dataset</code> so that we can later leverage nice functionalities such as <em>multiprocessing</em>.</p>
+<div class="highlight highlight-source-python"><pre><span class=pl-k>def</span> <span class=pl-c1>__init__</span>(<span class=pl-smi><span class=pl-smi>self</span></span>, <span class=pl-smi>list_IDs</span>, <span class=pl-smi>labels</span>):
+    <span class=pl-s><span class=pl-pds>'</span>Initialization<span class=pl-pds>'</span></span>
+    <span class=pl-c1>self</span>.labels <span class=pl-k>=</span> labels
+    <span class=pl-c1>self</span>.list_IDs <span class=pl-k>=</span> list_IDs</pre></div>
+<p>There, we store important information such as labels and the list of IDs that we wish to generate at each pass.</p>
+<p>Each call requests a sample index for which the upperbound is specified in the <code>__len__</code> method.</p>
+<div class="highlight highlight-source-python"><pre><span class=pl-k>def</span> <span class=pl-c1>__len__</span>(<span class=pl-smi><span class=pl-smi>self</span></span>):
+    <span class=pl-s><span class=pl-pds>'</span>Denotes the total number of samples<span class=pl-pds>'</span></span>
+    <span class=pl-k>return</span> <span class=pl-c1>len</span>(<span class=pl-c1>self</span>.list_IDs)</pre></div>
+<p>Now, when the sample corresponding to a given index is called, the generator executes the <code>__getitem__</code> method to generate it.</p>
+<div class="highlight highlight-source-python"><pre><span class=pl-k>def</span> <span class=pl-c1>__getitem__</span>(<span class=pl-smi><span class=pl-smi>self</span></span>, <span class=pl-smi>index</span>):
+    <span class=pl-s><span class=pl-pds>'</span>Generates one sample of data<span class=pl-pds>'</span></span>
+    <span class=pl-c><span class=pl-c>#</span> Select sample</span>
+    <span class=pl-c1>ID</span> <span class=pl-k>=</span> <span class=pl-c1>self</span>.list_IDs[index]
+
+    <span class=pl-c><span class=pl-c>#</span> Load data and get label</span>
+    X <span class=pl-k>=</span> torch.load(<span class=pl-s><span class=pl-pds>'</span>data/<span class=pl-pds>'</span></span> <span class=pl-k>+</span> <span class=pl-c1>ID</span> <span class=pl-k>+</span> <span class=pl-s><span class=pl-pds>'</span>.pt<span class=pl-pds>'</span></span>)
+    y <span class=pl-k>=</span> <span class=pl-c1>self</span>.labels[<span class=pl-c1>ID</span>]
+
+    <span class=pl-k>return</span> X, y</pre></div>
+<p>During data generation, this method reads the Torch tensor of a given example from its corresponding file <code>ID.pt</code>.
+Since our code is designed to be multicore-friendly, note that you can do more complex operations instead (e.g. computations from source files) without worrying that data generation becomes a bottleneck in the training process.</p>
+<p>The complete code corresponding to the steps that we described in this section is shown below.</p>
+<div class="highlight highlight-source-python"><pre><span class=pl-k>import</span> torch
+
+<span class=pl-k>class</span> <span class=pl-en>Dataset</span>(<span class=pl-e>torch</span>.<span class=pl-e>utils</span>.<span class=pl-e>data</span>.<span class=pl-e>Dataset</span>):
+  <span class=pl-s><span class=pl-pds>'</span>Characterizes a dataset for PyTorch<span class=pl-pds>'</span></span>
+  <span class=pl-k>def</span> <span class=pl-c1>__init__</span>(<span class=pl-smi><span class=pl-smi>self</span></span>, <span class=pl-smi>list_IDs</span>, <span class=pl-smi>labels</span>):
+        <span class=pl-s><span class=pl-pds>'</span>Initialization<span class=pl-pds>'</span></span>
+        <span class=pl-c1>self</span>.labels <span class=pl-k>=</span> labels
+        <span class=pl-c1>self</span>.list_IDs <span class=pl-k>=</span> list_IDs
+
+  <span class=pl-k>def</span> <span class=pl-c1>__len__</span>(<span class=pl-smi><span class=pl-smi>self</span></span>):
+        <span class=pl-s><span class=pl-pds>'</span>Denotes the total number of samples<span class=pl-pds>'</span></span>
+        <span class=pl-k>return</span> <span class=pl-c1>len</span>(<span class=pl-c1>self</span>.list_IDs)
+
+  <span class=pl-k>def</span> <span class=pl-c1>__getitem__</span>(<span class=pl-smi><span class=pl-smi>self</span></span>, <span class=pl-smi>index</span>):
+        <span class=pl-s><span class=pl-pds>'</span>Generates one sample of data<span class=pl-pds>'</span></span>
+        <span class=pl-c><span class=pl-c>#</span> Select sample</span>
+        <span class=pl-c1>ID</span> <span class=pl-k>=</span> <span class=pl-c1>self</span>.list_IDs[index]
+
+        <span class=pl-c><span class=pl-c>#</span> Load data and get label</span>
+        X <span class=pl-k>=</span> torch.load(<span class=pl-s><span class=pl-pds>'</span>data/<span class=pl-pds>'</span></span> <span class=pl-k>+</span> <span class=pl-c1>ID</span> <span class=pl-k>+</span> <span class=pl-s><span class=pl-pds>'</span>.pt<span class=pl-pds>'</span></span>)
+        y <span class=pl-k>=</span> <span class=pl-c1>self</span>.labels[<span class=pl-c1>ID</span>]
+
+        <span class=pl-k>return</span> X, y</pre></div>
+<h3><a aria-hidden=true class=anchor-bis href=#pytorch-script id=pytorch-script></a>PyTorch script</h3>
+<p>Now, we have to modify our PyTorch script accordingly so that it accepts the generator that we just created.
+In order to do so, we use PyTorch's <code>DataLoader</code> class, which in addition to our <code>Dataset</code> class, also takes in the following important arguments:</p>
+<ul>
+<li><code>batch_size</code>, which denotes the number of samples contained in each generated batch.</li>
+<li><code>shuffle</code>. If set to <code>True</code>, we will get a new order of exploration at each pass (or just keep a linear exploration scheme otherwise). Shuffling the order in which examples are fed to the classifier is helpful so that batches between epochs do not look alike. Doing so will eventually make our model more robust.</li>
+<li><code>num_workers</code>, which denotes the number of processes that generate batches in parallel. A high enough number of workers assures that CPU computations are efficiently managed, <em>i.e.</em> that the bottleneck is indeed the neural network's forward and backward operations on the GPU (and not data generation).</li>
+</ul>
+<p>A proposition of code template that you can write in your script is shown below.</p>
+<div class="highlight highlight-source-python"><pre><span class=pl-k>import</span> torch
+<span class=pl-k>from</span> my_classes <span class=pl-k>import</span> Dataset
+
+
+<span class=pl-c><span class=pl-c>#</span> CUDA for PyTorch</span>
+use_cuda <span class=pl-k>=</span> torch.cuda.is_available()
+device <span class=pl-k>=</span> torch.device(<span class=pl-s><span class=pl-pds>"</span>cuda:0<span class=pl-pds>"</span></span> <span class=pl-k>if</span> use_cuda <span class=pl-k>else</span> <span class=pl-s><span class=pl-pds>"</span>cpu<span class=pl-pds>"</span></span>)
+torch.backends.cudnn.benchmark <span class=pl-k>=</span> <span class=pl-c1>True</span>
+
+<span class=pl-c><span class=pl-c>#</span> Parameters</span>
+params <span class=pl-k>=</span> {<span class=pl-s><span class=pl-pds>'</span>batch_size<span class=pl-pds>'</span></span>: <span class=pl-c1>64</span>,
+          <span class=pl-s><span class=pl-pds>'</span>shuffle<span class=pl-pds>'</span></span>: <span class=pl-c1>True</span>,
+          <span class=pl-s><span class=pl-pds>'</span>num_workers<span class=pl-pds>'</span></span>: <span class=pl-c1>6</span>}
+max_epochs <span class=pl-k>=</span> <span class=pl-c1>100</span>
+
+<span class=pl-c><span class=pl-c>#</span> Datasets</span>
+partition <span class=pl-k>=</span> <span class=pl-c><span class=pl-c>#</span> IDs</span>
+labels <span class=pl-k>=</span> <span class=pl-c><span class=pl-c>#</span> Labels</span>
+
+<span class=pl-c><span class=pl-c>#</span> Generators</span>
+training_set <span class=pl-k>=</span> Dataset(partition[<span class=pl-s><span class=pl-pds>'</span>train<span class=pl-pds>'</span></span>], labels)
+training_generator <span class=pl-k>=</span> torch.utils.data.DataLoader(training_set, <span class=pl-k>**</span>params)
+
+validation_set <span class=pl-k>=</span> Dataset(partition[<span class=pl-s><span class=pl-pds>'</span>validation<span class=pl-pds>'</span></span>], labels)
+validation_generator <span class=pl-k>=</span> torch.utils.data.DataLoader(validation_set, <span class=pl-k>**</span>params)
+
+<span class=pl-c><span class=pl-c>#</span> Loop over epochs</span>
+<span class=pl-k>for</span> epoch <span class=pl-k>in</span> <span class=pl-c1>range</span>(max_epochs):
+    <span class=pl-c><span class=pl-c>#</span> Training</span>
+    <span class=pl-k>for</span> local_batch, local_labels <span class=pl-k>in</span> training_generator:
+        <span class=pl-c><span class=pl-c>#</span> Transfer to GPU</span>
+        local_batch, local_labels <span class=pl-k>=</span> local_batch.to(device), local_labels.to(device)
+
+        <span class=pl-c><span class=pl-c>#</span> Model computations</span>
+        [<span class=pl-c1>...</span>]
+
+    <span class=pl-c><span class=pl-c>#</span> Validation</span>
+    <span class=pl-k>with</span> torch.set_grad_enabled(<span class=pl-c1>False</span>):
+        <span class=pl-k>for</span> local_batch, local_labels <span class=pl-k>in</span> validation_generator:
+            <span class=pl-c><span class=pl-c>#</span> Transfer to GPU</span>
+            local_batch, local_labels <span class=pl-k>=</span> local_batch.to(device), local_labels.to(device)
+
+            <span class=pl-c><span class=pl-c>#</span> Model computations</span>
+            [<span class=pl-c1>...</span>]
+</pre></div>
+<h2><a aria-hidden=true class=anchor href=#conclusion id=conclusion></a>Conclusion</h2>
+<p>This is it! You can now run your PyTorch script with the command</p>
+<pre><code>python3 pytorch_script.py
+</code></pre>
+<p>and you will see that during the training phase, <strong>data</strong> is <strong>generated in parallel by the CPU</strong>, which can then be <strong>fed to the GPU</strong> for neural network computations.</p>
+
+
+<h2><a aria-hidden=true href=#also-interested></a>You may also like...</h2>
+<div class=mobile-container style=overflow-x:hidden;>
+  <div class="card-deck mb-3 text-center">
+    
+    <div class="card mb-4 shadow-sm">
+      <a href=teaching/cs-221><span class=link-spanner></span></a>
+      <div class=card-header>
+        <h4>Artificial Intelligence cheatsheets</h4>
+      </div>
+      <div class=card-body>
+        <img src=blog/illustrations/also-viewed_001.png?f5faa5e91de0d97be2ca23db3317088f>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>• Reflex-based models</li>
+          <li>• States-based models</li>
+          <li>• Variables-based models</li>
+          <li>• Logic-based models</li>
+        </ul>
+      </div>
+    </div>
+
+    
+    <div class="card mb-4 shadow-sm">
+      <a href=teaching/cs-229><span class=link-spanner></span></a>
+      <div class=card-header>
+        <h4>Machine Learning cheatsheets</h4>
+      </div>
+      <div class=card-body>
+        <img src=blog/illustrations/also-viewed_002.png?04d4fbc59ace38c43da9410bcdf17ec1>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>• Supervised learning</li>
+          <li>• Unsupervised learning</li>
+          <li>• Deep learning</li>
+          <li>• Machine learning tips and tricks</li>
+        </ul>
+      </div>
+    </div>
+
+    
+    <div class="card mb-4 shadow-sm">
+      <a href=teaching/cs-230><span class=link-spanner></span></a>
+      <div class=card-header>
+        <h4>Deep Learning cheatsheets</h4>
+      </div>
+      <div class=card-body>
+        <img src=blog/illustrations/also-viewed_003.png?4360f6646421699cd14fa5d9c570ed54>
+        <ul class="list-unstyled mt-3 mb-4">
+          <li>• Convolutional neural networks</li>
+          <li>• Recurrent neural networks</li>
+          <li>• Deep learning tips and tricks</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+</article> </div> <footer class=footer> <div class=footer id=contact> <div class=container> <a href=https://twitter.com/shervinea><i class="fa fa-twitter fa-3x fa-fw"></i></a> <a href=https://linkedin.com/in/shervineamidi><i class="fa fa-linkedin fa-3x fa-fw"></i></a> <a href=https://github.com/shervinea><i class="fa fa-github fa-3x fa-fw"></i></a> <a href="https://scholar.google.com/citations?user=nMnMTm8AAAAJ"><i class="fa fa-google fa-3x fa-fw"></i></a> <a class=crptdml data-domain=stanford data-name=shervine data-tld=edu href=#mail onclick="window.location.href = 'mailto:' + this.dataset.name + '@' + this.dataset.domain + '.' + this.dataset.tld"><i class="fa fa-envelope fa-3x fa-fw"></i></a> </div> </div> </footer> </body></html>
