@@ -812,7 +812,7 @@
 <h3 id="A Unified Framework for Discovering Discrete Symmetries">A Unified Framework for Discovering Discrete Symmetries</h3>
 <p></p>In our recent paper, <a href="https://rohanvkashyap.github.io/authors/admin/view_1.pdf"><em>A Unified Framework for Discovering Discrete Symmetries</em></a> (NeurIPS review) we propose a unified framework that enables symmetry discovery across a broad range of subgroups including locally symmetric, dihedral and cyclic subgroups. At the core of the framework is a novel architecture composed of linear and tensor-valued functions that expresses functions invariant to these subgroups in a principled manner. The structure of the architecture enables us to leverage multi-armed bandit algorithms and gradient descent to efficiently optimize over the linear and the tensor-valued functions respectively.</p>
 <p>The following section is a brief overview of the recent advances in the theoretical analysis of push-forward generative models.</p>
-<h3 id="Denoising Score Matching Langevin Dynamics">Denoising Score Matching Langevin Dynamics</h3>
+<!--h3 id="Denoising Score Matching Langevin Dynamics">Denoising Score Matching Langevin Dynamics</h3>
 <figure>
   <img src="/diffusion_models.png" alt=""/>
   <figcaption>Figure: Solving a reverse-time SDE yields a score-based
@@ -913,14 +913,14 @@
   class="math inline">\(\Phi_\nu\)</span> is the cumulative distribution
   function of <span class="math inline">\(\nu\)</span>. Then we have <span
   class="math inline">\(\operatorname{Lip}(g) \geq
-  \operatorname{Lip}\left(T_{\mathrm{OT}}\right)\)</span>.</p>
+  \operatorname{Lip}\left(T_{\mathrm{OT}}\right)\)</span>.</p-->
 <!--<p>We also do nitty-gritty research to make Gaussian processes (a model that is also common in statistics) work <em>really</em> well. One neat property of GPs is that there are principles for selecting all their free parameters. In principle, this means that humans aren&rsquo;t needed in the loop to train them.</p>-->
 <!--<p>Unfortunately, to reduce computational complexity, approximations need to be introduced. These often introduce free parameters again, which then means that a human has to intervene to ensure that the quality of the approximation is acceptable. This defeats part of the point! We improved two GP approximations (variational and conjugate gradient) by providing:</p>-->
 <!--<ul>
 <li>automatic procedures for selecting approximation parameters, and</li>
 <li>mathematical guarantees on the quality of the solution.</li>
 </ul>-->
-<h3 id="Poisson Flow Generative Models">Poisson Flow Generative Models</h3>
+<!--h3 id="Poisson Flow Generative Models">Poisson Flow Generative Models</h3>
 <figure>
   <img src="/authors/admin/Image2.png" alt=""/>
   <figcaption>Figure: (a) 3D Poisson field trajectories for a heart-shaped distribution (b) The evolvements of a
@@ -946,7 +946,7 @@
 <li><a href="https://arxiv.org/pdf/2011.13456.pdf">Score-Based Generative Modeling through Stochastic Differential Equations</a></li>
 <li><a href="https://arxiv.org/pdf/2206.14476.pdf">Can Push-forward Generative Models Fit Multimodal Distributions?</a>
 </a></li>
-</ul>
+</ul-->
 <p>We designed quantitative concentration bounds (using Sobolev inequalities) explicitly dependent on the number of orbits and illustrated theoretical results for incorporating invariance symmetries using Lie groups for diffusion models using a score-based formulation by utilizing the implicit structure in the time-reversed stochastic differential equations. Currently, we are working on establishing connections to compact Riemannian manifolds.</p>
 <!--<h3 id="deep-gaussian-processes">Deep Gaussian processes</h3>
 <p>Why is accurate Gaussian process inference important? Well, apart from GPs being useful for noisy and/or low-data tasks where quantifying uncertainty is important<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, GPs are also a different representation of a neural network layer. It seems that there are advantages in terms of the quality of approximate Bayesian inference when representing a layer as a GP rather than with weights. One key research question is whether thinking about neural network layers as GPs can help bring the benefits of Bayesian inference (uncertainty and automatic model selection) to deep neural networks.</p>
