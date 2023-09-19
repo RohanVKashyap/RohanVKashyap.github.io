@@ -809,6 +809,76 @@
 <p></p>In our recent paper, <a href="https://rohanvkashyap.github.io/authors/admin/view_1.pdf"><em>A Unified Framework for Discovering Discrete Symmetries</em></a> (NeurIPS review) we propose a unified framework that enables symmetry discovery across a broad range of subgroups including locally symmetric, dihedral and cyclic subgroups. At the core of the framework is a novel architecture composed of linear and tensor-valued functions that expresses functions invariant to these subgroups in a principled manner. The structure of the architecture enables us to leverage multi-armed bandit algorithms and gradient descent to efficiently optimize over the linear and the tensor-valued functions respectively.</p>
 <p>The following section is a brief overview of the recent advances in the theoretical analysis of push-forward generative models.</p-->
 <h3 id="Lie Groups">Lie Groups</h3>
+<p>A Lie group <span class="math inline"><em>G</em></span> is a smooth
+manifold together with a distinguished element <span
+class="math inline"><em>e</em> ∈ <em>G</em></span>, and smooth maps
+multiplication: <span
+class="math inline"><em>G</em> × <em>G</em> → <em>G</em></span> and
+inverse: <span class="math inline"><em>G</em> → <em>G</em></span> (this
+map is required to be a diffeomorphism) such that <span
+class="math inline"><em>G</em></span> is a group with these operations
+and with e being the identity element. A morphism of Lie groups is a
+group homomorphism <span
+class="math inline"><em>f</em> : <em>G</em> → <em>H</em></span> which is
+also a smooth map.\</p>
+<p>Examples:\ 1. <span
+class="math inline">(ℝ<sup><em>n</em></sup>,+,0)</span>.\ 2. <span
+class="math inline">(ℂ<sup>*</sup>,<em>x</em>,1)</span>.\ 3. <span
+class="math inline">(<em>S</em><sup>1</sup>,<em>x</em>,1)</span>.
+Moreover, <span
+class="math inline"><em>f</em> : ℝ → <em>S</em><sup>1</sup></span> given
+by <span
+class="math inline"><em>f</em>(<em>x</em>) = <em>e</em><sup><em>i</em><em>x</em></sup></span>
+is a Lie group morphism.\ 4. <span
+class="math inline">(<em>G</em><em>L</em>(<em>n</em>,ℝ),<em>x</em>,<em>I</em>)</span>.\
+5. <span class="math inline">$S U(2)=\left(\begin{array}{cc}a &amp; b \\
+-\bar{b} &amp; \bar{a}\end{array}\right)$</span> such that <span
+class="math inline">|<em>a</em>|<sup>2</sup> + |<em>b</em>|<sup>2</sup> = 1</span>.
+That is, <span class="math inline"><em>S</em><em>U</em>(2)</span> is
+homeomorphic to <span class="math inline"><em>S</em><sup>3</sup></span>
+(and hence can be made into a smooth manifold which is in fact a smooth
+submanifold of <span class="math inline">ℝ<sup>4</sup></span> ). It is
+easy to see that the group operations are smooth.\ 6. <span
+class="math inline"><em>S</em><em>L</em>(<em>n</em>,ℝ)</span> is a Lie
+group of dimension <span
+class="math inline"><em>n</em><sup>2</sup> − 1</span>.\ 7. <span
+class="math inline"><em>S</em><em>O</em>(<em>n</em>), <em>O</em>(<em>n</em>), <em>S</em><em>U</em>(<em>n</em>), <em>U</em>(<em>n</em>)</span>
+are Lie groups (will be proven later in another way): For instance,
+<span
+class="math inline"><em>O</em>(<em>n</em>) ⊂ ℝ<sup><em>n</em><sup>2</sup></sup> ∣ <em>A</em><em>A</em><sup><em>T</em></sup> = <em>I</em></span>.
+We want to use IFT. So consider the smooth function <span
+class="math inline"><em>F</em>(<em>A</em>) = <em>A</em><sup><em>T</em></sup><em>A</em></span>
+defined on the open subset of invertible matrices. Its derivative is
+<span
+class="math inline"><em>F</em><sup>′</sup>(<em>B</em>) = <em>A</em><sup><em>T</em></sup><em>B</em> + <em>B</em><sup><em>T</em></sup><em>A</em>=</span>
+<span
+class="math inline">(<em>B</em><sup><em>T</em></sup><em>A</em>)<sup><em>T</em></sup> + <em>B</em><sup><em>T</em></sup><em>A</em></span>
+whose kernel consists of skew-symmetric matrices <span
+class="math inline"><em>C</em></span> of the type <span
+class="math inline"><em>C</em> = <em>A</em><sup><em>T</em></sup><em>B</em></span>.
+Thus define <span
+class="math inline"><em>B</em> = <em>A</em><em>C</em></span>. Thus the
+rank is a constant. The constant rank theorem implies that <span
+class="math inline"><em>F</em><sup>−1</sup>(<em>I</em>)</span> is a
+manifold of dimension <span
+class="math inline">$n^2-\frac{n(n-1)}{2}$</span>. The multiplication
+and inverse operations are inherited from <span
+class="math inline"><em>M</em>(<em>n</em>,ℝ)</span> and hence smooth.\
+8. It turns out that the manifold <span
+class="math inline"><em>G</em> = ℝ × ℝ × <em>S</em><sup>1</sup></span>
+given a group structure as <span
+class="math inline">(<em>x</em><sub>1</sub>,<em>x</em><sub>2</sub>,<em>u</em><sub>1</sub>).(<em>x</em><sub>2</sub>,<em>y</em><sub>2</sub>,<em>u</em><sub>2</sub>)=</span>
+<span
+class="math inline">(<em>x</em><sub>1</sub>+<em>x</em><sub>2</sub>,<em>y</em><sub>1</sub>+<em>y</em><sub>2</sub>,<em>e</em><sup><em>i</em><em>x</em><sub>1</sub><em>y</em><sub>2</sub></sup><em>u</em><sub>1</sub><em>u</em><sub>2</sub>)</span>
+is a Lie group (why?) but not a matrix Lie group! That is, it is not a
+Lie subgroup (embedded submanifold such that the inclusion is a group
+homomorphism - this is usually called a closed Lie subgroup whereas the
+term Lie subgroup is usually reserved for immersed submanifolds, but we
+shall not do so in this set of lectures) of <span
+class="math inline"><em>G</em><em>L</em>(<em>n</em>,ℝ)</span> for any
+<span class="math inline"><em>n</em></span>.\ We have a theorem that in
+some sense reduces our analysis to that of discrete groups and connected
+Lie groups.\</p>
 <!--figure>
   <img src="/diffusion_models.png" alt=""/>
   <figcaption>Figure: Solving a reverse-time SDE yields a score-based
