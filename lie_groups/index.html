@@ -1005,50 +1005,68 @@
   irreducible representations) of the rotations. The collection of all
   rotations form an infinite group (<span
   class="math inline"><em>S</em><em>O</em>(3)</span>).</p>
-  <p> <b>Theorem 1.</b>  Let <span class="math inline"><em>G</em></span> be a (possibly
-  disconnected) Lie group. Let <span
-  class="math inline"><em>G</em><sup>0</sup></span> be the connected
-  component of identity. Then <span
-  class="math inline"><em>G</em><sup>0</sup></span> is a normal Lie
-  subgroup of <span class="math inline"><em>G</em></span>. The quotient
-  group <span class="math inline"><em>G</em>/<em>G</em><sup>0</sup></span>
-  is discrete.</p>
-  <p>Unless specified otherwise, we will now assume that <span
-  class="math inline"><em>G</em></span> is connected. An example of a
-  connected Lie group is <span
-  class="math inline"><em>G</em><em>L</em>(<em>n</em>, ℂ)</span> : Let
-  <span class="math inline"><em>g</em></span> be such a matrix. Let <span
-  class="math inline"><em>g</em> = <em>P</em><em>J</em><em>P</em><sup>−1</sup></span>
-  where <span class="math inline"><em>J</em></span> is the Jordan
-  canonical form. It is easy to see that <span
-  class="math inline"><em>J</em></span> can be connected to identity (and
-  hence so can <span class="math inline"><em>g</em>)</span>.We can also focus on simply connected Lie groups thanks to the
-  following theorems.</p>
+
+<p>Definition: A Lie subgroup of <span
+  class="math inline"><em>G</em><em>L</em>(<em>n</em>,<em>R</em>)</span>
+  is called a matrix Lie group.</p>
+  <p>Example: <span
+  class="math inline">$H:=\left\{\left[\begin{array}{lll}1 &amp; a &amp; b
+  \\ 0 &amp; 1 &amp; c \\ 0 &amp; 0 &amp; 1\end{array}\right] \in M(3,
+  \mathbb{R})\right\}$</span> is a Lie group called the Heisenberg group.
+  Note that, <span
+  class="math display">$$\Phi\left(\left[\begin{array}{lll}
+  1 &amp; 1 &amp; b \\
+  0 &amp; 1 &amp; c \\
+  0 &amp; 1 &amp; 1
+  \end{array}\right]\right):=\left(a, c, e^{\sqrt{-1} b}\right)$$</span>
+  is a Lie homomorphism.</p>
+
+  <h3 id="Matrix Lie groups">Matrix Lie groups</h3>
+    
+<p> <b>Theorem 1.</b>  Let <span class="math inline"><em>G</em></span> be a (possibly
+disconnected) Lie group. Let <span
+class="math inline"><em>G</em><sup>0</sup></span> be the connected
+component of identity. Then <span
+class="math inline"><em>G</em><sup>0</sup></span> is a normal Lie
+subgroup of <span class="math inline"><em>G</em></span>. The quotient
+group <span class="math inline"><em>G</em>/<em>G</em><sup>0</sup></span>
+is discrete.</p>
+<p>Unless specified otherwise, we will now assume that <span
+class="math inline"><em>G</em></span> is connected. An example of a
+connected Lie group is <span
+class="math inline"><em>G</em><em>L</em>(<em>n</em>, ℂ)</span> : Let
+<span class="math inline"><em>g</em></span> be such a matrix. Let <span
+class="math inline"><em>g</em> = <em>P</em><em>J</em><em>P</em><sup>−1</sup></span>
+where <span class="math inline"><em>J</em></span> is the Jordan
+canonical form. It is easy to see that <span
+class="math inline"><em>J</em></span> can be connected to identity (and
+hence so can <span class="math inline"><em>g</em>)</span>.We can also focus on simply connected Lie groups thanks to the
+following theorems.</p>
   
-  <p><b>Theorem 2:</b> If <span class="math inline"><em>G</em></span> is a connected Lie
-  group, then its universal cover <span
-  class="math inline"><em>G̃</em></span> is a Lie group canonically such
-  that the covering map is a Lie group morphism and the kernel is the
-  fundamental group. In this case, the kernel is a discrete subgroup of
-  <span class="math inline"><em>G̃</em></span>.</p>
-  
-  <h3 id="Simply Connected Lie groups">Simply Connected Lie groups</h3>
-  
-  <p> <b>Theorem 3:</b> If <span class="math inline"><em>G</em></span> is a connected Lie
-  group, then its universal cover <span
-  class="math inline"><em>G̃</em></span> is a Lie group canonically such
-  that the covering map is a Lie group morphism and the kernel is the
-  fundamental group. In this case, the kernel is a discrete central
-  subgroup of <span class="math inline"><em>G̃</em></span>.</p>
-  <p>
-  <p>The fact that the kernel is central follows from the map <span
-  class="math inline"><em>g</em> → <em>g</em><em>h</em><em>g</em><sup>−1</sup></span>
-  and the connectedness of <span class="math inline"><em>G</em></span>.
-  <span
-  class="math inline"><em>S</em><em>L</em>(<em>n</em>,ℂ), <em>U</em>(<em>n</em>),  <em>S</em><em>U</em>(<em>n</em>),  <em>S</em><em>O</em>(<em>n</em>, ℝ)</span>
-  are all connected matrix lie groups but <span
-  class="math inline"><em>S</em><em>L</em>(<em>n</em>, ℝ)</span> is not a matrix
-  Lie group.</p>
+<p><b>Theorem 2:</b> If <span class="math inline"><em>G</em></span> is a connected Lie
+group, then its universal cover <span
+class="math inline"><em>G̃</em></span> is a Lie group canonically such
+that the covering map is a Lie group morphism and the kernel is the
+fundamental group. In this case, the kernel is a discrete subgroup of
+<span class="math inline"><em>G̃</em></span>.</p>
+
+<h3 id="Simply Connected Lie groups">Simply Connected Lie groups</h3>
+
+<p> <b>Theorem 3:</b> If <span class="math inline"><em>G</em></span> is a connected Lie
+group, then its universal cover <span
+class="math inline"><em>G̃</em></span> is a Lie group canonically such
+that the covering map is a Lie group morphism and the kernel is the
+fundamental group. In this case, the kernel is a discrete central
+subgroup of <span class="math inline"><em>G̃</em></span>.</p>
+<p>
+<p>The fact that the kernel is central follows from the map <span
+class="math inline"><em>g</em> → <em>g</em><em>h</em><em>g</em><sup>−1</sup></span>
+and the connectedness of <span class="math inline"><em>G</em></span>.
+<span
+class="math inline"><em>S</em><em>L</em>(<em>n</em>,ℂ), <em>U</em>(<em>n</em>),  <em>S</em><em>U</em>(<em>n</em>),  <em>S</em><em>O</em>(<em>n</em>, ℝ)</span>
+are all connected matrix lie groups but <span
+class="math inline"><em>S</em><em>L</em>(<em>n</em>, ℝ)</span> is not a matrix
+Lie group.</p>
 <!--h3 id="Poisson Flow Generative Models">Poisson Flow Generative Models</h3>
 <figure>
   <img src="/authors/admin/Image2.png" alt=""/>
