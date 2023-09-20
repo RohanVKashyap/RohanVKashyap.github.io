@@ -985,14 +985,14 @@
   
   <h3 id="Why should we care">Why should we care?</h3>
   
-  <p><b>Discrete case:</b> Suppose we shuffle cards in some way (I know of only one way - the
+  <p><strong>Discrete case:</strong> Suppose we shuffle cards in some way (I know of only one way - the
   overhand shuffle). We want to know how many times one must do it so that
   the cards become sufficiently random. This can be modeled as an
   operation (convolution) of probability distributions on <span
   class="math inline"><em>S</em><sub><em>n</em></sub></span>. More
   generally, the study of probability distributions on groups leads to
   interesting applications in real life.</p>
-  <p><b>Continuous case:</b> A continuous version of the problem above in a higher-dimensional
+  <p><strong>Continuous case:</strong> A continuous version of the problem above in a higher-dimensional
   (sphere instead of circle) case is as follows: Consider the Hydrogen
   atom. In quantum mechanics, the only “energy levels” of the Hydrogen
   atom correspond to the spectrum of an operator which is simply the
@@ -1006,7 +1006,9 @@
   rotations form an infinite group (<span
   class="math inline"><em>S</em><em>O</em>(3)</span>).</p>
 
-<p>Definition: A Lie subgroup of <span
+<h3 id="Matrix Lie groups">Matrix Lie groups</h3>
+
+<p><strong>Definition:</strong> A Lie subgroup of <span
   class="math inline"><em>G</em><em>L</em>(<em>n</em>,<em>R</em>)</span>
   is called a matrix Lie group.</p>
   <p>Example: <span
@@ -1015,13 +1017,11 @@
   \mathbb{R})\right\}$</span> is a Lie group called the Heisenberg group.
   Note that, <span
   class="math display">$$\Phi\left(\left[\begin{array}{lll}
-  1 &amp; 1 &amp; b \\
+  1 &amp; a &amp; b \\
   0 &amp; 1 &amp; c \\
   0 &amp; 1 &amp; 1
   \end{array}\right]\right):=\left(a, c, e^{\sqrt{-1} b}\right)$$</span>
   is a Lie homomorphism.</p>
-
-  <h3 id="Matrix Lie groups">Matrix Lie groups</h3>
     
 <p> <b>Theorem 1.</b>  Let <span class="math inline"><em>G</em></span> be a (possibly
 disconnected) Lie group. Let <span
@@ -1049,6 +1049,78 @@ class="math inline"><em>G̃</em></span> is a Lie group canonically such
 that the covering map is a Lie group morphism and the kernel is the
 fundamental group. In this case, the kernel is a discrete subgroup of
 <span class="math inline"><em>G̃</em></span>.</p>
+
+
+<h3 id="Matrix Exponentials">Matrix Exponentials</h3>
+<p>There are two reasons to care about matrix exponentials. (1) The
+  constant rank theorem proves that <span class="math inline">\(S
+  O(3)\)</span> is a Lie group, but we want a more concrete description of
+  rotations. Suppose we consider an infinitesimal rotation near the
+  identity, i.e., <span class="math inline">\(A=I+B\)</span>. Now <span
+  class="math inline">\((I+B)(I+B)^T=I\)</span> and hence <span
+  class="math inline">\(B+B^T \approx 0\)</span>. Conversely, if <span
+  class="math inline">\(B+B^T \approx 0\)</span>, then <span
+  class="math inline">\((I+B)\left(I+B^T\right) \approx I\)</span>. To
+  make the approximation better, we can rotate by “half-angles”, i.e., try
+  <span class="math inline">\((I+B / 2)^2\left(I+B^T /
+  2\right)^2=\left(I+B+B^2 / 4\right)(. .)^T=I+B^2 /
+  2+O\left(B^3\right)\)</span>. This motivates us to study <span
+  class="math inline">\(\lim _{N \rightarrow \infty}(I+B /
+  N)^N\)</span>.</p>
+  <ol start="2" type="1">
+  <li>Consider the system of ODE: <span class="math inline">\(\frac{d v}{d
+  t}=A v\)</span> where <span class="math inline">\(A\)</span> is a
+  matrix. One would naively expect the solution to be <span
+  class="math inline">\(e^{A t} v_0\)</span> if <span
+  class="math inline">\(e^{A t}\)</span> is suitably defined. (In fact,
+  for certain systems, this is the Schrödinger equation and hence the
+  matrix exponential plays a starring role in quantum computing).
+  Definition: For any complex matrix <span
+  class="math inline">\(X\)</span>, define <span
+  class="math inline">\(e^X:=I+X+X^2 / 2 !+\ldots\)</span> This definition
+  is valid because <span class="math inline">\(1+\|X\|+\ldots\)</span>
+  (Hilbert-Schmidt) converges and <span class="math inline">\(\left|X_{i
+  j}\right| \leq\|X\|\)</span>.</li>
+  </ol>
+  <p>We begin now by asking can the group structure be recovered
+  similarly: if so , one can work with skew symmetric matrices instead of
+  <span class="math inline">\(O(n)\)</span>. Observe, for <span
+  class="math inline">\(x, y\)</span> skew symmetric, <span
+  class="math inline">\(e^x, e^y \in O(n)\)</span>, and, <span
+  class="math display">\[
+  \begin{aligned}
+  &amp; e^{t x} \cdot e^{t y}=\left(I+t x+\frac{t^2 x^2}{2
+  !}+\cdots\right)\left(I+t y+\frac{t^2 y^2}{2 !}+\cdots\right) \\
+  &amp; =I+t(x+y)+t^2 / 2\left(x^2+y^2+2 x y\right)+O\left(t^3\right) \\
+  &amp; =I+t(x+y)+t^2 / 2(x+y)^2+t^2 / 2[x, y]+O\left(t^3\right) \\
+  &amp; \approx e^{t(x+y)+t^2 / 2[x, y]}+O\left(t^3\right)  \\
+  &amp;
+  \end{aligned}
+  \]</span> For recovering group operations one needs to study the
+  commutator. That would facilitate “infinitesimal” recovery of those
+  operations. We therefore ask analogies for skew-2ynmetric matrices,
+  matrix exponential, and commutations for an abstract hie group (instead
+  of <span class="math inline">\(O(n)\)</span>).</p>
+
+<p>How does one compute <span class="math inline">\(e^X\)</span> in any
+concrete case? A “theoretical” (that is, not a very efficient algorithm)
+is to simply take the Jordan canonical form <span
+class="math inline">\(X=P J P^{-1}\)</span> and write <span
+class="math inline">\(e^X=P e^J P^{-1}\)</span>. Now to compute <span
+class="math inline">\(e^J\)</span>, one simply needs to do it for every
+Jordan block. Each such block is of the form <span
+class="math inline">\(B=\lambda I+N\)</span> where <span
+class="math inline">\(N\)</span> is upper-triangular and hence
+nilpotent. <span class="math inline">\(I\)</span> and <span
+class="math inline">\(N\)</span> commute and hence <span
+class="math inline">\(e^B=e^\lambda e^N\)</span> which can be computed
+quickly. This algorithm is not very efficient (because it needs
+computation of the eigenvalues and eigenvectors). In many cases <span
+class="math inline">\((I+X / N)^N\)</span> can be better. Using a power
+series, we can define the matrix Logarithm: <span
+class="math inline">\(\ln (A):=\sum_{m=1}^{\infty}(-1)^{m+1}
+\frac{(A-I)^m}{m}\)</span> whenever the series converges (for instance,
+when <span class="math inline">\(\|A-I\|&lt;1\)</span> ).</p>
 
 <h3 id="Simply Connected Lie groups">Simply Connected Lie groups</h3>
 
