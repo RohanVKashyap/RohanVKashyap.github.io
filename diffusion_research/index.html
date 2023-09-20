@@ -771,44 +771,22 @@
 
     <div class="article-style">
       <!--h2 id="list-of-research-interests">Diffusion Models</h2-->
-<!--ul>
-<li>Poisson Flow generative models.</li>
-<li>Direct and indirect push-forward generative models. Eg: VAE, GAN and diffusion models.</li>
-<li>Neural networks with invariance properties (e.g. rotation, scale, or more arbitrary) and learning invariances for continuous image manifolds.</li>
-</ul-->
-<!--<h2 id="high-level-aims-and-approach">High-level aims and approach</h2>
-<p>Our research aims to improve three broad properties of Machine Learning methods:</p>
-<ul>
-<li>Data efficiency: Making better predictions with less data.</li>
-<li>Automatic Machine Learning: Methods are too brittle, and require human design and oversight.</li>
-<li>Uncertainty quantification and decision making: Uncertainty tells us when risks are worth taking.</li>
-</ul>
-<p>Improvements in these areas would benefit the full spectrum of applications: from tasks with small amounts of data where eliminating noise is important, to high-dimensional large-data settings where neural networks are applied to natural data like images.</p>
-<p>I&rsquo;m not completely sure what approach I would bet on. I certainly follow developments in meta-learning and large models carefully. If the answer to this was clear, this wouldn&rsquo;t be research. Luckily, there are interesting questions to investigate in both directions.</p>-->
-<!--h2 id="research-highlights">Research Highlights</h2>
-<p>To give a more concrete idea of research we have done, here are some projects and papers roughly grouped together in themes.</p>
-<h3 id="learning-invariances">Learning invariances</h3>
-<figure>
-  <img src="/poster.png" alt=""/>
-  <figcaption>Figure: AISTATS Poster.</figcaption>
-</figure>
-<p>Invariance and equivariance are very common inductive biases, with the ubiquitous convolutional layer being the most common example. When designing architectures, humans currently choose how many convolutional layers to use, together with parameters like filter size. Often these choices are made with a laborious trial-and-error procedure (cross-validation). To make the number of choices even larger, other types of convolutional layers have been developed in recent years, which help generalisation across different scales and rotations. The optimal inductive bias varies by problem and dataset, so it would be nice if we had an automatic procedure for determining these.</p>
-<p>We are developing methods that allow weights and architecture to be learned <em>at the same time</em>, by optimising a single objective function. In our paper <a href="https://rohanvkashyap.github.io/authors/admin/Neural%20discovery%20of%20permutation%20subgroups.pdf"><em>Neural discovery of permutation subgroups</em></a> (AISTATS 2023) we present a novel method to discover the underlying subgroup, given that it satisfies certain conditions. Our results show that one could discover any subgroup of type <span class="math inline">\(S_k(k \leq n)\)</span> by learning an <span class="math inline">\(S_n\)</span>-invariant function and a linear transformation.</p-->
-<!--<p>The final invariance can be visualised by looking at the samples that the data augmentation procedure generates. Samples generated for a particular input image visualise which transformations are seen as not changing the label (see figure below).</p>
-<p>Overall, this procedure is a lot more convenient than training a model many times in a cross-validated grid search over the data augmentation parameters. What really shows that invariances are truly learned here, is that if you apply the <em>same</em> method to a dataset with different characteristics, a different invariance is learned. The same exact method that worked well on MNIST would learn almost full rotational invariance for rotated MNIST (see paper for results). Following the normal procedure, the cross-validated grid search would have to be performed again!</p>-->
-<!--<figure>
-  <img src="/authors/admin/DALLE-2-IMAGES.png" alt=""/>
-  <figcaption>Figure: Selected samples from DALLE-2 model.</figcaption>
-</figure>-->
-<!--<p>What are the limitations?</p>
-<ul>
-<li>Currently it only works really robustly on shallow models (although we have had <a href="/publication/schwoebel-2021-layer/">partial progress in deep models</a>).</li>
-<li>You need to specify a solution space of invariances, from which the correct invariance is picked. All machine learning methods need to parameterise their solution space, but so far we have only parameterised simple ones like the space of distributions on affine transformations, and local deformations.</li>
-</ul>-->
-<!--h3 id="A Unified Framework for Discovering Discrete Symmetries">A Unified Framework for Discovering Discrete Symmetries</h3>
-<p></p>In our recent paper, <a href="https://rohanvkashyap.github.io/authors/admin/view_1.pdf"><em>A Unified Framework for Discovering Discrete Symmetries</em></a> (NeurIPS review) we propose a unified framework that enables symmetry discovery across a broad range of subgroups including locally symmetric, dihedral and cyclic subgroups. At the core of the framework is a novel architecture composed of linear and tensor-valued functions that expresses functions invariant to these subgroups in a principled manner. The structure of the architecture enables us to leverage multi-armed bandit algorithms and gradient descent to efficiently optimize over the linear and the tensor-valued functions respectively.</p>
-<p>The following section is a brief overview of the recent advances in the theoretical analysis of push-forward generative models.</p-->
+
 <h3 id="Denoising Score Matching Langevin Dynamics">Denoising Score Matching Langevin Dynamics</h3>
+
+<p>Diffusion models, also known as score-based generative models, is a
+    new paradigm for generative modeling which exhibits state-of-the-art
+    performance in image and audio synthesis. Such models first consider a
+    forward stochastic process, adding noise to the data until a Gaussian
+    distribution is reached. The model then approximates the backward
+    process associated with this forward noising process. It can be shown,
+    see for instance, that in order to compute the drift of the backward
+    trajectory, the gradient of the forward logarithmic density (Stein
+    score) must be estimated. Such an estimator is then obtained using score
+    matching techniques and leveraging neural network techniques. At
+    sampling time, the backward process is initialized with a Gaussian and
+    run backward in time using the approximation of the Stein score.</p>
+
 <figure>
   <img src="/diffusion_models.png" alt=""/>
   <figcaption>Figure: Solving a reverse-time SDE yields a score-based
@@ -877,6 +855,41 @@
   <img src="/authors/admin/DALLE-2-IMAGES.png" alt=""/>
   <figcaption>Figure: Selected samples from DALLE-2 model.</figcaption>
 </figure>  
+
+<h3 id="Estimating Scores using SDE">Estimating Scores using SDE</h3>
+
+<p>The score of a distribution can be estimated by training a
+    score-based model on samples with score matching. To estimate <span
+    class="math inline">\(\nabla_{\mathbf{x}} \log p_t(\mathbf{x})\)</span>,
+    we can train a time-dependent score-based model <span
+    class="math inline">\(\mathbf{s}_{\boldsymbol{\theta}}(\mathbf{x},
+    t)\)</span> via a continuous generalization: <span
+    class="math display">\[
+    \boldsymbol{\theta}^*=\underset{\boldsymbol{\theta}}{\arg \min }
+    \mathbb{E}_t\left\{\lambda(t) \mathbb{E}_{\mathbf{x}(0)}
+    \mathbb{E}_{\mathbf{x}(t) \mid
+    \mathbf{x}(0)}\left[\left\|\mathbf{s}_{\boldsymbol{\theta}}(\mathbf{x}(t),
+    t)-\nabla_{\mathbf{x}(t)} \log p_{0 t}(\mathbf{x}(t) \mid
+    \mathbf{x}(0))\right\|_2^2\right]\right\} .
+    \]</span> Here <span class="math inline">\(\lambda:[0, T] \rightarrow
+    \mathbb{R}_{&gt;0}\)</span> is a positive weighting function, <span
+    class="math inline">\(t\)</span> is uniformly sampled over <span
+    class="math inline">\([0, T]\)</span>, <span
+    class="math inline">\(\mathbf{x}(0) \sim p_0(\mathbf{x})\)</span> and
+    <span class="math inline">\(\mathbf{x}(t) \sim p_{0 t}(\mathbf{x}(t)
+    \mid \mathbf{x}(0))\)</span>. With sufficient data and model capacity,
+    score matching ensures that the optimal solution to Eq. (7), denoted by
+    <span
+    class="math inline">\(\mathbf{s}_{\boldsymbol{\theta}^*}(\mathbf{x},
+    t)\)</span>, equals <span class="math inline">\(\nabla_{\mathbf{x}} \log
+    p_t(\mathbf{x})\)</span> for almost all <span
+    class="math inline">\(\mathbf{x}\)</span> and <span
+    class="math inline">\(t\)</span>. As in SMLD and DDPM, we can typically
+    choose <span class="math inline">\(\lambda \propto 1 /
+    \mathbb{E}\left[\left\|\nabla_{\mathbf{x}(t)} \log p_{0 t}(\mathbf{x}(t)
+    \mid \mathbf{x}(0))\right\|_2^2\right]\)</span>.</p>
+
+
 <h3 id="push-forward generative models">Push-forward generative models</h3>  
 <p style="text-align:justify;">Score-Based Generative Modeling (SGM) is a recently developed approach to probabilistic generative modeling that exhibits state-of-the-art performance on several audio and image synthesis tasks. Progressively applying Gaussian noise transforms complex data distributions to approximately Gaussian. Reversing this dynamic defines a generative model. When the forward noising process is given by a Stochastic Differential Equation (SDE), <a href="https://arxiv.org/pdf/2011.13456.pdf"><em>Song et al. (2021)</em></a> demonstrate how the time inhomogeneous drift of the associated reverse-time SDE may be estimated using score-matching. A limitation of this approach is that the forward-time SDE must be run for a sufficiently long time for the final distribution to be approximately Gaussian while ensuring that the corresponding time-discretization error is controlled.</p>
 <p>Theorem 1. Let <span class="math inline">\(g: \mathbb{R}^p
@@ -937,13 +950,131 @@
   class="math inline">\(r \rightarrow \infty\)</span> limit. To learn the
   bijective transformation, they estimate the normalized field in the
   augmented space.</p></p>
+
+<h3 id="PFGM++">PFGM++</h3> 
+<figure>
+    <img src="/authors/admin/PFGM++.png" alt=""/>
+    <figcaption>Figure: PFGM++ unify PFGM and diffusion models, as well as the potential to combine
+        their strengths (robustness and rigidity).</figcaption>
+  </figure>  
+
+  <p>While PFGM consider the electric field in a <span
+    class="math inline">\(N+1\)</span>-dimensional augmented space, we
+    augment the data <span class="math inline">\(\mathbf{x}\)</span> with
+    <span class="math inline">\(D\)</span>-dimensional variables <span
+    class="math inline">\(\mathbf{z}=\left(z_1, \ldots, z_D\right)\)</span>,
+    i.e., <span class="math inline">\(\tilde{\mathbf{x}}=(\mathbf{x},
+    \mathbf{z})\)</span> and <span class="math inline">\(D \in
+    \mathbb{Z}^{+}\)</span>. Similar to the <span
+    class="math inline">\(N+1\)</span>-dimensional electric field, the
+    electric field at the augmented data <span
+    class="math inline">\(\tilde{\mathbf{x}}=(\mathbf{x}, \mathbf{z}) \in
+    \mathbb{R}^{N+D}\)</span> is: <span class="math display">\[
+    \mathbf{E}(\tilde{\mathbf{x}})=\frac{1}{S_{N+D-1}(1)} \int
+    \frac{\tilde{\mathbf{x}}-\tilde{\mathbf{y}}}{\|\tilde{\mathbf{x}}-\tilde{\mathbf{y}}\|^{N+D}}
+    p(\mathbf{y}) d \mathbf{y}
+    \]</span></p>
+    <p>Analogous to the theoretical results presented in PFGM, with the
+    electric field as the drift term, the ODE <span class="math inline">\(d
+    \tilde{\mathbf{x}}=\mathbf{E}(\tilde{\mathbf{x}}) \mathrm{d} t\)</span>
+    defines a surjection from a uniform distribution on an infinite <span
+    class="math inline">\(\mathrm{N}+\mathrm{D}\)</span>-dim hemisphere and
+    the data distribution on the <span
+    class="math inline">\(\mathrm{N}\)</span> <span
+    class="math inline">\(\operatorname{dim} \mathbf{z}=\mathbf{0}\)</span>
+    hyperplane. However, the mapping has <span class="math inline">\(S
+    O(D)\)</span> symmetry on the surface of <span
+    class="math inline">\(D\)</span>-dim cylinder <span
+    class="math inline">\(\sum_{i=1}^D z_i^2=r^2\)</span> for any positive
+    <span class="math inline">\(r\)</span>. We provide an illustrative
+    example at the bottom of Fig. <span class="math inline">\(2(D=2,
+    N=1)\)</span>, where the electric flux emitted from a line segment (red)
+    has rotational symmetry through the ring area (blue) on the <span
+    class="math inline">\(z_1^2+z_2^2=r^2\)</span> cylinder. Hence, instead
+    of modeling the individual behavior of each <span
+    class="math inline">\(z_i\)</span>, it suffices to track the norm of
+    augmented variables <span
+    class="math inline">\(r(\tilde{\mathbf{x}})=\|\mathbf{z}\|_2-\)</span>
+    due to symmetry. Specifically, note that <span
+    class="math inline">\(\mathrm{d}
+    z_i=\mathbf{E}(\tilde{\mathbf{x}})_{z_i} \mathrm{~d} t\)</span>, and the
+    time derivative of <span class="math inline">\(r\)</span> is</p>
+    <p><span class="math display">\[
+    \begin{aligned}
+    \frac{\mathrm{d} r}{\mathrm{~d} t} &amp; =\sum_{i=1}^D \frac{z_i}{r}
+    \frac{\mathrm{d} z_i}{\mathrm{~d} t}=\int \frac{\sum_{i=1}^D
+    z_i^2}{S_{N+D-1}(1) r\|\tilde{\mathbf{x}}-\tilde{\mathbf{y}}\|^{N+D}}
+    p(\mathbf{y}) \mathrm{d} \mathbf{y} \\
+    &amp; =\frac{1}{S_{N+D-1}(1)} \int
+    \frac{r}{\|\tilde{\mathbf{x}}-\tilde{\mathbf{y}}\|^{N+D}} p(\mathbf{y})
+    \mathrm{d} \mathbf{y}
+    \end{aligned}
+    \]</span></p>
+    <p>Henceforth we replace the notation for augmented data with <span
+    class="math inline">\(\tilde{\mathbf{x}}=(\mathbf{x}, r)\)</span> for
+    simplicity. After the symmetry reduction, the field to be modeled has a
+    similar form except that the last <span class="math inline">\(D\)</span>
+    sub-components <span
+    class="math inline">\(\left\{\mathbf{E}(\tilde{\mathbf{x}})_{z_i}\right\}_{i=1}^D\)</span>
+    are condensed into a scalar <span
+    class="math inline">\(E(\tilde{\mathbf{x}})_r=\frac{1}{S_{N+D-1}(1)}
+    \int \frac{r_r}{\|\tilde{\mathbf{x}}-\tilde{\mathbf{y}}\|^{N+D}}
+    p(\mathbf{y}) \mathrm{d} \mathbf{y}\)</span>. Therefore, we can use the
+    physically meaningful <span class="math inline">\(r\)</span> as the
+    anchor variable in the ODE <span class="math inline">\(\mathrm{d}
+    \mathbf{x} / \mathrm{d} r\)</span> by change-of-variable: <span
+    class="math display">\[
+    \frac{\mathrm{d} \mathbf{x}}{\mathrm{d} r}=\frac{\mathrm{d}
+    \mathbf{x}}{\mathrm{d} t} \frac{\mathrm{d} t}{\mathrm{~d}
+    r}=\mathbf{E}(\tilde{\mathbf{x}})_{\mathbf{x}} \cdot
+    E(\tilde{\mathbf{x}})_r^{-1}=\frac{\mathbf{E}(\tilde{\mathbf{x}})_{\mathbf{x}}}{E(\tilde{\mathbf{x}})_r}
+    \]</span></p>
+    <p>Indeed, the ODE <span class="math inline">\(\mathrm{d} \mathbf{x} /
+    \mathrm{d} r\)</span> turns the aforementioned surjection into a
+    bijection between an easy-to-sample prior distribution on the <span
+    class="math inline">\(r=r_{\max }\)</span> hyper-cylinder <span
+    class="math inline">\({ }^2\)</span> and the data distribution on <span
+    class="math inline">\(r=0\)</span> (i.e., <span
+    class="math inline">\(\mathbf{z}=\mathbf{0}\)</span> ) hyperplane. The
+    following theorem states the observation formally:</p>
+    <p>Theorem 1. Assume the data distribution <span class="math inline">\(p
+    \in \mathcal{C}^1\)</span> and <span class="math inline">\(p\)</span>
+    has compact support. As <span class="math inline">\(r_{\max }
+    \rightarrow \infty\)</span>, for <span class="math inline">\(D \in
+    \mathbb{R}^{+}\)</span>, the <span class="math inline">\(O D E
+    \mathrm{~d} \mathbf{x} / \mathrm{d}
+    r=\mathbf{E}(\tilde{\mathbf{x}})_{\mathbf{x}} /
+    E(\tilde{\mathbf{x}})_r\)</span> defines a bijection between <span
+    class="math inline">\(\lim _{r_{\max } \rightarrow \infty} p_{r_{\max
+    }}(\mathbf{x}) \propto \lim _{r_{\max } \rightarrow \infty} r_{\text
+    {max }}^D /\left(\|\mathbf{x}\|_2^2+r_{\text {max
+    }}^2\right)^{\frac{N+D}{2}}\)</span> when <span
+    class="math inline">\(r=r_{\max }\)</span> and the data distribution
+    <span class="math inline">\(p\)</span> when <span
+    class="math inline">\(r=0\)</span>.</p>
+
+<figure>
+    <img src="/authors/admin/PFGM.png" alt=""/>
+    <figcaption>Figure : (left) Poisson field (black arrows) and particle trajectories
+        (blue lines) of a 2D uniform disk (red). Left (no augmentation, 2D): all
+        particles collapse to the disk center. Right (augmentation, 3D):
+        particles hit different points on the disk. (right) Proof idea of Theorem 1.
+        By Gauss Law, the outflow flux <span class="math inline">\(d
+        \Phi_{\text {out }}\)</span> equals the inflow flux <span
+        class="math inline">\(d \Phi_{i n}\)</span>. The factor of two in <span
+        class="math inline">\(p(\mathbf{x}) d A / 2\)</span> is due to the
+        symmetry of Poisson fields in <span
+        class="math inline">\(z&lt;0\)</span> and <span
+        class="math inline">\(z&gt;0\)</span>.</figcaption>
+</figure>
+
 <p>See:</p>
 <ul>
 <li><a href="https://arxiv.org/pdf/2011.13456.pdf">Score-Based Generative Modeling through Stochastic Differential Equations</a></li>
 <li><a href="https://arxiv.org/pdf/2206.14476.pdf">Can Push-forward Generative Models Fit Multimodal Distributions?</a>
 </a></li>
 </ul>
-<p>We designed quantitative concentration bounds (using Sobolev inequalities) explicitly dependent on the number of orbits and illustrated theoretical results for incorporating invariance symmetries using Lie groups for diffusion models using a score-based formulation by utilizing the implicit structure in the time-reversed stochastic differential equations. Currently, we are working on establishing connections to compact Riemannian manifolds.</p>
+<!--p>We designed quantitative concentration bounds (using Sobolev inequalities) explicitly dependent on the number of orbits and illustrated theoretical results for incorporating invariance symmetries using Lie groups for diffusion models using a score-based formulation by utilizing the implicit structure in the time-reversed stochastic differential equations. Currently, we are working on establishing connections to compact Riemannian manifolds.</p-->
 <!--<h3 id="deep-gaussian-processes">Deep Gaussian processes</h3>
 <p>Why is accurate Gaussian process inference important? Well, apart from GPs being useful for noisy and/or low-data tasks where quantifying uncertainty is important<sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup>, GPs are also a different representation of a neural network layer. It seems that there are advantages in terms of the quality of approximate Bayesian inference when representing a layer as a GP rather than with weights. One key research question is whether thinking about neural network layers as GPs can help bring the benefits of Bayesian inference (uncertainty and automatic model selection) to deep neural networks.</p>
 <p>The evidence of this comes from the very first papers on deep GPs by <a href="http://proceedings.mlr.press/v31/damianou13a.html" target="_blank" rel="noopener">Damianou &amp; Lawrence</a>, where the marginal likelihood estimate was already used for model selection. Simple inference methods keep this property, even as <a href="/publication/dutordoir-2020-dcgp/">deep GP models become more complex</a>.</p>
@@ -957,9 +1088,9 @@
 <li id="fn:1" role="doc-endnote">
 <p>See <a href="https://arxiv.org/pdf/2109.07103.pdf" target="_blank" rel="noopener">Automatic Symmetry Discovery with Lie Algebra Convolutional Network </a> for a good intro.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
 </li>
-<li id="fn:2" role="doc-endnote">
+<!--li id="fn:2" role="doc-endnote">
 <p>Which is the case in many industrial and engineering problems.&#160;<a href="#fnref:2" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
-</li>
+</li-->
 </ol>
 </section>
 
