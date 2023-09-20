@@ -858,6 +858,19 @@
 
 <h3 id="Estimating Scores using SDE">Estimating Scores using SDE</h3>
 
+<figure>
+    <img src="/authors/admin/score_estimation.png" alt=""/>
+    <figcaption><p>Figure: (left) <span class="math inline">\(\nabla_{\mathbf{x}} \log
+        p_{\text {data }}(\mathbf{x})\)</span>. (right) <span
+        class="math inline">\(\mathbf{s}_{\boldsymbol{\theta}}(\mathbf{x})\)</span>
+        The data density <span class="math inline">\(p_{\text {data
+        }}(\mathbf{x})\)</span> is encoded using an orange colormap: darker
+        color implies higher density. Red rectangles highlight regions where
+        <span class="math inline">\(\nabla_{\mathbf{x}} \log p_{\text {data
+        }}(\mathbf{x}) \approx
+        \mathbf{s}_{\boldsymbol{\theta}}(\mathbf{x})\)</span>.</p></figcaption>
+  </figure>  
+
 <p>The score of a distribution can be estimated by training a
     score-based model on samples with score matching. To estimate <span
     class="math inline">\(\nabla_{\mathbf{x}} \log p_t(\mathbf{x})\)</span>,
