@@ -951,6 +951,62 @@
   bijective transformation, they estimate the normalized field in the
   augmented space.</p></p>
 
+<p>We wish to generate samples <span class="math inline">\(\mathbf{x}
+    \in \mathbb{R}^N\)</span> from a distribution <span
+    class="math inline">\(p(\mathbf{x})\)</span> supported on a bounded
+    region. We may set the source <span
+    class="math inline">\(\rho(\mathbf{x})=p(\mathbf{x}) \in
+    \mathcal{C}^0\)</span> and compute the resulting gradient field <span
+    class="math inline">\(\mathbf{E}(\mathbf{x})\)</span>. Since <span
+    class="math inline">\(-\mathbf{E}(\mathbf{x})\)</span> points towards
+    sources, the backward ODE <span class="math inline">\(d \mathbf{x} / d
+    t=-\mathbf{E}(\mathbf{x})\)</span> will take samples close to the
+    sources. One may naively hope that the backward ODE is a generative
+    model that recovers <span class="math inline">\(p(\mathbf{x})\)</span>.
+    Unfortunately, the backward ODE has the problem of mode collapse. We
+    illustrate this phenomenon with a 2D uniform disk. The reverse Poisson
+    field <span class="math inline">\(-\mathbf{E}(\mathbf{x})\)</span> on
+    the 2D <span class="math inline">\((x, y)\)</span>-plane points towards
+    the center of the disk <span class="math inline">\(O\)</span> (Fig. 2(a)
+    left), so all particle trajectories will eventually hit <span
+    class="math inline">\(O\)</span>. If we instead add an additional
+    dimension <span class="math inline">\(z\)</span>, particles can hit
+    different points on the disk and faithfully recover the data
+    distribution.</p>
+    <p>Consequently, instead of solving the Poisson equation <span
+    class="math inline">\(\nabla^2
+    \varphi(\mathbf{x})=-p(\mathbf{x})\)</span> in the original data space,
+    we solve the Poisson equation in an augmented space <span
+    class="math inline">\(\tilde{\mathbf{x}}=(\mathbf{x}, z) \in
+    \mathbb{R}^{N+1}\)</span> with an additional variable <span
+    class="math inline">\(z \in \mathbb{R}\)</span>. We augment the training
+    data <span class="math inline">\(\tilde{\mathbf{x}}\)</span> in the new
+    space by setting <span class="math inline">\(z=0\)</span> such that
+    <span class="math inline">\(\tilde{\mathbf{x}}=(\mathbf{x}, 0)\)</span>.
+    As a consequence, the data distribution in the augmented space is <span
+    class="math inline">\(\tilde{p}(\tilde{\mathbf{x}})=p(\mathbf{x})
+    \delta(z)\)</span>, where <span class="math inline">\(\delta\)</span> is
+    the Dirac delta function. The Poisson field by solving the new Poisson
+    equation <span class="math inline">\(\nabla^2
+    \varphi(\tilde{\mathbf{x}})=-\tilde{p}(\tilde{\mathbf{x}})\)</span> has
+    an analytical form: <span class="math display">\[
+    \forall \tilde{\mathbf{x}} \in \mathbb{R}^{N+1},
+    \mathbf{E}(\tilde{\mathbf{x}})=-\nabla
+    \varphi(\tilde{\mathbf{x}})=\frac{1}{S_N(1)} \int
+    \frac{\tilde{\mathbf{x}}-\tilde{\mathbf{y}}}{\|\tilde{\mathbf{x}}-\tilde{\mathbf{y}}\|^{N+1}}
+    \tilde{p}(\tilde{\mathbf{y}}) d \tilde{\mathbf{y}}
+    \]</span> The associated forward/backward ODEs of the Poisson field are
+    <span class="math inline">\(d \tilde{\mathbf{x}} / d
+    t=\mathbf{E}(\tilde{\mathbf{x}}), d \tilde{\mathbf{x}} / d
+    t=-\mathbf{E}(\tilde{\mathbf{x}})\)</span>. Intuitively, theses ODEs
+    uniquely define trajectories of particles between the <span
+    class="math inline">\(z=0\)</span> hyperplane and an enclosing
+    hemisphere. In the following theorem, we show that the backward ODE
+    defines a transformation between the uniform distribution on an infinite
+    hemisphere and the data distribution <span
+    class="math inline">\(\tilde{p}(\tilde{\mathbf{x}})\)</span> in the
+    <span class="math inline">\(z=0\)</span> plane.</p>
+
 <h3 id="PFGM++">PFGM++</h3> 
 <figure>
     <img src="/authors/admin/PFGM++.png" alt=""/>
