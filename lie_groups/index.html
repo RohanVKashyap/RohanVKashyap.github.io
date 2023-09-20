@@ -1006,6 +1006,8 @@
   rotations form an infinite group (<span
   class="math inline"><em>S</em><em>O</em>(3)</span>).</p>
 
+
+
 <h3 id="Matrix Lie groups">Matrix Lie groups</h3>
 
 <p><strong>Definition:</strong> A Lie subgroup of <span
@@ -1022,6 +1024,58 @@
   0 &amp; 1 &amp; 1
   \end{array}\right]\right):=\left(a, c, e^{\sqrt{-1} b}\right)$$</span>
   is a Lie homomorphism.</p>
+
+  <p>Definition: Let <span class="math inline">\(M\)</span> be a smooth
+    manifold and <span class="math inline">\(G\)</span> a Lie group. A left
+    action of <span class="math inline">\(G\)</span> on <span
+    class="math inline">\(M\)</span> is a smooth map, <span
+    class="math display">\[
+    (\cdot): G \times M \rightarrow M
+    \]</span> such that, <span class="math display">\[
+    \begin{aligned}
+    &amp; g_1\cdot(g_2\cdot(p)=(g_1g_2) \cdot p \\
+    &amp; e \cdot p=p
+    \end{aligned}
+    \]</span> Definition: A representation of a Lie group <span
+    class="math inline">\(G\)</span> on finite dimensional vector space
+    <span class="math inline">\(V\)</span> is a Lie group action <span
+    class="math inline">\(G \times V \rightarrow V\)</span>, such that <span
+    class="math inline">\(g \cdot v \rightarrow v\)</span> is linear, ie.
+    <span class="math inline">\(f\)</span> a smooth Lie map, <span
+    class="math display">\[
+    \rho: G \rightarrow G L(V).
+    \]</span></p>
+    <p>Examples:</p>
+    <ol type="1">
+    <li><p><span class="math inline">\(G L(n, \mathbb{R})\)</span> acts
+    transitively on <span class="math inline">\(r\)</span>-dimensional
+    subspaces of <span class="math inline">\(\mathbb{R}^n\)</span>, and the
+    coset apace can be given a smooth structure, called the
+    Grassmanian.</p></li>
+    <li><p>If <span class="math inline">\(G \xhookrightarrow{} M\)</span>,
+    then <span class="math inline">\(G\)</span> acts on <span
+    class="math inline">\(C^{\infty}(M)\)</span> as follows: <span
+    class="math display">\[
+    f \in C^{\infty}(M) \rightarrow g \cdot f:=f \circ g^{-1}
+    \]</span></p></li>
+    </ol>
+    <p>Likewise, if <span class="math inline">\(x \in X(M)\)</span>, and
+    <span class="math inline">\(G \xhookrightarrow{} M\)</span>, then <span
+    class="math inline">\(G \xhookrightarrow{} X(M)\)</span> given as: <span
+    class="math display">\[
+    (g \cdot X)_p:=\left.D g^{-1}\right|_{g(p)}\left(X_{g(p)}\right)
+    \]</span> If <span class="math inline">\(w\)</span> is a 1-form, then,
+    <span class="math display">\[
+    (g \cdot
+    \omega)_p\left(x_p\right):=\omega_{g^{-1}(p)}\left(\left(g^{-1}\right)_*\left(x_p\right)\right)
+    \]</span></p>
+    <ol start="3" type="1">
+    <li>Suppose <span class="math inline">\(P \in M\)</span> is a fixed
+    point of a Lie group action on <span class="math inline">\(M\)</span>,
+    then we get that the map <span class="math inline">\(g
+    \mapsto\left(g_*\right)_p \in G L\left(T_p M\right)\)</span> is a
+    representation of <span class="math inline">\(G\)</span>.</li>
+    </ol>
     
 <p> <b>Theorem 1.</b>  Let <span class="math inline"><em>G</em></span> be a (possibly
 disconnected) Lie group. Let <span
@@ -1121,6 +1175,64 @@ series, we can define the matrix Logarithm: <span
 class="math inline">\(\ln (A):=\sum_{m=1}^{\infty}(-1)^{m+1}
 \frac{(A-I)^m}{m}\)</span> whenever the series converges (for instance,
 when <span class="math inline">\(\|A-I\|&lt;1\)</span> ).</p>
+
+<p>For recovering group operations one needs to study the commutator.
+  That would facilitate “infinitesimal” recovery of those operations. We
+  therefore ask analogues for skew-symmetric matrices, matrix exponential,
+  and commutations for an abstract hie group (instead of <span
+  class="math inline">\(O(n)\)</span>).</p>
+  <p>Here we list out analogies for things done in the case when the Lie
+  group <span class="math inline">\(G=O(n)\)</span>:</p>
+  <ol type="1">
+  <li><p>The act of taking limits <span class="math inline">\(t x
+  \rightarrow 0\)</span>, can be done with the help of <span
+  class="math inline">\(T_{e}G\)</span>.</p></li>
+  <li><p>The commutator satisfies:</p></li>
+  </ol>
+  <ol type="i">
+  <li>Bilinearity.</li>
+  <li><span class="math inline">\([x, y]=-[y, x]\)</span></li>
+  <li>$ [x,[y, z]] , z] $.</li>
+  </ol>
+  <ol start="3" type="1">
+  <li>Matrix exponential features as means to solve linear differential
+  equation <span class="math inline">\(d v / d t=X v\)</span>. The
+  analogue for this would be finding the flow of appropriate vector
+  field.</li>
+  </ol>
+  <p>Remark: Vector fields are relevant for manifolds because their flows
+  can give us a family of diffeomorphisms. In fact, for compact connected
+  manifolds, any two points can be exchanged by a diffeomorphism.</p>
+
+
+<h3 id="Invariant vector fields">Invariant vector fields</h3>
+<p>A vector field on <span class="math inline">\(G\)</span> is
+    left-invariant if it satisfies <span class="math inline">\(L_{g}\cdot
+    X=X\)</span> i.e., <span class="math display">\[
+    \left.\left(L_g\right)_*\right|_{g^{-1}(p)}\left(X_{g^{-1}(p)}\right)=\left(L_g
+    X\right)_p=X_p
+    \]</span></p>
+    <p>Let <span class="math inline">\(v \in T_e G\)</span>, set <span
+    class="math inline">\(X_g:=\left.\left(\mathcal{L}_g\right)_*\right|_e(v)\)</span>,
+    then by chain rule <span class="math inline">\(X\)</span> is a left
+    invariant vector field. The map, <span class="math display">\[
+    \begin{aligned}
+    &amp; T_e G \longrightarrow \begin{array}{l}
+    \text { left invariant } \\
+    \text { vector fields on } G
+    \end{array} \\
+    &amp; v \longrightarrow x_g=\left.\left(L_g\right)_*\right|_e(v)
+    \end{aligned}
+    \]</span> is an isomorphism.</p>
+
+<p>Definition: The commutator <span class="math inline">\([\cdot,
+      \cdot]\)</span> on <span class="math inline">\(g=T_e G\)</span> is
+      defined as, <span class="math display">\[
+      [v, w]=\left[x_v, x_w\right]_e
+      \]</span> where <span class="math inline">\(X_v, X_w\)</span> are
+      left-invariant extension of <span class="math inline">\(v, w\)</span>.
+      This <span class="math inline">\([\cdot, \cdot]\)</span> makes <span
+      class="math inline">\(g\)</span> into a Lie algebra.</p>
 
 <h3 id="Simply Connected Lie groups">Simply Connected Lie groups</h3>
 
