@@ -1124,6 +1124,39 @@
         class="math inline">\(z&gt;0\)</span>.</figcaption>
 </figure>
 
+<p>Diffusion models generate samples by simulating ODE/SDE involving the
+    score function <span class="math inline">\(\nabla_{\mathbf{x}} \log
+    p_\sigma(\mathbf{x})\)</span> at different intermediate distributions
+    <span class="math inline">\(p_\sigma\)</span>, where <span
+    class="math inline">\(\sigma\)</span> is the standard deviation of the
+    Gaussian kernel. In this section, we show that both sampling and
+    training schemes in diffusion models are equivalent to those in <span
+    class="math inline">\(D \rightarrow \infty\)</span> case under the
+    PFGM++ framework. To begin with, we show that the electric field in
+    PFGM++ has the same direction as the score function when <span
+    class="math inline">\(D\)</span> tends to infinity, and their sampling
+    processes are also identical.</p>
+    <p>Theorem. Assume the data distribution <span class="math inline">\(p
+    \in \mathcal{C}^1\)</span>. Consider taking the limit <span
+    class="math inline">\(D \rightarrow \infty\)</span> while holding <span
+    class="math inline">\(\sigma=r / \sqrt{D}\)</span> fixed. Then, for all
+    <span class="math inline">\(\mathbf{x}\)</span>, <span
+    class="math display">\[
+    \lim _{\substack{D \rightarrow \infty \\ r=\sigma
+    \sqrt{D}}}\left\|\frac{\sqrt{D}}{E(\tilde{\mathbf{x}})_r}
+    \mathbf{E}(\tilde{\mathbf{x}})_{\mathbf{x}}-\sigma \nabla_{\mathbf{x}}
+    \log p_{\sigma=r / \sqrt{D}}(\mathbf{x})\right\|_2=0
+    \]</span></p>
+    <p>Further, given the same initial point, the trajectory of the PFGM++
+    ODE <span class="math inline">\(\left(\mathrm{d} \mathbf{x} / \mathrm{d}
+    r=\mathbf{E}(\tilde{\mathbf{x}})_{\mathbf{x}} /
+    E(\tilde{\mathbf{x}})_r\right)\)</span> matches the diffusion <span
+    class="math inline">\(O D E\)</span> <span
+    class="math inline">\((\mathrm{d} \mathbf{x} / \mathrm{d} t=-\)</span>
+    <span class="math inline">\(\left.\dot{\sigma}(t) \sigma(t)
+    \nabla_{\mathbf{x}} \log p_{\sigma(t)}(\mathbf{x})\right)\)</span> in
+    the same limit.</p>
+
 <p>See:</p>
 <ul>
 <li><a href="https://arxiv.org/pdf/2011.13456.pdf">Score-Based Generative Modeling through Stochastic Differential Equations</a></li>
