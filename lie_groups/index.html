@@ -1256,6 +1256,103 @@ when <span class="math inline">\(\|A-I\|&lt;1\)</span> ).</p>
         <p>(one can check this by evaluating <span class="math inline">\([X,
         Y]\left(x_i\right)\)</span> ).</p>
 
+<h3 id="One-parameter subgroup">One-parameter subgroup</h3>
+
+        <p>Theorem: Let <span class="math inline">\(G\)</span> be the Lie group,
+          <span class="math inline">\(g=T_e G\)</span>, and <span
+          class="math inline">\(v \in g\)</span>. Then <span
+          class="math inline">\(\exists!\)</span> a Lie group morphism <span
+          class="math inline">\(\gamma_\nu: \mathbb{R} \rightarrow G\)</span> such
+          that <span class="math inline">\(\gamma_\nu^{\prime}(0)=\nu\)</span>.
+          This map is called the one-parameter subgroup corresponding to <span
+          class="math inline">\(\nu\)</span>.</p>
+          <p>Proof:- Extend <span class="math inline">\(v\)</span> uniquely to a
+          left invariant vector field <span class="math inline">\(V\)</span>. We
+          shall establish uniqueness: Let <span
+          class="math inline">\(\gamma_v(t)\)</span> be a one parameter subgroup.
+          Choose coordinates such that,</p>
+          <p><span class="math display">\[
+          \begin{aligned}
+          \gamma_v^{\prime}(t) &amp; \left.=\sum_i \gamma_v^{\prime}(t)^{(i)}
+          \partial / \partial x_i\right. \\
+          \gamma_v^{\prime}(t)^{(i)} &amp; =\lim _{h \rightarrow 0}
+          \frac{\gamma_v(t+h)^{(i)}-\gamma_v(t)^{(i)}}{h} \\
+          &amp; =\lim _{h \rightarrow 0}
+          \frac{L_{\gamma_v(t)}\left(\gamma_v(h)\right)^{(i)}-L_{\gamma_v(t)}\left(\gamma_v(0)\right)^{(i)}}{h}
+          \end{aligned}
+          \]</span></p>
+          <p>By Chain rule,</p>
+          <p><span class="math display">\[
+          \begin{gathered}
+          {\left[\left(L_{\gamma_v(t)}\right)_*\left(\gamma_v^{\prime}(0)\right)\right]^{(i)}=\left[\left(L_{\gamma_v(t)}\right)_*(v)\right]^{(i)}=\left(V\left(\gamma_v(t)\right)\right)^{(i)}}
+          \\
+          \Rightarrow \frac{d \gamma_v}{d t}=V(\gamma(t)) \\
+          \gamma_v(0)=e
+          \end{gathered}
+          \]</span></p>
+          <p>Thus, <span class="math inline">\(\gamma_v(t)\)</span> is unique (by
+          uniqueness of ODEs).</p>
+        
+        <p>Let <span class="math inline">\(G\)</span> be a Lie group and <span
+            class="math inline">\(g\)</span> be its Lie algebra. Then,</p>
+            <p><span class="math display">\[
+            \begin{aligned}
+            &amp; \exp : g \mapsto G \\
+            &amp; \exp (v):=\gamma_v(1)
+            \end{aligned}
+            \]</span></p>
+            <p>is called the exponential map.</p>
+            <p>Remark: On a compact Lie group, the exponential form coming from
+            Riemannian geometry coincides with the map above.</p>
+            <p>Examples:</p>
+            <ol type="1">
+            <li><span class="math inline">\(G=S^{1}, g=T_e
+            S^{\prime}=\mathbb{R}\)</span>. Given <span class="math inline">\(v \in
+            g\)</span>,</li>
+            </ol>
+            <p><span class="math display">\[
+            \left.\left(X_v\right)\right|_{e^{i \theta}}=e^{i \theta}(v)
+            \]</span> (in particular its interval curve is given by <span
+            class="math inline">\(e^{i v t}\)</span> ( <span
+            class="math inline">\(v\)</span> seen as complex number).</p>
+            <ol start="2" type="1">
+            <li>More generally, <span class="math inline">\(G=G L(n,
+            \mathbb{R})\)</span>, then <span class="math inline">\(g l(n,
+            \mathbb{R})=M(n, \mathbb{R})\)</span>.</li>
+            </ol>
+            <p>Given, <span class="math inline">\(A \in g l(n, \mathbb{R})\)</span>,
+            the invariant vector field for <span class="math inline">\(A\)</span>
+            is,</p>
+            <p><span class="math display">\[
+            V(g):=gA
+            \]</span> Since, <span
+            class="math inline">\(\left(L_g\right)_*(A)=gA\)</span>, the integral
+            curve satisfies, <span class="math display">\[
+            \begin{aligned}
+            \frac{d \gamma_A}{d t} &amp; =\gamma_A(t) A \\
+            \gamma_A(0) &amp; =I_d \\
+            \Rightarrow \gamma_A(t) &amp; =e^{A t} .
+            \end{aligned}
+            \]</span></p>
+            <p>Properties:</p>
+            <ol type="i">
+            <li><p><span class="math inline">\(\exp\)</span> is a smooth map (by ODE
+            theory).</p></li>
+            <li><p><span class="math inline">\(\operatorname{exp}(0)=e,(\exp
+            )_*(0)=I_d\)</span>.</p></li>
+            <li><p>By Inverse Function Theorem, exp is a local diffeomorphism near
+            0.</p></li>
+            <li><p><span class="math inline">\(\exp ((t+s) x)=\exp (t x) \exp (s
+            x)\)</span>.</p></li>
+            <li><p>If <span class="math inline">\(\phi\)</span> is a Lie group
+            morphism, then, <span class="math display">\[
+            \exp \left(\phi_*(v)\right)=\phi(\exp (v)).
+            \]</span></p></li>
+            <li><p><span class="math inline">\(\text { (vi) } X \exp (y) X^{-1}=\exp
+            \left(\left(A_X\right)_*(y)\right) \text {, where } A_X(g)=X g
+            X^{-1}\)</span>.</p></li>
+            </ol>
+
 <h3 id="Simply Connected Lie groups">Simply Connected Lie groups</h3>
 
 <p> <b>Theorem 3:</b> If <span class="math inline"><em>G</em></span> is a connected Lie
