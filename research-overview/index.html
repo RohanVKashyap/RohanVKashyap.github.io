@@ -772,12 +772,14 @@
     <div class="article-style">
       <h2 id="list-of-research-interests">List of Research Interests</h2>
 <ul>
+<li>Learning neural networks with invariance properties (e.g. dihedral, rotations, translations) for arbitrary discrete groups and matrix lie groups.</li>
+<li>Generative models. Eg: VAE, GAN and score-based generative models - diffusion models.</li>
 <li>Poisson Flow generative models.</li>
-<li>Variational Diffusion models.</li>
+<!--li>Variational Diffusion models.</li-->
 <!--li>Mathematical reasoning for theorem proving using neural nets.</li-->
 <!--li>Analysis of deep neural networks (infinite limits and GP relations). </li-->
-<li>Direct and indirect push-forward generative models. Eg: VAE, GAN and diffusion models.</li>
-<li>Neural networks with invariance properties (e.g. rotation, scale, or more arbitrary) and learning invariances for continuous image manifolds.</li>
+<!--li>Direct and indirect push-forward generative models. Eg: VAE, GAN and diffusion models.</li-->
+<!--li>Neural networks with invariance properties (e.g. rotation, scale, or more arbitrary) and learning invariances for continuous image manifolds.</li-->
 <!--li>Analysis of neural network optimization in the weight space and related topics (convergence rates, cyclic step sizes, chebyshev polynomials, residual polynomials and link functions) for gradient descent algorithm.</li-->
 </ul>
 <!--<h2 id="high-level-aims-and-approach">High-level aims and approach</h2>
@@ -836,6 +838,23 @@
   </ol>
 
 <h3 id="A Unified Framework for Discovering Discrete Symmetries">A Unified Framework for Discovering Discrete Symmetries</h3>
+<figure>
+  <img src="/authors/admin/unified_1.img" alt=""/>
+  <figcaption>Figure: <p>Proposed unified architecture for discovering symmetries, composed of
+    linear transformations (<span class="math inline">\(M_1\)</span>, <span
+    class="math inline">\(M_2\)</span>) and nonlinear functions (<span
+    class="math inline">\(\rho\)</span>, <span
+    class="math inline">\(\phi\)</span>). <span
+    class="math inline">\(\rho\)</span> is explicitly fixed whereas <span
+    class="math inline">\(M_1, M_2, \phi\)</span> are trainable. The
+    following result guarantees that the architecture can express functions
+    invariant to any locally symmetric, dihedral and cyclic. Here, <span
+    class="math inline">\(\phi\)</span> is represented by a neural network
+    and trained using gradient descent while <span
+    class="math inline">\(M_1, M_2\)</span> are optimized using bandit
+    sampling over a discrete space of matrices.</p></figcaption>
+</figure>
+
 <p></p>In our recent paper, <a href="https://rohanvkashyap.github.io/authors/admin/view_1.pdf"><em>A Unified Framework for Discovering Discrete Symmetries</em></a> (NeurIPS review) we propose a unified framework that enables symmetry discovery across a broad range of subgroups including locally symmetric, dihedral and cyclic subgroups. At the core of the framework is a novel architecture composed of linear and tensor-valued functions that expresses functions invariant to these subgroups in a principled manner. The structure of the architecture enables us to leverage multi-armed bandit algorithms and gradient descent to efficiently optimize over the linear and the tensor-valued functions respectively.</p>
 <p> Our main result is as follows:</p>
 <p>Theorem: Let <span class="math inline">\(\mathcal{B}\)</span> denote
@@ -857,7 +876,7 @@
   class="math inline">\(S_{n(n-1)}\)</span>-invariant function,
   and</p></li>
   <li><p><span class="math inline">\(\rho: \mathbb{R}^n \rightarrow
-  \mathbb{R}^{n(n-1)}\)</span> is a tensor-valued function <span
+  \mathbb{R}^{n(n-1)}\)</span> is a tensor-valued function, <span
   class="math inline">\(\rho:\left[x_1, \ldots, x_n\right]^T
   \mapsto\left[\left(x_i, x_j\right)_{i, j \in[n], i \neq
   j}\right]^T\)</span>.</p></li>
