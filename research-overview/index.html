@@ -799,6 +799,42 @@
 <p>Invariance and equivariance are very common inductive biases, with the ubiquitous convolutional layer being the most common example. When designing architectures, humans currently choose how many convolutional layers to use, together with parameters like filter size. Often these choices are made with a laborious trial-and-error procedure (cross-validation). To make the number of choices even larger, other types of convolutional layers have been developed in recent years, which help generalisation across different scales and rotations. The optimal inductive bias varies by problem and dataset, so it would be nice if we had an automatic procedure for determining these.</p>
 <p>We are developing methods that allow weights and architecture to be learned <em>at the same time</em>, by optimising a single objective function. In our paper <a href="https://rohanvkashyap.github.io/authors/admin/Neural%20discovery%20of%20permutation%20subgroups.pdf"><em>Neural discovery of permutation subgroups</em></a> (AISTATS 2023) we present a novel method to discover the underlying subgroup, given that it satisfies certain conditions. Our results show that one could discover any subgroup of type <span class="math inline">\(S_k(k \leq n)\)</span> by learning an <span class="math inline">\(S_n\)</span>-invariant function and a linear transformation.</p>
 
+<p>Theorem [Cyclic and Dihedral subgroups]: If <span
+  class="math inline">\(k|n\)</span>, any <span
+  class="math inline">\(\mathbb{Z}_k\)</span>-invariant (or <span
+  class="math inline">\(D_{2k}\)</span>-invariant) function <span
+  class="math inline">\(\psi\)</span>, can be realised using a <span
+  class="math inline">\(\mathbb{Z}_n\)</span>-invariant (or <span
+  class="math inline">\(D_{2n}\)</span>-invariant) function <span
+  class="math inline">\(\phi\)</span> and a linear transformation, in
+  specific, it can be realised through the following form, <span
+  class="math display">\[\begin{equation}
+      \psi(x) = \left(  \phi \cdot \hat{M} \right) (x)
+  \end{equation}\]</span> where <span class="math inline">\(\hat{M} =
+  \begin{bmatrix} M \\ I - L \end{bmatrix}\)</span> for some <span
+  class="math inline">\(M, L \in \mathbb{R}^{n \times n}\)</span>.</p>
+  <p>The above result can also be extended to other classes of subgroups
+  given as:</p>
+  <p>Theorem: Any <span class="math inline">\(H\)</span>-invariant
+  function <span class="math inline">\(\psi\)</span> can be learnt through
+  composing a <span class="math inline">\(G\)</span>-invariant function
+  <span class="math inline">\(\phi\)</span> with a linear transformation
+  <span class="math inline">\(M\)</span>, i.e., <span
+  class="math inline">\(\psi = \phi \cdot M\)</span> if the following
+  conditions hold,</p>
+  <ol type="1">
+  <li><p>For any <span class="math inline">\(h \in H,\)</span> <span
+  class="math inline">\(\exists g \in G\)</span> such that <span
+  class="math inline">\(M(h \cdot x) = g \cdot \left(Mx\right), \: \forall
+  x \in X\)</span>.</p></li>
+  <li><p>For any <span class="math inline">\(g \in G\)</span> such that
+  <span class="math inline">\(g \cdot \left(Mx\right) \in R(M)\)</span>,
+  <span class="math inline">\(\exists h \in H\)</span> such that <span
+  class="math inline">\(M(h \cdot x) = g \cdot \left(Mx\right), \: \forall
+  x \in X\)</span>, where <span class="math inline">\(R(M)\)</span> is the
+  range of <span class="math inline">\(M\)</span>.</p></li>
+  </ol>
+
 <h3 id="A Unified Framework for Discovering Discrete Symmetries">A Unified Framework for Discovering Discrete Symmetries</h3>
 <p></p>In our recent paper, <a href="https://rohanvkashyap.github.io/authors/admin/view_1.pdf"><em>A Unified Framework for Discovering Discrete Symmetries</em></a> (NeurIPS review) we propose a unified framework that enables symmetry discovery across a broad range of subgroups including locally symmetric, dihedral and cyclic subgroups. At the core of the framework is a novel architecture composed of linear and tensor-valued functions that expresses functions invariant to these subgroups in a principled manner. The structure of the architecture enables us to leverage multi-armed bandit algorithms and gradient descent to efficiently optimize over the linear and the tensor-valued functions respectively.</p>
 <p> Our main result is as follows:</p>
@@ -863,6 +899,53 @@
   otherwise. }\end{cases}
   \]</span></li>
   </ol>
+
+  <p>We remark that the above result can be extended to express functions
+    invariant to wider classes of subgroups. The following results offer a
+    glimpse of how this can be achieved, for instance, for product
+    groups.</p>
+
+  <p>Theorem [Invariance to product groups]: Let <span
+    class="math inline">\([n] = \bigcup\limits_{j=1}^L
+    \mathcal{I}_j\)</span> be a partition of <span
+    class="math inline">\([n]\)</span>, <span class="math inline">\(G_i \in
+    \{S_{\mathcal{I}_j}, D_{\mathcal{I}_j}, \mathbb{Z}_{\mathcal{I}_j}\},
+    \forall j \in [L]\)</span> and <span class="math inline">\(G = G_1
+    \times G_2 \times \cdots G_L\)</span> such that no two groups <span
+    class="math inline">\(G_i, G_j\)</span> are isomorphic. Let <span
+    class="math inline">\(\psi\)</span> be a <span
+    class="math inline">\(G\)</span>-invariant function, then there exists
+    an <span class="math inline">\(S_{l}\)</span>-invariant function <span
+    class="math inline">\(\phi\)</span> and a specific tensor-valued
+    function <span class="math inline">\(\rho\)</span>, such that, <span
+    class="math display">\[\begin{equation}
+            \psi = \phi \circ \rho.
+        \end{equation}\]</span></p>
+
+  <p>Our next result shows a performance guarantee for the LinTS
+    algorithm, showing a bound on its probability of misidentifying the
+    optimal arm in a linear reward model.</p>
+    <p>Theorem [Error probability bound for LinTS]: Let the set of arms
+    <span class="math inline">\(\mathcal{A} \subset \mathbb{R}^d\)</span> be
+    finite. Suppose that the reward from playing an arm <span
+    class="math inline">\(a \in \mathcal{A}\)</span> at any iteration,
+    conditioned on the past, is sub-Gaussian with mean <span
+    class="math inline">\(a^{\top} \mu^\star\)</span>. After <span
+    class="math inline">\(T\)</span> iterations, let the guessed best arm
+    <span class="math inline">\(A_T\)</span> be drawn from the empirical
+    distribution of all arms played in the <span
+    class="math inline">\(T\)</span> rounds, i.e., <span
+    class="math inline">\(\mathbb{P}[A_T = a] = \frac{1}{T} \sum_{t=1}^T
+    \mathbf{1}\{a^{(t)} = a \}\)</span> where <span
+    class="math inline">\(a^{(t)}\)</span> denotes the arm played in
+    iteration <span class="math inline">\(t\)</span>. Then,</p>
+    <p><span class="math inline">\(\mathbb{P}\left[A_T \neq a^{\star}\right]
+    \leq \frac{c \log (T)}{T}\)</span></p>
+    <p>where <span class="math inline">\(c \equiv c\left(\mathcal{A},
+    \mu^\star, \nu \right)\)</span> is a quantity that depends on the
+    problem instance (<span class="math inline">\(\mathcal{A},
+    \mu^\star\)</span>) and algorithm parameter (<span
+    class="math inline">\(\nu\)</span>).</p>
 
 <section class="footnotes" role="doc-endnotes">
 <hr>
