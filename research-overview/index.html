@@ -785,7 +785,9 @@
   <figcaption>Figure: AISTATS Poster.</figcaption>
 </figure>
 <p>Invariance and equivariance are very common inductive biases, with the ubiquitous convolutional layer being the most common example. When designing architectures, humans currently choose how many convolutional layers to use, together with parameters like filter size. Often these choices are made with a tedious trial-and-error procedure. To make the number of choices even larger, other types of convolutional layers have been developed in recent years, which help generalisation across different scales and rotations. The optimal inductive bias varies by problem and dataset, so it would be nice if we had an automatic procedure for determining these.</p>
-<p>We are developing methods that allow weights and architecture to be learned <em>at the same time</em>, by optimising a single objective function. In our paper titled <a href="https://arxiv.org/abs/2309.05352"><em>Neural discovery of permutation subgroups</em></a> (AISTATS 2023), we present a novel method to discover the underlying subgroup, given that it satisfies certain conditions. We consider the problem of learning an <span
+<p>We are developing methods that allow weights and architecture to be learned <em>at the same time</em>, by optimising a single objective function. In our paper titled <a href="https://arxiv.org/abs/2309.05352"><em>Neural discovery of permutation subgroups</em></a> (AISTATS 2023), we present a novel method to discover the underlying subgroup, given that it satisfies certain conditions.</p> 
+  
+<p>We consider the problem of learning an <span
   class="math inline"><em>H</em></span>-invariant function <span
   class="math inline"><em>f</em> : <em>X</em> → ℝ</span>, where <span
   class="math inline"><em>X</em> = [0,1]<sup><em>n</em></sup> ⊂ <em>R</em><sup><em>n</em></sup></span>
@@ -801,15 +803,7 @@
   class="math inline"><em>G</em></span>-invariant function along with a
   linear transformation, given that <span
   class="math inline"><em>G</em></span> and <span
-  class="math inline"><em>H</em></span> satisfy certain conditions. Since
-  any given <span class="math inline"><em>G</em></span> can have several
-  such subgroups, we propose to learn the underlying subgroup <span
-  class="math inline"><em>H</em></span> by exploiting the existing
-  structures using a family of <span
-  class="math inline"><em>G</em></span>-invariant functions and a
-  learnable linear transformation.</p> 
-  
-<p>Our results show that one could discover any subgroup of type <span class="math inline">\(S_k(k \leq n)\)</span> by learning an <span class="math inline">\(S_n\)</span>-invariant function and a linear transformation.</p>
+  class="math inline"><em>H</em></span> satisfy certain conditions. Our results show that one could discover any subgroup of type <span class="math inline">\(S_k(k \leq n)\)</span> by learning an <span class="math inline">\(S_n\)</span>-invariant function and a linear transformation given below:</p>
 
 <p><strong>Theorem</strong> [Cyclic and Dihedral subgroups]: If <span
   class="math inline">\(k|n\)</span>, any <span
@@ -828,7 +822,7 @@
   <p>The above result can also be extended to other classes of subgroups
   given as:</p>
 
-  <p>Theorem [Main Theorem]: Any <span class="math inline">\(H\)</span>-invariant
+  <p><strong>Theorem</strong> [Main Theorem]: Any <span class="math inline">\(H\)</span>-invariant
   function <span class="math inline">\(\psi\)</span> can be learnt through
   composing a <span class="math inline">\(G\)</span>-invariant function
   <span class="math inline">\(\phi\)</span> with a linear transformation
@@ -935,7 +929,7 @@
     glimpse of how this can be achieved, for instance, for product
     groups.</p>
 
-  <p>Theorem [Invariance to product groups]: Let <span
+  <p><strong>Theorem</strong>[Invariance to product groups]: Let <span
     class="math inline">\([n] = \bigcup\limits_{j=1}^L
     \mathcal{I}_j\)</span> be a partition of <span
     class="math inline">\([n]\)</span>, <span class="math inline">\(G_i \in
@@ -955,7 +949,7 @@
   <p>Our next result shows a performance guarantee for the LinTS
     algorithm, showing a bound on its probability of misidentifying the
     optimal arm in a linear reward model.</p>
-    <p>Theorem [Error probability bound for LinTS]: Let the set of arms
+    <p><strong>Theorem</strong> [Error probability bound for LinTS]: Let the set of arms
     <span class="math inline">\(\mathcal{A} \subset \mathbb{R}^d\)</span> be
     finite. Suppose that the reward from playing an arm <span
     class="math inline">\(a \in \mathcal{A}\)</span> at any iteration,
