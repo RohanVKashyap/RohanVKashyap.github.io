@@ -1137,7 +1137,6 @@ fundamental group. In this case, the kernel is a discrete subgroup of
   (Hilbert-Schmidt) converges and <span class="math inline">\(\left|X_{i
   j}\right| \leq\|X\|\)</span>.</p>
  
-
   <p>We begin now by asking can the group structure be recovered
   similarly: if so , one can work with skew symmetric matrices instead of
   <span class="math inline">\(O(n)\)</span>. Observe, for <span
@@ -1358,7 +1357,8 @@ when <span class="math inline">\(\|A-I\|&lt;1\)</span> ).</p>
 
 <h3 id="Simply Connected Lie groups">Simply Connected Lie groups</h3>
 
-<p> <b>Theorem:</b> If <span class="math inline"><em>G</em></span> is a connected Lie
+<p>We can also focus on simply connected Lie groups thanks to the following theorem.</p>
+<p><b>Theorem:</b> If <span class="math inline"><em>G</em></span> is a connected Lie
 group, then its universal cover <span
 class="math inline"><em>G̃</em></span> is a Lie group canonically such
 that the covering map is a Lie group morphism and the kernel is the
@@ -1373,6 +1373,13 @@ class="math inline"><em>S</em><em>L</em>(<em>n</em>,ℂ), <em>U</em>(<em>n</em
 are all connected matrix lie groups but <span
 class="math inline"><em>S</em><em>L</em>(<em>n</em>, ℝ)</span> is not a matrix
 Lie group.</p>
+
+<p>We can now prove that $O(n)$ is a Lie group for instance: The logarithm map is smooth in a neighbourhood of $I$. 
+   Hence, in a neighbourhood $U$, of $I$ in $O(n)$, we have a chart. Given any other element $g, g \cdot U$ is a similar neighbourhood around $g$ and likewise $g . \ln (U)$ on the other side.
+   Moreover, note that if $g$ is complex and invertible, then $g=P e^D\left(e^{-D} J\right) P^{-1}$ where $D$ is the diagonal matrix consisting of eigenvalues and $e^{-D} J$ is upper-triangular and has 1's on its diagonal. Now $\ln \left(e^{-D} J\right)$ is well-defined because $I-e^{-D} J$ is nilpotent.
+   Moreover, $e^{\ln \left(e^{-D} J\right)}=e^{-D} J$. Thus every invertible complex matrix is $e^X$ for some $X$. 
+   Using this observation, we have a nice result: Note that if $X+X^T=0$, then $e^X e^{X^T}=e^X e^{-X}=I$. Conversely, every matrix in $O(n)$ is normal and hence diagonalisable as $M=U D U^{\dagger}$. Hence, $X=\ln (M)=U \ln (D) U^{\dagger}$. Now $X^T=$ $\bar{U} \ln (D) U^T=U \ln \left(D^{-1}\right) U^{\dagger}=-X$. 
+   However, this $X$ need not be real!</p>
 
 </a></li>
 </ul>
