@@ -1118,12 +1118,12 @@ fundamental group. In this case, the kernel is a discrete subgroup of
   class="math inline">\((I+B)\left(I+B^T\right) \approx I\)</span>. To
   make the approximation better, we can rotate by “half-angles”, i.e.,
   <span class="math inline">\((I+B / 2)^2\left(I+B^T /
-  2\right)^2=\left(I+B+B^2 / 4\right)(. .)^T=I+B^2 /
+  2\right)^2=I+B^2 /
   2+O\left(B^3\right)\)</span>. This motivates us to study <span
   class="math inline">\(\lim _{N \rightarrow \infty}(I+B /
   N)^N\)</span>.</p>
-  <ol start="2" type="1">
-  <li>Consider the system of ODE: <span class="math inline">\(\frac{d v}{d
+
+  <p>2. Consider the system of ODE: <span class="math inline">\(\frac{d v}{d
   t}=A v\)</span> where <span class="math inline">\(A\)</span> is a
   matrix. One would naively expect the solution to be <span
   class="math inline">\(e^{A t} v_0\)</span> if <span
@@ -1135,8 +1135,9 @@ fundamental group. In this case, the kernel is a discrete subgroup of
   class="math inline">\(e^X:=I+X+X^2 / 2 !+\ldots\)</span> This definition
   is valid because <span class="math inline">\(1+\|X\|+\ldots\)</span>
   (Hilbert-Schmidt) converges and <span class="math inline">\(\left|X_{i
-  j}\right| \leq\|X\|\)</span>.</li>
-  </ol>
+  j}\right| \leq\|X\|\)</span>.</p>
+ 
+
   <p>We begin now by asking can the group structure be recovered
   similarly: if so , one can work with skew symmetric matrices instead of
   <span class="math inline">\(O(n)\)</span>. Observe, for <span
@@ -1191,9 +1192,9 @@ when <span class="math inline">\(\|A-I\|&lt;1\)</span> ).</p>
   <li><p>The commutator satisfies:</p></li>
   </ol>
   <ol type="i">
-  <li>Bilinearity.</li>
-  <li><span class="math inline">\([x, y]=-[y, x]\)</span></li>
-  <li>$ [x,[y, z]] , z] $.</li>
+  <li>Bilinearity: $[a x+b y, z] = a[x, z]+b[y, z]$</li>
+  <li>Anticommutativity: <span class="math inline">\([x, y]=-[y, x]\)</span></li>
+  <li>Jacobi Identity: $[x,[y, z]]+[y,[z, x]]+[z,[x, y]] = 0$, for all scalars $a, b$ in $F$ and all elements $x, y, z$ in $\mathfrak{g}$.</li>
   </ol>
   <ol start="3" type="1">
   <li>Matrix exponential features as means to solve linear differential
@@ -1201,9 +1202,6 @@ when <span class="math inline">\(\|A-I\|&lt;1\)</span> ).</p>
   analogue for this would be finding the flow of appropriate vector
   field.</li>
   </ol>
-  <p>Remark: Vector fields are relevant for manifolds because their flows
-  can give us a family of diffeomorphisms. In fact, for compact connected
-  manifolds, any two points can be exchanged by a diffeomorphism.</p>
 
 
 <h3 id="Invariant vector fields">Invariant vector fields</h3>
@@ -1257,6 +1255,10 @@ when <span class="math inline">\(\|A-I\|&lt;1\)</span> ).</p>
         <p>(one can check this by evaluating <span class="math inline">\([X,
         Y]\left(x_i\right)\)</span> ).</p>
 
+<p>Remark: Vector fields are relevant for manifolds because their flows
+   can give us a family of diffeomorphisms. In fact, for compact connected
+   manifolds, any two points can be exchanged by a diffeomorphism.</p>
+
 <h3 id="One-parameter subgroup">One-parameter subgroup</h3>
 
         <p>Theorem: Let <span class="math inline">\(G\)</span> be the Lie group,
@@ -1267,7 +1269,7 @@ when <span class="math inline">\(\|A-I\|&lt;1\)</span> ).</p>
           that <span class="math inline">\(\gamma_\nu^{\prime}(0)=\nu\)</span>.
           This map is called the one-parameter subgroup corresponding to <span
           class="math inline">\(\nu\)</span>.</p>
-          <p>Proof:- Extend <span class="math inline">\(v\)</span> uniquely to a
+          <p>Proof: Extend <span class="math inline">\(v\)</span> uniquely to a
           left invariant vector field <span class="math inline">\(V\)</span>. We
           shall establish uniqueness: Let <span
           class="math inline">\(\gamma_v(t)\)</span> be a one parameter subgroup.
@@ -1313,7 +1315,7 @@ when <span class="math inline">\(\|A-I\|&lt;1\)</span> ).</p>
             </ol>
             <p><span class="math display">\[
             \left.\left(X_v\right)\right|_{e^{i \theta}}=e^{i \theta}(v)
-            \]</span> (in particular its interval curve is given by <span
+            \]</span> In particular its interval curve is given by <span
             class="math inline">\(e^{i v t}\)</span> ( <span
             class="math inline">\(v\)</span> seen as complex number).</p>
             <ol start="2" type="1">
@@ -1356,7 +1358,7 @@ when <span class="math inline">\(\|A-I\|&lt;1\)</span> ).</p>
 
 <h3 id="Simply Connected Lie groups">Simply Connected Lie groups</h3>
 
-<p> <b>Theorem 3:</b> If <span class="math inline"><em>G</em></span> is a connected Lie
+<p> <b>Theorem:</b> If <span class="math inline"><em>G</em></span> is a connected Lie
 group, then its universal cover <span
 class="math inline"><em>G̃</em></span> is a Lie group canonically such
 that the covering map is a Lie group morphism and the kernel is the
@@ -1371,31 +1373,7 @@ class="math inline"><em>S</em><em>L</em>(<em>n</em>,ℂ), <em>U</em>(<em>n</em
 are all connected matrix lie groups but <span
 class="math inline"><em>S</em><em>L</em>(<em>n</em>, ℝ)</span> is not a matrix
 Lie group.</p>
-<!--h3 id="Poisson Flow Generative Models">Poisson Flow Generative Models</h3>
-<figure>
-  <img src="/authors/admin/Image2.png" alt=""/>
-  <figcaption>Figure: (a) 3D Poisson field trajectories for a heart-shaped distribution (b) The evolvements of a
-    distribution (top) or an (augmented) sample (bottom) by the forward/backward ODEs pertained to
-    the Poisson field.</figcaption>
-</figure>  
-<p style="text-align:justify;">The Poisson flow generative model (PFGM) maps a uniform distribution
-  on a high-dimensional hemisphere into any data distribution. They
-  interpret the data points as electrical charges on the <span
-  class="math inline">\(\mathrm{z}=\)</span> 0 hyperplane in a space
-  augmented with an additional dimension z, generating a high-dimensional
-  electric field (the gradient of the solution to Poisson equation). They
-  prove that if these charges flow upward along electric field lines,
-  their initial distribution in the <span
-  class="math inline">\(\mathrm{z}=0\)</span> plane transforms into a
-  distribution on the hemisphere of radius <span
-  class="math inline">\(r\)</span> that becomes uniform in the <span
-  class="math inline">\(r \rightarrow \infty\)</span> limit. To learn the
-  bijective transformation, they estimate the normalized field in the
-  augmented space.</p></p-->
-<!--p>See:</p>
-<ul>
-<li><a href="https://arxiv.org/pdf/2011.13456.pdf">Score-Based Generative Modeling through Stochastic Differential Equations</a></li-->
-<!--li><a href="https://arxiv.org/pdf/2206.14476.pdf">Can Push-forward Generative Models Fit Multimodal Distributions?</a-->
+
 </a></li>
 </ul>
 <section class="footnotes" role="doc-endnotes">
